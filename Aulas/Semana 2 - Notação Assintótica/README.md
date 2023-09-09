@@ -27,6 +27,14 @@
 
 
 <details><summary><h3> Buscar o Maior e o Menor Valor de Forma Eficiente </h3></summary>
+&emsp;&emsp;Este algoritmo em C resolve o problema de encontrar o maior e o menor elemento em um vetor de inteiros de uma maneira mais inteligente e eficiente.
 
+&emsp;&emsp;O algoritmo começa verificando o tamanho do vetor `Tam`. Se o tamanho for ímpar, utilizamos o primeiro elemento `V[0]` para inicializar tanto o `Maior` quanto o `Menor`. Se o tamanho for par, os dois primeiros elementos são comparados, e o maior é atribuído a `Maior`, e o menor é atribuído a `Menor`.
 
+&emsp;&emsp;Em seguida, o algoritmo entra em um loop que percorre o vetor a partir do terceiro elemento. Para cada par de elementos (`V[i]` e `V[i + 1]`), ele realiza as seguintes comparações:
+- Se `V[i]` for maior que `V[i + 1]`, ele compara `V[i]` com o valor atual de `Maior` e `V[i + 1]` com o valor atual de `Menor`.
+- Se `V[i]` não for maior que `V[i + 1]`, ele compara `V[i + 1]` com o valor atual de `Maior` e `V[i]` com o valor atual de `Menor`.
+
+Dessa forma, `Maior` e `Menor` são atualizados conforme o algoritmo encontra valores maiores ou menores no vetor.
+  
 </details>
