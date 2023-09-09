@@ -17,10 +17,10 @@
 |--|--|
 | Hello world! | D 1<br> E 1<br> H 1<br> L 3<br> O 2<br> R 1<br> W 1 |
 
-<br>🔹 <a href="https://github.com/Assaoka/UNIFESP--Algoritmos_e_Estruturas_de_Dados/blob/main/Aulas/Semana%202%20-%20Nota%C3%A7%C3%A3o%20Assint%C3%B3tica/JoaoAssaoka_rn168863-AP1.c"> Minha Resolução</a>
+<br>🔹 Você pode encontrar a Minha Resolução em C neste<a href="https://github.com/Assaoka/UNIFESP--Algoritmos_e_Estruturas_de_Dados/blob/main/Aulas/Semana%202%20-%20Nota%C3%A7%C3%A3o%20Assint%C3%B3tica/JoaoAssaoka_rn168863-AP1.c"> link</a>.
+
 
 </details>
-
 
 
 
@@ -36,5 +36,8 @@
 - Se `V[i]` não for maior que `V[i + 1]`, ele compara `V[i + 1]` com o valor atual de `Maior` e `V[i]` com o valor atual de `Menor`.
 
 Dessa forma, `Maior` e `Menor` são atualizados conforme o algoritmo encontra valores maiores ou menores no vetor.
-  
+
+Este algoritmo é eficiente, pois reduz o número de comparações necessárias, mesmo para vetores de tamanho grande. Além disso, ele lida adequadamente com vetores de tamanho ímpar, garantindo que o primeiro elemento seja tanto o maior quanto o menor, quando necessário.
+
+🔹 Você pode encontrar o código em C neste [link](https://github.com/Assaoka/UNIFESP--Algoritmos_e_Estruturas_de_Dados/blob/main/Aulas/Semana%202%20-%20Nota%C3%A7%C3%A3o%20Assint%C3%B3tica/MaiorMenor_Eficiente.c). Espero que esta explicação ajude a compreender como o algoritmo funciona.
 </details>
