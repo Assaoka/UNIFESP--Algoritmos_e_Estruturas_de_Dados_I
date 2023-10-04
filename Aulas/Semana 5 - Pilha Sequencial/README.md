@@ -1,9 +1,10 @@
-# Semana 5 (11/09/2023) - Pilha Sequencial
+<h1 align="center"> Semana 5 (11/09/2023) - Pilha Sequencial </h1>
+ 
 ## Definição de Pilha: 
-Último a Entrar, Primeiro a Sair ("Last In, First Out" -> LIFO)	
-<br>&emsp;&emsp;1.  O Novo Elemento é Sempre Inserido no Topo da Pilha
-<br>&emsp;&emsp;2. O Elemento Removido é Sempre o que Chegou a Menos Tempo na Pilha
-<br>&emsp;&emsp;3. A Consulta Normalmente Retorna o Elemento no Topo da Pilha
+`Último a Entrar, Primeiro a Sair` ("Last In, First Out" -> `LIFO`)	
+<br>&emsp;&emsp;1.  O `Novo Elemento` é Sempre Inserido no `Topo da Pilha`
+<br>&emsp;&emsp;2. O `Elemento Removido` é Sempre o que `Chegou a Menos Tempo na Pilha`
+<br>&emsp;&emsp;3. A `Consulta` Normalmente Retorna o Elemento no `Topo da Pilha`
 
 ~~~c
 #define TamanhoPilha 50
@@ -17,8 +18,8 @@ typedef SPilhaVet *PPilhaVet; // Ponteiro para Pilha
 
 
 
-## Operações Básicas Sobre Pilhas
-### 1. Inicializar Pilha
+## Operações Básicas Sobre Pilhas:
+### `1. Inicializar Pilha:`
 ~~~c
 PPilhaVet inicializarPilhaVet() {
 	PPilhaVet novo = (PPilhaVet) malloc (sizeof(SPilhaVet)); // Aloca Espaço para a Pilha
@@ -27,7 +28,7 @@ PPilhaVet inicializarPilhaVet() {
 }
 ~~~
 
-### 2. Empilhar Elemento (Push)
+### `2. Empilhar Elemento:` Push
 ~~~c
 int pushVet (PPilhaVet pilha, char info) {
 	if (pilha->topo == TamanhoPilha - 1) return -1; // Pilha Cheia
@@ -39,7 +40,7 @@ int pushVet (PPilhaVet pilha, char info) {
 }
 ~~~
 
-### 3. Desempilhar Elemento (Pop)
+### `3. Desempilhar Elemento:` Pop
 ~~~c
 int popVet(PPilhaVet pilha, char *info) {
 	if (pilha->topo == -1) return -1; // Pilha Vazia
@@ -51,7 +52,7 @@ int popVet(PPilhaVet pilha, char *info) {
 }
 ~~~
 
-### 4. Consultar Elemento no Topo (Peek)
+### `4. Consultar Elemento no Topo:` Peek
 ~~~c
 int peekVet (PPilhaVet pilha, char *info) {
 	if (pilha->topo == -1) return -1; // Pilha Vazia
@@ -62,7 +63,7 @@ int peekVet (PPilhaVet pilha, char *info) {
 }
 ~~~
 
-### 5. Listar Elementos da Pilha
+### `5. Listar Elementos da Pilha:`
 ~~~c
 void listar (PPilhaVet pilha) {
 	int i;
@@ -74,8 +75,9 @@ void listar (PPilhaVet pilha) {
 
 
 
+
 ## Exercícios:
-### Questão 1: Faça um Programa que Use uma Pilha para Inverter a Ordem das Letras de Uma Frase.
+### `Questão 1:` Faça um Programa que Use uma Pilha para Inverter a Ordem das Letras de Uma Frase.
 ~~~c
 void inverter () {
 	PPilhaVet pilha = inicializarPilhaVet(); // Inicializa a Pilha
