@@ -41,7 +41,14 @@ int pushVet (PPilhaVet pilha, char info) {
 
 ### 3. Desempilhar Elemento (Pop)
 ~~~c
+int popVet(PPilhaVet pilha, char *info) {
+	if (pilha->topo == -1) return -1; // Pilha Vazia
 
+	// se não, remove o elemento do topo da pilha
+	*info = pilha->info[pilha->topo]; // Retorna o Elemento do Topo da Pilha
+	pilha->topo -= 1; // Decrementa o Topo da Pilha
+	return 0; // Sucesso
+}
 ~~~
 
 ### 4. Consultar Elemento no Topo (Peek)
