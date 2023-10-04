@@ -64,5 +64,11 @@ int peekVet (PPilhaVet pilha, char *info) {
 
 ### 5. Listar Elementos da Pilha
 ~~~c
+void listar (PPilhaVet pilha) {
+	int i;
+	for (i = 0; i <= pilha->topo; i++) {
+		printf("%c\n", pilha->info[i]);
+	}
+}
 ~~~
 
