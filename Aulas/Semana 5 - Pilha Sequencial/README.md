@@ -53,6 +53,13 @@ int popVet(PPilhaVet pilha, char *info) {
 
 ### 4. Consultar Elemento no Topo (Peek)
 ~~~c
+int peekVet (PPilhaVet pilha, char *info) {
+	if (pilha->topo == -1) return -1; // Pilha Vazia
+
+	// se não, retorna o elemento do topo da pilha
+	*info = pilha->info[pilha->topo]; // Retorna o Elemento do Topo da Pilha (Sem Remover)
+	return 0; // Sucesso
+}
 ~~~
 
 ### 5. Listar Elementos da Pilha
