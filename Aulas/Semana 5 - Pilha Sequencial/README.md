@@ -72,3 +72,23 @@ void listar (PPilhaVet pilha) {
 }
 ~~~
 
+
+
+## Exercícios:
+### Questão 1: Faça um Programa que Use uma Pilha para Inverter a Ordem das Letras de Uma Frase.
+~~~c
+void inverter () {
+	PPilhaVet pilha = inicializarPilhaVet(); // Inicializa a Pilha
+	char txt[TamanhoPilha], letra;
+	int i;
+
+	scanf("%[^\n]", txt); // Lê a Frase
+	for (i = 0; txt[i] != '\0'; i++) pushVet(pilha, txt[i]); // Empilha as Letras da Frase
+	while (pilha->topo != -1) {
+		popVet(pilha, &letra); // Desempilha as Letras da Frase
+		printf("%c", letra);
+	}
+
+	free(pilha); // Libera a Memória Alocada para a Pilha
+}
+~~~
