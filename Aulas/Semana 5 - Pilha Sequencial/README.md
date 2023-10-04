@@ -29,10 +29,19 @@ PPilhaVet inicializarPilhaVet() {
 
 ### 2. Empilhar Elemento (Push)
 ~~~c
+int pushVet (PPilhaVet pilha, char info) {
+	if (pilha->topo == TamanhoPilha - 1) return -1; // Pilha Cheia
+
+	// se não, insere o elemento no topo da pilha
+	pilha->topo += 1; // Incrementa o Topo da Pilha
+	pilha->info[pilha->topo] = info; // Insere o Elemento no Topo da Pilha
+	return 0; // Sucesso
+}
 ~~~
 
 ### 3. Desempilhar Elemento (Pop)
 ~~~c
+
 ~~~
 
 ### 4. Consultar Elemento no Topo (Peek)
