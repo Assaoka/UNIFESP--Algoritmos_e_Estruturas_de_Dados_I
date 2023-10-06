@@ -94,9 +94,10 @@ PPilha liberarR (PPilha topo) {
 }
 ~~~
 
-## Expressões Numéricas em RNP
+### `JUDGE:` Expressões Numéricas em RNP
 &emsp;&emsp;Algumas calculadoras que realização cálculos financeiros, como a HP 12C, utilizam o método Notação Polonesa Reversa, (RPN, em inglês, Reverse Polish Notation ou muitas vezes conhecida por método pós-fixo - Postfix), para encontrar o valor das expressões numéricas digitadas. Por exemplo, para avaliarmos uma expressão na notação usual (Infix) como: (1+2)*(8-3), em notação Postfix temos: 12+83-*, cujo resultado é 15.
-<br>&emsp;&emsp;O objetivo desta tarefa consiste em: dado uma expressão na forma de RPN (Postfix), calcular o valor final da mesma.
+<br>`Objetivo:` Dado uma expressão na forma de RPN (Postfix), calcular o valor final da mesma.
+<br> `Testes:` 10/10 
 ~~~c
 
 ~~~
