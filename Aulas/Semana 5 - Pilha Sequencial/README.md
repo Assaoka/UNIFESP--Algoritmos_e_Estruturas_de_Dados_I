@@ -1,6 +1,6 @@
-<h1 align="center"> Semana 5 (11/09/2023) - Pilha Sequencial </h1>
+<h1 align="center"> Semana 5 (10/09/2023) - Pilha Sequencial </h1>
  
-## Definição de Pilha: 
+## Definição de Pilha Sequencial: 
 `Último a Entrar, Primeiro a Sair` ("Last In, First Out" -> `LIFO`)	
 <br>&emsp;&emsp;1.  O `Novo Elemento` é Sempre Inserido no `Topo da Pilha`
 <br>&emsp;&emsp;2. O `Elemento Removido` é Sempre o que `Chegou a Menos Tempo na Pilha`
@@ -18,7 +18,7 @@ typedef SPilhaVet *PPilhaVet; // Ponteiro para Pilha
 
 
 
-## Operações Básicas Sobre Pilhas:
+## Operações Básicas Sobre Pilhas Sequências:
 ### `1. Inicializar Pilha:`
 ~~~c
 PPilhaVet inicializarPilhaVet() {
