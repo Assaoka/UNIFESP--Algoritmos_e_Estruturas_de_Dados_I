@@ -7,6 +7,11 @@
 <br>&emsp;&emsp;3. A `Consulta` Normalmente Retorna o Elemento no `Topo da Pilha`
 
 ~~~c
+typedef struct Pilha {
+    int info; // Informação do Elemento
+    struct Pilha *prox; // Ponteiro para o Próximo Elemento
+} SPilha;
+typedef SPilha *PPilha;
 ~~~
 
 
