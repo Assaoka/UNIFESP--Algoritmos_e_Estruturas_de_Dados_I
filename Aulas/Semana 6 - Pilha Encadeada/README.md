@@ -4,7 +4,6 @@
 `Último a Entrar, Primeiro a Sair` ("Last In, First Out" -> `LIFO`)	
 <br>&emsp;&emsp;1.  O `Novo Elemento` é Sempre Inserido no `Topo da Pilha`
 <br>&emsp;&emsp;2. O `Elemento Removido` é Sempre o que `Chegou a Menos Tempo na Pilha`
-<br>&emsp;&emsp;3. A `Consulta` Normalmente Retorna o Elemento no `Topo da Pilha`
 
 ~~~c
 typedef struct Pilha {
