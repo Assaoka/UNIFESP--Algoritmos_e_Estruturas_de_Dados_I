@@ -29,6 +29,15 @@ PPilha push (PPilha topo, int v) {
 
 ### `2. Desempilhar Elemento:` Pop
 ~~~c
+PPilha pop (PPilha topo, int *v) {
+    PPilha p = topo; // Ponteiro Auxiliar para o Elemento a Ser Removido
+    if (topo == NULL) return NULL; // Pilha Vazia
+
+    *v = topo->info; // Retorna a Informação do Elemento Removido
+    topo = topo->prox; // Atualiza o Topo para não Perder a Referência
+    free(p); // Libera o Espaço Alocado do Elemento Removido
+    return topo; // Retorna o Novo Topo da Pilha
+}
 ~~~
 
 
