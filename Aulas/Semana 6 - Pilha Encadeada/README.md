@@ -19,6 +19,12 @@ typedef SPilha *PPilha;
 ## Operações Básicas Sobre Pilhas:
 ### `1. Empilhar Elemento:` Push
 ~~~c
+PPilha push (PPilha topo, int v) {
+    PPilha novo = (PPilha)malloc(sizeof(SPilha)); // Aloca Espaço para o Novo Elemento
+    novo->info = v; // Insere a Informação no Novo Elemento
+    novo->prox = topo; // O Novo Elemento Aponta para o Antigo Topo
+    return novo; // Retorna o Novo Topo da Pilha
+}
 ~~~
 
 ### `2. Desempilhar Elemento:` Pop
