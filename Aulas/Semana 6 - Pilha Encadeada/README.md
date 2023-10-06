@@ -93,3 +93,5 @@ PPilha liberarR (PPilha topo) {
 	return NULL; // Pilha Vazia
 }
 ~~~
+
+## Expressões Numéricas em RNP
