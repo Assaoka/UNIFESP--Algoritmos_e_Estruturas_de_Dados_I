@@ -77,7 +77,11 @@ void listarR (PPilha topo) {
 ~~~
 
 ~~~c
-
+void listarRInv (PPilha topo) {
+	if (topo == NULL) return; // Pilha Vazia
+	listarRInv(topo->prox); // Chama a Função para o Próximo Elemento (Recursão)
+	printf("%d ", topo->info); // Imprime a Informação do Elemento
+}
 ~~~
 
 ### `Questão 2:` Faça uma função recursiva que libera a pilha.
