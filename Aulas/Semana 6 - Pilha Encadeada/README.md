@@ -86,4 +86,10 @@ void listarRInv (PPilha topo) {
 
 ### `Questão 2:` Faça uma função recursiva que libera a pilha.
 ~~~c
+PPilha liberarR (PPilha topo) {
+	if (topo == NULL) return NULL; // Pilha Vazia
+	liberarR(topo->prox); // Chama a Função para o Próximo Elemento (Recursão)
+	free(topo); // Libera o Espaço Alocado do Elemento Removido
+	return NULL; // Pilha Vazia
+}
 ~~~
