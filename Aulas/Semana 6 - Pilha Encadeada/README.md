@@ -53,7 +53,16 @@ void listar (PPilha topo) {
 
 
 ### `4. Liberar Espaços Alocados:`
+PPilha liberar (PPilha topo) {
+    PPilha p; // Ponteiro Auxiliar para Percorrer a Pilha
+    for (p = topo; p != NULL; p = topo) { // Percorre a Pilha
+        topo = topo->prox; // Atualiza o Topo para não Perder a Referência
+        free(p); // Libera o Espaço Alocado do Elemento Removido
+    }
+    return NULL; // Pilha Vazia
+}
 ~~~c
+
 ~~~
 
 
