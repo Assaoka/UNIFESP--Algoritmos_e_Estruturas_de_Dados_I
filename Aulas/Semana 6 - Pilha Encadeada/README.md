@@ -43,6 +43,12 @@ PPilha pop (PPilha topo, int *v) {
 
 ### `3. Listar Elementos da Pilha:`
 ~~~c
+void listar (PPilha topo) {
+    PPilha p; // Ponteiro Auxiliar para Percorrer a Pilha
+    for (p = topo; p != NULL; p = p->prox) { // Percorre a Pilha
+        printf("%d ", p->info); // Imprime a Informação do Elemento
+    }
+}
 ~~~
 
 
