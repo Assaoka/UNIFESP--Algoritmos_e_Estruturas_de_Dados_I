@@ -1,4 +1,4 @@
-<h1 align="center"> Semana 6 (17/09/2023) - Pilha Encadeada </h1>
+<h1 align="center"> Semana 6 - Pilha Encadeada </h1>
  
 ## Definição de Pilha: 
 `Último a Entrar, Primeiro a Sair` ("Last In, First Out" -> `LIFO`)	
