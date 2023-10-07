@@ -83,3 +83,15 @@ void listar (PNo ini) {
 	printf("\n");
 }
 ~~~
+
+~~~c
+void listarR (PNo ini) {
+	if (ini == NULL) { // Fila Vazia OU Fim da Fila
+		printf("\n");
+		return;
+	}   
+	printf("%d ", ini->info); // Imprime a Informação do Elemento
+	listarR(ini->prox); // Chama a Função para o Próximo Elemento (Recursão)
+}
+~~~
+
