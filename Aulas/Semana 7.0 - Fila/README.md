@@ -58,7 +58,7 @@ PNo insere (PFila fila, tipoElemento v) {
 
 ### `3. Remover Elemento (Retirar do Início):`
 ~~~c
-PNo remove (PFila fila, tipoElemento *v) {
+PNo remover (PFila fila, tipoElemento *v) {
 	if (fila == NULL) return NULL; // Fila Não Inicializada (Erro)
 
 	PNo lixo = fila->ini; // Ponteiro Auxiliar para o Elemento a Ser Removido
