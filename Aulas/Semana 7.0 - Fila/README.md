@@ -83,7 +83,6 @@ void listar (PNo ini) {
 	printf("\n");
 }
 ~~~
-
 ~~~c
 void listarR (PNo ini) {
 	if (ini == NULL) { // Fila Vazia OU Fim da Fila
@@ -95,3 +94,16 @@ void listarR (PNo ini) {
 }
 ~~~
 
+### `5. Liberar Espaços Alocados:`
+~~~c
+PFila liberar (PFila fila) {
+	PNo aux; // Ponteiro Auxiliar para Percorrer a Fila
+	if (fila == NULL) return NULL; // Fila Não Inicializada (Erro)
+	for (aux = fila->ini; aux != NULL; aux = fila->ini) { // Percorre a Fila
+		fila->ini = aux->prox; // Atualiza o Início da Fila para não Perder a Referência
+		free(aux); // Libera o Espaço Alocado do Elemento Removido
+	}
+	free(fila); // Libera o Espaço Alocado da Fila
+	return NULL; // Fila Vazia
+}
+~~~
