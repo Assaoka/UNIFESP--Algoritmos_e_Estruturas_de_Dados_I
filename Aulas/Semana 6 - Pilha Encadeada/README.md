@@ -1,5 +1,8 @@
 <h1 align="center"> Semana 6 - Pilha Encadeada </h1>
- 
+
+## Encadeamento:
+&emsp;&emsp; A partir de agora, iniciaremos nosso estudo sobre `Estruturas de Dados Encadeadas.` Essas estruturas são `Alocadas Dinamicamente`, o que significa que `Não Precisamos Conhecer Antecipadamente o Número de Elementos` que elas conterão. Isso as `Diferencia dos Vetores`, onde os elementos são `Armazenados em Posições Sequências na Memória.`
+
 ## Definição de Pilha: 
 `Último a Entrar, Primeiro a Sair` ("Last In, First Out" -> `LIFO`)	
 <br>&emsp;&emsp;1.  O `Novo Elemento` é Sempre Inserido no `Topo da Pilha`
