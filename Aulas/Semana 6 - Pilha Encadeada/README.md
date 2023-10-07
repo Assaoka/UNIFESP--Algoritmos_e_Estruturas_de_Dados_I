@@ -22,8 +22,7 @@ typedef SPilha *PPilha;
 
 
 
-
-## Operações Básicas Sobre Pilhas:
+## Operações Básicas com Pilhas Encadeadas:
 ### `1. Empilhar Elemento:` Push
 ~~~c
 PPilha push (PPilha topo, int v) {
