@@ -55,3 +55,22 @@ PNo insere (PFila fila, tipoElemento v) {
 	return fila->fim; // Retorna o Novo Fim da Fila
 }
 ~~~
+
+### `3. Remover Elemento (Retirar do Início):`
+~~~c
+PNo remove (PFila fila, tipoElemento *v) {
+	if (fila == NULL) return NULL; // Fila Não Inicializada (Erro)
+
+	PNo lixo = fila->ini; // Ponteiro Auxiliar para o Elemento a Ser Removido
+	if (fila->ini == NULL) return NULL; // Fila Vazia (Impossível Remover)
+	
+	*v = lixo->info; // Retorna a Informação do Elemento Removido
+	if (fila->ini == fila->fim) fila->fim = NULL; // Fila com Apenas um Elemento (Atualiza o Fim da Fila)
+	fila->ini = lixo->prox; // Atualiza o Início da Fila
+	
+	free(lixo); // Libera o Espaço Alocado do Elemento Removido
+	return fila->ini; // Retorna o Novo Início da Fila
+}
+~~~
+
+
