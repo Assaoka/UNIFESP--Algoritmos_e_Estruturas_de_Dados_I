@@ -17,8 +17,7 @@ typedef SPilhaVet *PPilhaVet; // Ponteiro para Pilha
 
 
 
-
-## Operações Básicas Sobre Pilhas Sequências:
+## Operações Básicas com Pilhas Sequências:
 ### `1. Inicializar Pilha:`
 ~~~c
 PPilhaVet inicializarPilhaVet() {
