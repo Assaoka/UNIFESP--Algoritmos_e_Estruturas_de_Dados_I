@@ -1,4 +1,4 @@
-<h1 align="center"> Semana 2 (20/08/2023) - Notação Assintótica </h1>
+<h1 align="center"> Semana 2 - Notação Assintótica </h1>
 
 
 <details><summary><h3> Problema 1 - Contagem de Letras em Strings </h3></summary>
