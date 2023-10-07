@@ -29,12 +29,29 @@ typedef SFila *PFila;
 
 
 ## Operações Básicas com Filas Encadeadas:
-### `1. Criar uma Fila Vazia`
+### `1. Criar uma Fila Vazia:`
 ~~~c
 PFila inicializar () { 
 	PFila novo = (PFila) malloc(sizeof(SFila)); // Aloca Espaço para a Fila
 	novo->ini = NULL; 
 	novo->fim = NULL;
 	return novo;
+}
+~~~
+
+### `2. Inserir Elemento (Insere no Fim):`
+~~~c
+PNo insere (PFila fila, tipoElemento v) {
+	if (fila == NULL) return NULL; // Fila Não Inicializada (Erro)
+
+	PNo novo = (PNo) malloc(sizeof(SNo)); // Aloca Espaço para o Novo Elemento
+	novo->info = v; // Insere a Informação no Novo Elemento
+	novo->prox = NULL; // O Novo Elemento Aponta para o Antigo Topo
+	
+	if (fila->ini == NULL) fila->ini = novo; // Fila Vazia (Inicio aponta para o novo elemento)
+	else fila->fim->prox = novo; // Fila Não Vazia (O último elemento aponta para o novo elemento)
+	
+	fila->fim = novo; // Atualiza o Fim da Fila
+	return fila->fim; // Retorna o Novo Fim da Fila
 }
 ~~~
