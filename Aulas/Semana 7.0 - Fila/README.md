@@ -9,8 +9,8 @@ Uma Fila Encadeada é uma Estrutura de Dados que Segue o Princípio `FIFO` (Firs
 ~~~c
 typedef int tipoElemento; // Tipo de Dado que a Fila Armazena (Alterar de Acordo com o Problema)
 typedef struct No {
-    tipoElemento info; // Informação do Elemento
-    struct No *prox; // Ponteiro para o Próximo Elemento
+	tipoElemento info; // Informação do Elemento
+	struct No *prox; // Ponteiro para o Próximo Elemento
 } SNo;
 typedef SNo *PNo;
 ~~~
@@ -18,8 +18,23 @@ typedef SNo *PNo;
 <br>Uma fila encadeada pode ser implementada usando uma estrutura que contém um ponteiro para o primeiro elemento da fila e um ponteiro para o último elemento da fila.
 ~~~c
 typedef struct Fila {
-    PNo ini; // Primeiro Elemento da Fila
-    PNo fim; // Último Elemento da Fila
+	PNo ini; // Primeiro Elemento da Fila
+	PNo fim; // Último Elemento da Fila
 } SFila;
 typedef SFila *PFila;
+~~~
+
+
+
+
+
+## Operações Básicas com Filas Encadeadas:
+### `1. Criar uma Fila Vazia`
+~~~c
+PFila inicializar () { 
+	PFila novo = (PFila) malloc(sizeof(SFila)); // Aloca Espaço para a Fila
+	novo->ini = NULL; 
+	novo->fim = NULL;
+	return novo;
+}
 ~~~
