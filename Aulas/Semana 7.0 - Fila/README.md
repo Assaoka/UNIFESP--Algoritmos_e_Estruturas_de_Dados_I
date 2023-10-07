@@ -14,3 +14,12 @@ typedef struct No {
 } SNo;
 typedef SNo *PNo;
 ~~~
+
+<br>Uma fila encadeada pode ser implementada usando uma estrutura que contém um ponteiro para o primeiro elemento da fila e um ponteiro para o último elemento da fila.
+~~~c
+typedef struct Fila {
+    PNo ini; // Primeiro Elemento da Fila
+    PNo fim; // Último Elemento da Fila
+} SFila;
+typedef SFila *PFila;
+~~~
