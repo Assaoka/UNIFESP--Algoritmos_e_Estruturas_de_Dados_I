@@ -1,4 +1,4 @@
-<h1 align="center"> Semana 5 (10/09/2023) - Pilha Sequencial </h1>
+<h1 align="center"> Semana 5 - Pilha Sequencial </h1>
  
 ## Definição de Pilha Sequencial: 
 `Último a Entrar, Primeiro a Sair` ("Last In, First Out" -> `LIFO`)	
