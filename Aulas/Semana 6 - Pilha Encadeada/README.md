@@ -5,8 +5,12 @@
 
 ## Definição de Pilha: 
 `Último a Entrar, Primeiro a Sair` ("Last In, First Out" -> `LIFO`)	
-<br>&emsp;&emsp;1.  O `Novo Elemento` é Sempre Inserido no `Topo da Pilha`
-<br>&emsp;&emsp;2. O `Elemento Removido` é Sempre o que `Chegou a Menos Tempo na Pilha`
+<br>&emsp;&emsp;1. O `Novo Elemento` é Sempre Inserido no `Topo da Pilha.`
+<br>&emsp;&emsp;2. O `Elemento Removido` é Sempre o que `Chegou a Menos Tempo na Pilha.`
+
+Cada Elemento Possui Dois Campos:
+<br>&emsp;&emsp;1. Um Campo que Armazena `Informação do Elemento.`
+<br>&emsp;&emsp;2. Um `Ponteiro` que Aponta para o `Próximo Elemento.`
 
 ~~~c
 typedef struct Pilha {
