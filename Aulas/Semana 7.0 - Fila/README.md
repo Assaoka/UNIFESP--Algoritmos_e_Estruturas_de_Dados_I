@@ -73,4 +73,13 @@ PNo remove (PFila fila, tipoElemento *v) {
 }
 ~~~
 
-
+### `4. Listar Elementos da Fila:`
+A Impressão dos Elementos da Fila pode ser Feita com uma Lógica Semelhante a da Impressão de uma Pilha Encadeada.
+~~~c
+void listar (PNo ini) {
+	PNo aux; // Ponteiro Auxiliar para Percorrer a Fila
+	for (aux = ini; aux != NULL; aux = aux->prox) // Percorre a Fila
+		printf("%d ", aux->info); // Imprime a Informação do Elemento
+	printf("\n");
+}
+~~~
