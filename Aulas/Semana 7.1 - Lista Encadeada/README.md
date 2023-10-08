@@ -84,11 +84,35 @@ PNo removerIni (PNo lista, tipoElemento *v) {
 ~~~
 #### `| Fim:`
 ~~~c
+PNo removerFim (PNo lista, tipoElemento *v) {
+	PNo ant, lixo; // ant = Ponteiro para o Nó Anterior, lixo = Ponteiro para o Nó que Será Removido
 
+	if (lista == NULL) return NULL; // Se a Lista Estiver Vazia, Retorna NULL
+	for (ant = NULL, lixo = lista;  lixo->prox != NULL; lixo = lixo->prox) ant = lixo; // Percorre a Lista até o Fim (Dessa Forma, ant Aponta para o Penúltimo Elemento)
+	
+	if (ant == NULL) lista = NULL; // Se a Lista Tinha Apenas um Elemento, Agora a Lista é Vazia
+	else ant->prox = NULL; // Caso Contrário, o Antigo Penúltimo Elemento Aponta para NULL (Se tornando o Último Elemento)
+	*v = lixo->info; // Retorna a Informação do Nó a Ser Removido
+	free(lixo); // Libera a Memória Alocada para o Nó Removido
+	
+	return lista; // Retorna a Lista Atualizada (Primeiro Elemento, Sofrendo Alterações ou Não)
+}
 ~~~
 #### `| Índex:`
 ~~~c
+PNo removerIndex (PNo lista, tipoElemento *v, int index) {
+	PNo ant, lixo; // ant = Ponteiro para o Nó Anterior, lixo = Ponteiro para o Nó que Será Removido
+	int i; // i = Contador
 
+	if (lista == NULL) return NULL; // Se a Lista Estiver Vazia, Retorna NULL
+	for (i = 0, ant = NULL, lixo = lista; i < index && lixo->prox != NULL; i++, lixo = lixo->prox) ant = lixo; // Percorre a Lista até o Fim ou até o Índice (Dessa Forma, ant Aponta para o Nó Anterior ao Removido)
+	
+	if (ant == NULL) lista = lixo->prox; // Se Queremos Remover o Primeiro Elemento, o Primeiro Elemento da Lista Agora é o Próximo Elemento do Nó Removido (Se a Lista Tiver Apenas um Elemento, a Lista Agora é Vazia)
+	else ant->prox = lixo->prox; // Caso Contrário, o Anterior Aponta para o Próximo Elemento do Nó Removido
+	*v = lixo->info; // Retorna a Informação do Nó a Ser Removido
+	free(lixo); // Libera a Memória Alocada para o Nó Removido
+	return lista; // Retorna a Lista Atualizada (Primeiro Elemento, Sofrendo Alterações ou Não)
+}
 ~~~
 
 ### `3. Buscar:`
