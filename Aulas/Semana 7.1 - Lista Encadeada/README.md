@@ -72,13 +72,28 @@ PNo inserirIndex (PNo lista, tipoElemento v, int index) {
 ### `2. Remover Nó:`
 #### `| Início:`
 ~~~c
+PNo removerIni (PNo lista, tipoElemento *v) {
+	PNo lixo = lista; // Ponteiro para o Nó que Será Removido
+	if (lista == NULL) return NULL; // Se a Lista Estiver Vazia, Retorna NULL
 
+	*v = lixo->info; // Retorna a Informação do Nó a Ser Removido
+	lista = lixo->prox; // O Primeiro Elemento da Lista Agora é o Próximo Elemento do Nó Removido
+	free(lixo); // Libera a Memória Alocada para o Nó Removido
+	return lista; // Retorna a Lista Atualizada (Próximo do Nó Removido)
+}
 ~~~
 #### `| Fim:`
+~~~c
+
+~~~
 #### `| Índex:`
+~~~c
+
+~~~
 
 ### `3. Buscar:`
 ~~~c
+
 ~~~
 
 ### `4. Listar:`
