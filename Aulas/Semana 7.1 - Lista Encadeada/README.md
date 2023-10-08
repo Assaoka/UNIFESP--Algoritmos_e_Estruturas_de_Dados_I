@@ -117,7 +117,12 @@ PNo removerIndex (PNo lista, tipoElemento *v, int index) {
 
 ### `3. Buscar:`
 ~~~c
-
+PNo buscar (PNo lista, tipoElemento v) {
+	PNo procurado; // Ponteiro para Percorrer a Lista
+	for (procurado = lista; procurado != NULL; procurado = procurado->prox) // Percorre a Lista
+		if (procurado->info == v) return procurado; // Se Encontrar o Elemento, Retorna o Nó
+	return NULL; // Se Não Encontrar o Elemento, Retorna NULL
+}
 ~~~
 
 ### `4. Listar:`
@@ -139,5 +144,68 @@ PNo liberar (PNo lista) {
 		free(aux); // Libera a Memória Alocada para o Nó Removido
 	}
 	return NULL; // Retorna NULL (Lista Vazia)
+}
+~~~
+
+
+
+## Teste para as Funções:
+~~~c
+int main () {
+	PNo lista = NULL, auxBusca;
+	tipoElemento v;
+
+	// Teste 1: Inserir no início da lista
+	lista = inserirIni(lista, 1);
+	lista = inserirIni(lista, 2);
+	lista = inserirIni(lista, 3);
+	lista = inserirIni(lista, 4);
+	listar(lista); // Deve imprimir: 4 3 2 1
+
+	// Teste 2: Inserir no fim da lista
+	lista = inserirFim(lista, 5);
+	lista = inserirFim(lista, 6);
+	lista = inserirFim(lista, 7);
+	lista = inserirFim(lista, 8);
+	listar(lista); // Deve imprimir: 4 3 2 1 5 6 7 8
+
+	// Teste 3: Inserir em uma posição específica da lista
+	lista = inserirIndex(lista, 9, 0);
+	lista = inserirIndex(lista, 10, 2);
+	lista = inserirIndex(lista, 11, 15);
+	lista = inserirIndex(lista, 12, -1);
+	listar(lista); // Deve imprimir: 12 9 4 10 3 2 1 5 6 7 8 11
+
+	// Teste 4: Remover do início da lista
+	lista = removerIni(lista, &v);
+	listar(lista); // Deve imprimir: 9 4 10 3 2 1 5 6 7 8 11
+
+	// Teste 5: Remover do fim da lista
+	lista = removerFim(lista, &v);
+	lista = removerFim(lista, &v);
+	listar(lista); // Deve imprimir: 9 4 10 3 2 1 5 6 7
+
+	// Teste 6: Remover de uma posição específica da lista
+	lista = removerIndex(lista, &v, 4); // Deve remover o elemento 2
+	lista = removerIndex(lista, &v, -11); // Deve remover o elemento 9
+	lista = removerIndex(lista, &v, 15); // Deve remover o elemento 7
+	listar(lista); // Deve imprimir: 4 10 3 1 5 6
+
+	// Teste 7: Buscar um elemento na lista
+		// Deve imprimir: Elemento encontrado: 4
+		auxBusca = buscar(lista, 4); // Deve encontrar o elemento 4
+		if (auxBusca != NULL) printf("Elemento encontrado: %d\n", auxBusca->info); 
+		else printf("Elemento inexistente.\n");
+	
+		// Deve imprimir: Elemento não encontrado.
+		auxBusca = buscar(lista, 33); // Não deve encontrar o elemento 33
+		if (auxBusca != NULL) printf("Elemento encontrado: %d\n", auxBusca->info);
+		else printf("Elemento inexistente.\n");
+
+	// Teste 8: Liberar a lista
+	lista = liberar(lista); 
+	listar(lista); // Deve imprimir uma linha em branco
+
+	return 0;
 }
 ~~~
