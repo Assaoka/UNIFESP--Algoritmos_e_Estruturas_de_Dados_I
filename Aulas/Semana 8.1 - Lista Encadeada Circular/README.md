@@ -36,7 +36,19 @@ PNo inserirIni (PNo ult, tipoElemento v) {
 ~~~
 #### `| Fim:`
 ~~~c
+PNo inserirFim (PNo ult, tipoElemento v) {
+	PNo novo = (PNo) malloc(sizeof(SNo)); // Alocando Memória para o Novo Nó
 
+	novo->info = v; // Atribuindo o Valor ao Novo Nó
+	if (ult == NULL) { // Se a Lista Estiver Vazia
+		novo->prox = novo; // O Novo Nó Aponta para Ele Mesmo
+		return novo; // O Novo Nó Se Torna o Último (E Único) Elemento da Lista
+	}
+	novo->prox = ult->prox; // Caso Contrário, o Novo Nó Aponta para o Primeiro Elemento da Lista
+	ult->prox = novo; // O Último Elemento da Lista Aponta para o Novo Nó
+
+	return novo; // Retorna o Novo Elemento da Lista (Que Agora é o Último). Essa é a Única Diferença entre Inserir no Início e no Fim.
+}
 ~~~
 #### `| Índex:`
 Iremos considerar que 0 representa a primeira posição na lista. A inserção ocorrerá no início se o índice for menor que 0. Caso o índice seja maior que o número de elementos, vamos continuar percorrendo a lista até o índice.
