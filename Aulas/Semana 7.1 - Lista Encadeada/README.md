@@ -90,3 +90,15 @@ void listar (PNo lista) {
 	printf("\n");
 }
 ~~~
+
+### `5. Liberar:`
+~~~c
+PNo liberar (PNo lista) {
+	PNo aux; // Ponteiro Auxiliar para Percorrer a Lista
+	for (aux = lista; aux != NULL; aux = lista) { // Percorre a Lista
+		lista = lista->prox; // O Primeiro Elemento da Lista Agora é o Próximo Elemento do Nó Removido
+		free(aux); // Libera a Memória Alocada para o Nó Removido
+	}
+	return NULL; // Retorna NULL (Lista Vazia)
+}
+~~~
