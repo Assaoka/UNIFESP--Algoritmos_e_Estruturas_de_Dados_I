@@ -16,7 +16,18 @@ typedef SNo *PNo;
 
 
 
-
-
 ## Operações Básicas com Pilhas Encadeadas:
 ### `1. Inserir Nó:`
+#### `| Início:`
+~~~c
+
+~~~
+#### `| Fim:`
+~~~c
+
+~~~
+#### `| Índex:`
+Iremos considerar que 0 representa a primeira posição na lista. Além disso, a inserção ocorrerá no início se o índice for menor que 0 e no final se for maior do que o tamanho da lista, como tratamento de erros.
+~~~c
+
+~~~
