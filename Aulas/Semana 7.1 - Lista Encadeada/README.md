@@ -18,3 +18,18 @@ typedef struct No {
 typedef SNo *PNo;
 ~~~
 
+
+
+## Operações Básicas com Pilhas Encadeadas:
+### `1. Inserir Nó:`
+#### `| Início:`
+~~~c
+PNo inserirIni (PNo lista, tipoElemento v) {
+	PNo novo = (PNo) malloc(sizeof(SNo)); // Aloca Memória para o Novo Nó
+	novo->info = v; // Atribui o Valor ao Novo Nó
+	novo->prox = lista; // O Novo Nó Aponta para o Primeiro Elemento da Lista
+	lista = novo; // O Primeiro Elemento da Lista Agora é o Novo Nó
+	return lista; // Retorna a Lista Atualizada
+}
+~~~
+#### `| Fim:`
