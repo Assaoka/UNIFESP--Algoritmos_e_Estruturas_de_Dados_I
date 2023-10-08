@@ -58,11 +58,11 @@ PNo inserirIndex (PNo lista, tipoElemento v, int index) {
 	novo->info = v; // Atribui o Valor ao Novo Nó
 	for (i = 0, ant = NULL, paux = lista; i < index && paux != NULL; i++, paux = paux->prox) ant = paux; // Percorre a Lista até o Fim ou até o Índice
 	if (ant == NULL) { // Se a Lista Estiver Vazia ou o Índice For 0 (ou Menor)
-		novo->prox = lista;
-		lista = novo;
+		novo->prox = lista; // O Novo Nó Aponta para o Primeiro Elemento da Lista
+		lista = novo; // O Primeiro Elemento da Lista Agora é o Novo Nó
 	} else { // Caso Contrário
-		novo->prox = ant->prox;
-		ant->prox = novo;
+		novo->prox = ant->prox; // O Novo Nó Aponta para o Próximo Elemento do Anterior
+		ant->prox = novo; // O Anterior Aponta para o Novo Nó
 	}
 
 	return lista; // Retorna a Lista Atualizada (Primeiro Elemento, Sofrendo Alterações ou Não)
@@ -71,5 +71,22 @@ PNo inserirIndex (PNo lista, tipoElemento v, int index) {
 
 ### `2. Remover Nó:`
 #### `| Início:`
+~~~c
+
+~~~
 #### `| Fim:`
 #### `| Índex:`
+
+### `3. Buscar:`
+~~~c
+~~~
+
+### `4. Listar:`
+~~~c
+void listar (PNo lista) {
+	PNo aux; // Ponteiro Auxiliar para Percorrer a Lista
+	for (aux = lista; aux != NULL; aux = aux->prox) // Percorre a Lista
+		printf("%d ", aux->info); // Imprime a Informação do Elemento
+	printf("\n");
+}
+~~~
