@@ -47,3 +47,29 @@ PNo inserirFim (PNo lista, tipoElemento v) {
 	return lista; // Retorna a Lista Atualizada (Primeiro Elemento, Sofrendo Alterações ou Não)
 }
 ~~~
+#### `| Índex:`
+Iremos considerar que 0 representa a primeira posição na lista. Além disso, a inserção ocorrerá no início se o índice for menor que 0 e no final se for maior do que o tamanho da lista, como tratamento de erros.
+~~~c
+PNo inserirIndex (PNo lista, tipoElemento v, int index) { 
+	PNo novo = (PNo) malloc(sizeof(SNo)); // Aloca Memória para o Novo Nó
+	PNo ant, paux; // ant = Ponteiro para o Nó Anterior, paux = Ponteiro Auxiliar para Percorrer a Lista
+	int i; // i = Contador
+
+	novo->info = v; // Atribui o Valor ao Novo Nó
+	for (i = 0, ant = NULL, paux = lista; i < index && paux != NULL; i++, paux = paux->prox) ant = paux; // Percorre a Lista até o Fim ou até o Índice
+	if (ant == NULL) { // Se a Lista Estiver Vazia ou o Índice For 0 (ou Menor)
+		novo->prox = lista;
+		lista = novo;
+	} else { // Caso Contrário
+		novo->prox = ant->prox;
+		ant->prox = novo;
+	}
+
+	return lista; // Retorna a Lista Atualizada (Primeiro Elemento, Sofrendo Alterações ou Não)
+}
+~~~
+
+### `2. Remover Nó:`
+#### `| Início:`
+#### `| Fim:`
+#### `| Índex:`
