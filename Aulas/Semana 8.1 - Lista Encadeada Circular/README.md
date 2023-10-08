@@ -60,3 +60,17 @@ PNo inserirIndex (PNo ult, tipoElemento v, int index) {
 	return ult; // Retorna o Último Elemento da Lista (Sofrendo Alterações ou Não)
 }
 ~~~
+
+### `2. Remover Nó:`
+#### `| Início:`
+~~~c
+
+~~~
+#### `| Fim:`
+~~~c
+
+~~~
+#### `| Índex:`
+~~~c
+
+~~~
