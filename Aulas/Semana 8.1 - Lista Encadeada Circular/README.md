@@ -39,7 +39,24 @@ PNo inserirIni (PNo ult, tipoElemento v) {
 
 ~~~
 #### `| Índex:`
-Iremos considerar que 0 representa a primeira posição na lista. Além disso, a inserção ocorrerá no início se o índice for menor que 0 e no final se for maior do que o tamanho da lista, como tratamento de erros.
+Iremos considerar que 0 representa a primeira posição na lista. A inserção ocorrerá no início se o índice for menor que 0. Caso o índice seja maior que o número de elementos, vamos continuar percorrendo a lista até o índice.
 ~~~c
+PNo inserirIndex (PNo ult, tipoElemento v, int index) {
+	PNo novo = (PNo) malloc(sizeof(SNo)); // Alocando Memória para o Novo Nó
+	PNo ant, paux; // ant = Ponteiro para o Nó Anterior; paux = Ponteiro Auxiliar para Percorrer a Lista
+	int i; // Contador
 
+	novo->info = v; // Atribuindo o Valor ao Novo Nó
+	if (ult == NULL) { // Se a Lista Estiver Vazia
+		novo->prox = novo; // O Novo Nó Aponta para Ele Mesmo
+		return novo; // O Novo Nó Se Torna o Último (E Único) Elemento da Lista
+	}
+	for (i = 0, ant = ult, paux = ult->prox; i < index; i++, paux = paux->prox) ant = paux; // Percorrendo a Lista até o Índice
+	
+	if (ant == ult->prox && index != 0) ult = novo; // Se o Anterior Apontar para o Primeiro Elemento, Significa que o Novo Nó é o Último Elemento da Lista ou o Primeiro. Decidiremos de acordo com o Índice.
+	novo->prox = ant->prox; // O Novo Nó Aponta para o Próximo Elemento do Anterior de Onde Ele Será Inserido
+	ant->prox = novo; // O Anterior Aponta para o Novo Nó
+	
+	return ult; // Retorna o Último Elemento da Lista (Sofrendo Alterações ou Não)
+}
 ~~~
