@@ -20,7 +20,19 @@ typedef SNo *PNo;
 ### `1. Inserir Nó:`
 #### `| Início:`
 ~~~c
+PNo inserirIni (PNo ult, tipoElemento v) {
+	PNo novo = (PNo) malloc (sizeof(SNo)); // Alocando Memória para o Novo Nó
 
+	novo->info = v; // Atribuindo o Valor ao Novo Nó
+	if (ult == NULL) { // Se a Lista Estiver Vazia
+		novo->prox = novo; // O Novo Nó Aponta para Ele Mesmo
+		return novo; // O Novo Nó Se Torna o Último (E Único) Elemento da Lista
+	}
+	novo->prox = ult->prox; // Caso Contrário, o Novo Nó Aponta para o Primeiro Elemento da Lista
+	ult->prox = novo; // O Último Elemento da Lista Aponta para o Novo Nó
+
+	return ult; // Retorna o Último Elemento da Lista (Que Continua o Mesmo)
+}
 ~~~
 #### `| Fim:`
 ~~~c
