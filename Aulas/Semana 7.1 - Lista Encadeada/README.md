@@ -29,7 +29,21 @@ PNo inserirIni (PNo lista, tipoElemento v) {
 	novo->info = v; // Atribui o Valor ao Novo Nó
 	novo->prox = lista; // O Novo Nó Aponta para o Primeiro Elemento da Lista
 	lista = novo; // O Primeiro Elemento da Lista Agora é o Novo Nó
-	return lista; // Retorna a Lista Atualizada
+	return lista; // Retorna a Lista Atualizada (Novo Nó)
 }
 ~~~
 #### `| Fim:`
+~~~c
+PNo inserirFim (PNo lista, tipoElemento v) {
+	PNo novo = (PNo) malloc (sizeof(SNo)); // Aloca Memória para o Novo Nó
+	PNo ant, paux; // ant = Ponteiro para o Nó Anterior, paux = Ponteiro Auxiliar para Percorrer a Lista
+
+	novo->info = v; // Atribui o Valor ao Novo Nó
+	novo->prox = NULL; // O Novo Nó Aponta para NULL (Fim da Lista)
+	for (ant = NULL, paux = lista; paux != NULL; paux = paux->prox) ant = paux; // Percorre a Lista até o Fim
+	if (ant == NULL) lista = novo; // Se a Lista Estiver Vazia, o Novo Nó é o Primeiro Elemento
+	else ant->prox = novo; // Caso Contrário, o Antigo Último Elemento Aponta para o Novo Nó
+
+	return lista; // Retorna a Lista Atualizada (Primeiro Elemento, Sofrendo Alterações ou Não)
+}
+~~~
