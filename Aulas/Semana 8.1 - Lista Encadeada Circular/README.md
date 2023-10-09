@@ -76,7 +76,21 @@ PNo inserirIndex (PNo ult, tipoElemento v, int index) {
 ### `2. Remover Nó:`
 #### `| Início:`
 ~~~c
+PNo removerIni (PNo ult, tipoElemento *v) {
+	PNo lixo; // Ponteiro para o Nó que Será Removido
 
+	if (ult == NULL) return NULL; // Se a Lista Estiver Vazia, Retorna NULL
+	lixo = ult->prox; // O Nó que Será Removido é o Primeiro Elemento da Lista
+	*v = lixo->info; // Retorna a Informação do Nó a Ser Removido
+	if (ult == ult->prox) { // Se o Último Elemento da Lista Apontar para Ele Mesmo (Lista Só Possui um Elemento)
+		free (lixo); // Libera a Memória Alocada para o Nó
+		return NULL; // Retorna NULL (Lista Vazia)
+	}
+	ult->prox = lixo->prox; // Caso Contrário, o Último Elemento Aponta para o Próximo do Nó a Ser Removido
+	free (lixo); // Libera a Memória Alocada para o Nó
+
+	return ult; // Retorna o Último Elemento da Lista
+}
 ~~~
 #### `| Fim:`
 ~~~c
