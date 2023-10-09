@@ -94,7 +94,18 @@ PNo removerIni (PNo ult, tipoElemento *v) {
 ~~~
 #### `| Fim:`
 ~~~c
+PNo removerFim (PNo ult, tipoElemento *v) {
+	PNo ant, lixo; // ant = Ponteiro para o Nó Anterior; lixo = Ponteiro para o Nó que Será Removido
 
+	if (ult == NULL) return NULL; // Se a Lista Estiver Vazia, Retorna NULL
+	for (ant = ult, lixo = ult->prox; lixo != ult; ult = ult->prox) ant = ult; // Percorrendo a Lista até o Último Elemento
+	*v = lixo->info; // Retorna a Informação do Nó a Ser Removido
+	if (ant == lixo) ant = NULL; // Se o Anterior é o Próprio Nó a Ser Removido, A Lista Só Possui um Elemento (Ficará Vazia Após a Remoção)
+	else ant->prox = lixo->prox; // Caso Contrário, o Anterior Aponta para o Próximo do Nó a Ser Removido
+	free(lixo); // Libera a Memória Alocada para o Nó
+
+	return ant; // Atualiza o Ponteiro para o Último Elemento da Lista (Que Será o Anterior do Nó Removido, ou NULL)
+}
 ~~~
 #### `| Índex:`
 ~~~c
