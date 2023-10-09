@@ -1,4 +1,4 @@
-<h1 align="center"> Semana 7.1 - Lista Encadeada </h1>
+<h1 align="center"> Semana 7.2 - Lista Encadeada </h1>
 
 ## Definição de Lista Encadeada:
 Uma Lista Encadeada é uma Generalização das Pilhas e Filas:
