@@ -128,6 +128,12 @@ PNo buscar (PNo ult, tipoElemento v) {
 
 ### `4. Listar:`
 ~~~c
+void listar (PNo ult) {
+	PNo aux; // Ponteiro para Percorrer a Lista
+	for (aux = ult->prox; aux != ult; aux = aux->prox) // Percorre a Lista
+		printf("%d ", aux->info); // Imprime o Valor do Nó Atual
+	if (ult != NULL) printf("%d\n", ult->info); // Se a Lista Estiver Vazia, Não Entrará Aqui nem no For, Então Não Imprime Nada. Se a Lista só Possuir um Elemento, o For Não é Executado, mas o Último Nó é Impresso Aqui.
+}
 ~~~
 
 ### `5. Liberar:`
