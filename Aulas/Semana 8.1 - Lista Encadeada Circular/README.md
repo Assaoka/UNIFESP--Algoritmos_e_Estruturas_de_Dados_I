@@ -98,7 +98,7 @@ PNo removerFim (PNo ult, tipoElemento *v) {
 	PNo ant, lixo; // ant = Ponteiro para o Nó Anterior; lixo = Ponteiro para o Nó que Será Removido
 
 	if (ult == NULL) return NULL; // Se a Lista Estiver Vazia, Retorna NULL
-	for (ant = ult, lixo = ult->prox; lixo != ult; ult = ult->prox) ant = ult; // Percorrendo a Lista até o Último Elemento
+	for (ant = ult, lixo = ult->prox; lixo != ult; ant = lixo, lixo = lixo->prox); // Percorrendo a Lista até o Último Elemento
 	*v = lixo->info; // Retorna a Informação do Nó a Ser Removido
 	if (ant == lixo) ant = NULL; // Se o Anterior é o Próprio Nó a Ser Removido, A Lista Só Possui um Elemento (Ficará Vazia Após a Remoção)
 	else ant->prox = lixo->prox; // Caso Contrário, o Anterior Aponta para o Próximo do Nó a Ser Removido
@@ -106,9 +106,6 @@ PNo removerFim (PNo ult, tipoElemento *v) {
 
 	return ant; // Atualiza o Ponteiro para o Último Elemento da Lista (Que Será o Anterior do Nó Removido, ou NULL)
 }
-~~~
-#### `| Índex:`
-~~~c
 ~~~
 
 ### `3. Buscar:`
@@ -130,6 +127,7 @@ PNo buscar (PNo ult, tipoElemento v) {
 ~~~c
 void listar (PNo ult) {
 	PNo aux; // Ponteiro para Percorrer a Lista
+
 	for (aux = ult->prox; aux != ult; aux = aux->prox) // Percorre a Lista
 		printf("%d ", aux->info); // Imprime o Valor do Nó Atual
 	if (ult != NULL) printf("%d\n", ult->info); // Se a Lista Estiver Vazia, Não Entrará Aqui nem no For, Então Não Imprime Nada. Se a Lista só Possuir um Elemento, o For Não é Executado, mas o Último Nó é Impresso Aqui.
@@ -138,4 +136,15 @@ void listar (PNo ult) {
 
 ### `5. Liberar:`
 ~~~c
+PNo liberar (PNo ult) {
+	PNo aux; // Ponteiro para Percorrer a Lista
+
+	for (aux = ult->prox; aux != ult; aux = ult->prox) { // Percorre a Lista
+		ult->prox = aux->prox; // O Último Elemento Aponta para o Próximo do Nó Atual
+		free(aux); // Libera a Memória Alocada para o Nó Atual
+	}
+	free(ult); // Libera a Memória Alocada para o Último Nó (Que é o Único que Restou)
+
+	return NULL; // Retorna NULL (Lista Vazia)
+}
 ~~~
