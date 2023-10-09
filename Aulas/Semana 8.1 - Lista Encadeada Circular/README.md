@@ -109,5 +109,27 @@ PNo removerFim (PNo ult, tipoElemento *v) {
 ~~~
 #### `| Índex:`
 ~~~c
+~~~
 
+### `3. Buscar:`
+~~~c
+PNo buscar (PNo ult, tipoElemento v) {
+	PNo procurado; // Ponteiro para Percorrer a Lista
+
+	if (ult == NULL) return NULL; // Se a Lista Estiver Vazia, Retorna NULL
+	for (procurado = ult->prox; procurado != ult; procurado = procurado->prox) { // Percorrendo a Lista
+		if (procurado->info == v) return procurado; // Se o Valor do Nó Atual for o Valor Procurado, Retorna o Nó
+	}
+	if (ult->info == v) return ult; // Se o Valor do Último Nó for o Valor Procurado, Retorna o Último Nó (Fazemos isso pois o Último Nó não é Verificado no For)
+
+	return NULL; // Se Não Encontrar o Elemento, Retorna NULL
+}
+~~~
+
+### `4. Listar:`
+~~~c
+~~~
+
+### `5. Liberar:`
+~~~c
 ~~~
