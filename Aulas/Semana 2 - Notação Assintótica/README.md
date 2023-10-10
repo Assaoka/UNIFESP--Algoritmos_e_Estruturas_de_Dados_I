@@ -1,5 +1,7 @@
 <h1 align="center"> Semana 2 - Notação Assintótica </h1>
 
+Em Breve...
+
 
 <details><summary><h3> Problema 1 - Contagem de Letras em Strings </h3></summary>
 
