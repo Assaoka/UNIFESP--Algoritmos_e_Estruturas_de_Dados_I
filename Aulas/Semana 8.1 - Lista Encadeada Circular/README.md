@@ -143,7 +143,7 @@ PNo liberar (PNo ult) {
 		ult->prox = aux->prox; // O Último Elemento Aponta para o Próximo do Nó Atual
 		free(aux); // Libera a Memória Alocada para o Nó Atual
 	}
-	free(ult); // Libera a Memória Alocada para o Último Nó (Que é o Único que Restou)
+	if (ult != NULL) free(ult); // Libera a Memória Alocada para o Último Nó (Que é o Único que Restou)
 
 	return NULL; // Retorna NULL (Lista Vazia)
 }
