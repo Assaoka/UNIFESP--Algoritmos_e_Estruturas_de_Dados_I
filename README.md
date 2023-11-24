@@ -2,7 +2,7 @@
 &emsp;&emsp; Este espaço foi criado com o propósito de compartilhar os conteúdos e projetos relacionados ao curso de Algoritmos e Estruturas de Dados I do 2º semestre de 2023 na UNIFESP. Aqui, você terá acesso aos exercícios propostos pelo professor, bem como às minhas soluções. Espero que este material seja útil para aqueles que desejam aprender ou revisar conceitos fundamentais de algoritmos e estruturas de dados em linguagem C.
 
 ## `Materiais:`
-🔹 [Semana 5 - Pilha Sequencial](./Aulas/Extra%201%20-%20Arquivo)
+🔹 [Semana 5 - Pilha Sequencial](./Aulas/Semana%205%20-%20Pilha%20Sequencial)
 <br>🔹 [Semana 6 - Pilha Encadeada](./Aulas/Semana%206%20-%20Pilha%20Encadeada)
 <br>🔹 [Semana 7.0 - Fila Encadeada](./Aulas/Semana%207.0%20-%20Fila%20Encadeada)
 <br>🔹 [Semana 7.1 - Lista Encadeada](./Aulas/Semana%207.1%20-%20Lista%20Encadeada)
