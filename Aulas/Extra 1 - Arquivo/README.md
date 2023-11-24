@@ -1,3 +1,0 @@
-<h1 align="center"> Extra 1 - Arquivo </h1>
-
-Em Breve...
