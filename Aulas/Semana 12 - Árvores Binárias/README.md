@@ -127,6 +127,6 @@ int quant_nos(PArv a) {
 int maior(int a, int b) {return (a > b) ? a : b;} // Operador ternário (condição) ? (se verdadeiro) : (se falso)
 int altura(PArv a) {
 	if (a == NULL) return -1; // Condição de parada (Árvore vazia tem altura -1)
-	return (1 + maior(altura(a->esq), altura(a->dir)));
+	return (1 + maior(altura(a->esq), altura(a->dir))); // Retorna a maior altura entre as subárvores esquerda e direita + 1 para representar o próprio nó.
 }
 ~~~
