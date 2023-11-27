@@ -27,7 +27,8 @@ Sendo uma das `classes de estruturas de dados mais importantes,` as árvores sã
 11. `Altura/Profundidade:` Número de arestas entre um nó e a folha mais distante. Uma árvore vazia possui altura -1. 
 
 
-
+## Árvores Binárias:
+Dentre as diversas classes de árvores, as árvores binárias são as mais utilizadas.
 As árvores binarias são um `tipo especial` de árvore, onde cada nó pode ter no `máximo dois filhos.`
 
 
