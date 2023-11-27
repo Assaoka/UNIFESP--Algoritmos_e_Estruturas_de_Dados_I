@@ -102,7 +102,7 @@ PArv buscarNo (PArv a, tipoElemento v) {
 &emsp;&emsp; Para liberar uma árvore binária, devemos liberar o nó e seus filhos na ordem `pósfixa.` Caso seja liberado na ordem `prefixa` ou `infixa,` perdemos a referência para os filhos.
 ~~~c
 PArv liberar (PArv a) {
-	if (a == NULL) return; // Condição de parada
+	if (a == NULL) return NULL; // Condição de parada
 	a->esq = liberar(a->esq); // Libera a subárvore esquerda
 	a->dir = liberar(a->dir); // Libera a subárvore direita
 	free(a); // Libera o nó
