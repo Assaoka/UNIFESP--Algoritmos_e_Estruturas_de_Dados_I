@@ -1,13 +1,13 @@
 <h1 align="center"> Semana 12 - Árvores Binárias </h1>
 
 ## Introdução a Árvores:
-Sendo uma das `classes de estruturas de dados mais importantes,` as árvores são estruturas de dados que `permitem representar dados com hierarquias,` o que é muito útil para representar alguns tipos de dados como:
+&emsp;&emsp; Sendo uma das `classes de estruturas de dados mais importantes,` as árvores são estruturas de dados que `permitem representar dados com hierarquias,` o que é muito útil para representar alguns tipos de dados como:
 <br>&emsp;&emsp; 1. Um sistema de arquivos de um computador.
 <br>&emsp;&emsp; 2. O organograma de uma empresa.
 <br>&emsp;&emsp; 3. A divisão de um livro em capítulos, seções, tópicos...
 <br>&emsp;&emsp; 4. A árvore genealógica de uma pessoa.
 
-`Formalmente,` uma árvore é um conjunto `finito` de nós, onde:
+&emsp;&emsp; `Formalmente,` uma árvore é um conjunto `finito` de nós, onde:
 <br>&emsp;&emsp; 1. Uma árvore é um grafo conexo `acíclico.`
 <br>&emsp;&emsp; 2. Existe um nó especial chamado de `raiz` da árvore, que é o nó que `não possui pai.`
 <br>&emsp;&emsp; 3. Os demais nós possuem `exatamente um pai.`
@@ -28,9 +28,16 @@ Sendo uma das `classes de estruturas de dados mais importantes,` as árvores sã
 
 
 ## Árvores Binárias:
-&emsp;&emsp; Dentro da variedade de árvores, as árvores binárias são as mais usadas. Elas são um tipo especial onde `cada nó pode ter no máximo dois filhos.`
-<br>&emsp;&emsp; As subárvores de uma árvore binária são chamadas de `subárvore esquerda` e `subárvore direita.` A ordem entre os filhos é importante, `um filho à esquerda é diferente de um filho à direita.` Se trocarmos a ordem dos filhos de um nó obtemos outra árvore.
+&emsp;&emsp; Dentro da variedade de árvores, as árvores binárias são as mais usadas. Elas são um caso especial onde  `nenhum nó tem grau maior do que dois,` ou seja, cada nó pode ter no máximo dois filhos.
 
+&emsp;&emsp; As subárvores de uma árvore binária são chamadas de `subárvore esquerda` e `subárvore direita.` A ordem entre os filhos é importante, `um filho à esquerda é diferente de um filho à direita.` Se trocarmos a ordem dos filhos de um nó obtemos outra árvore.
+
+&emsp;&emsp; Cada nó deve armazenar 3 campos:
+<br>&emsp;&emsp;&emsp;&emsp; 1. `A informação que o nó guarda.`
+<br>&emsp;&emsp;&emsp;&emsp; 2. `Um ponteiro para o filho da esquerda.`
+<br>&emsp;&emsp;&emsp;&emsp; 3. `Um ponteiro para o filho da direita.`
+
+&emsp;&emsp; Uma estrutura que podemos usar para representar uma árvore binária é a seguinte:
 ~~~c
 typedef int tipoElemento; // Tipo de dado que o nó armazena (alterar de acordo com o problema)
 typedef struct ArvoreBinaria {
