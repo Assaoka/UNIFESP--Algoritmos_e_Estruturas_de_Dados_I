@@ -49,4 +49,32 @@ typedef SArv *PArv;
 ~~~
 
 ## Operações Básicas com Árvores Binárias:
-### `C
+### `1. Criar:`
+~~~c
+PArv cria (tipoElemento info, PArv esq, PArv dir) {
+	PArv novo = (PArv)malloc(sizeof(SArv)); // Aloca memória para o novo nó
+	novo->info = info; // Insere a informação no novo nó
+	novo->esq = esq; // Faz o ponteiro da esquerda apontar para o nó da esquerda
+	novo->dir = dir; // Faz o ponteiro da direita apontar para o nó da direita
+	return novo; // Retorna o novo nó
+}
+~~~
+### `2. Imprimir:`
+&emsp;&emsp; Aqui temos que introduzir um conceito novo. `A impressão de uma árvore binária pode ser feita de três formas:`
+<br>&emsp;&emsp;&emsp;&emsp; 1. `Prefixa:` Imprime primeiro a raiz, depois a subárvore esquerda e por último a subárvore direita.
+<br>&emsp;&emsp;&emsp;&emsp; 2. `Infixa:` Imprime primeiro a subárvore esquerda, depois a raiz e por último a subárvore direita.
+<br>&emsp;&emsp;&emsp;&emsp; 3. `Posfixa:` Imprime primeiro a subárvore esquerda, depois a subárvore direita e por último a raiz.
+~~~c
+void imprimir (PArv a) {
+	if (a == NULL) return; // Condição de parada
+	printf("%d ", a->info); // Alterar de acordo com o problema
+	imprimir(a->esq); // Imprimir a subárvore esquerda
+	imprimir(a->dir); // Imprimir a subárvore direita
+}
+~~~
+&emsp;&emsp; O código acima imprime a árvore de forma `prefixa.` Para imprimir nas outras formas, basta trocar a ordem das três últimas linhas.
+
+
+### `3. Buscar:`
+
+### `4. Liberar:`
