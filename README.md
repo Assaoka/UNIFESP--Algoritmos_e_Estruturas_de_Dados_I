@@ -4,8 +4,8 @@
 ## `Materiais:`
 🔹 [Semana 5 - Pilha Sequencial](./Aulas/Semana%205%20-%20Pilha%20Sequencial)
 <br>🔹 [Semana 6 - Pilha Encadeada](./Aulas/Semana%206%20-%20Pilha%20Encadeada)
-<br>🔹 [Semana 7.0 - Fila Encadeada](./Aulas/Semana%207.0%20-%20Fila%20Encadeada)
-<br>🔹 [Semana 7.1 - Lista Encadeada](./Aulas/Semana%207.1%20-%20Lista%20Encadeada)
+<br>🔹 [Semana 7.1 - Fila Encadeada](./Aulas/Semana%207.1%20-%20Fila%20Encadeada)
+<br>🔹 [Semana 7.2 - Lista Encadeada](./Aulas/Semana%207.2%20-%20Lista%20Encadeada)
 <br>🔹 [Semana 8.1 - Lista Encadeada Circular](./Aulas/Semana%208.1%20-%20Lista%20Encadeada%20Circular)
 <br>🔹 Em Breve...
 
