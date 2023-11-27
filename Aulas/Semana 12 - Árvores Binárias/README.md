@@ -19,8 +19,12 @@ Sendo uma das `classes de estruturas de dados mais importantes,` as árvores sã
 3. `Ancestral:` Dizemos que um nó `A` é ancestral de um nó `B` se existe um caminho de `A` até `B`. Se este caminho contiver uma única aresta, dizemos que `A` é pai de `B`.
 4. `Descendente:` Dizemos que um nó `A` é descendente de um nó `B` se existe um caminho de `B` até `A`. Se este caminho contiver uma única aresta, dizemos que `A` é filho de `B`.
 5. `Irmãos:` Dizemos que dois nós são irmãos se possuem o mesmo pai.
-6. `Nós folha/terminal:` Nós que não possuem filhos (nós com grau zero). 
-7. `Grau:` Número de filhos de um nó. 
+6. `Nós Folha/Terminal:` Nós que não possuem filhos (nós com grau zero). 
+7. `Grau:` Número de filhos de um nó. O grau de uma árvore é o `maior grau de seus nós.`
+8. `Nível:` Número de arestas entre um nó e a raiz. O nível da raiz é zero. Se um nó está no nível `n`, seus filhos estão no nível `n+1`. O nível de uma árvore é o `maior nível de seus nós.`
+9. `Árvore Completa:` Uma árvore de grau G é completa se todos os seus nós possuem exatamente `G filhos` e todas as `folhas estão no mesmo nível.`
+10. `Floresta:` Conjunto de árvores. Se removermos a raiz de uma árvore, obtemos uma floresta com cada uma das subárvores da árvore original.
+11. `Altura/Profundidade:` Número de arestas entre um nó e a folha mais distante. Uma árvore vazia possui altura -1. 
 
 
 
