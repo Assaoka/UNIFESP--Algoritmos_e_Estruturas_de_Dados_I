@@ -1,4 +1,4 @@
-<h1 align="center"> Semana 7. - Fila Encadeada </h1>
+<h1 align="center"> Semana 7.1 - Fila Encadeada </h1>
  
 ## Definição de Fila Encadeada:
 Uma Fila Encadeada é uma Estrutura de Dados que Segue o Princípio `FIFO` (First In First Out), ou seja, `O Primeiro Elemento a Entrar na Fila é o Primeiro a Sair.`
