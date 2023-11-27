@@ -66,7 +66,7 @@ PArv cria (tipoElemento info, PArv esq, PArv dir) {
 &emsp;&emsp; Aqui temos que introduzir um conceito novo. `A impressão de uma árvore binária pode ser feita de três formas:`
 <br>&emsp;&emsp;&emsp;&emsp; 1. `Prefixa:` Imprime primeiro a raiz, depois a subárvore esquerda e por último a subárvore direita.
 <br>&emsp;&emsp;&emsp;&emsp; 2. `Infixa:` Imprime primeiro a subárvore esquerda, depois a raiz e por último a subárvore direita.
-<br>&emsp;&emsp;&emsp;&emsp; 3. `Posfixa:` Imprime primeiro a subárvore esquerda, depois a subárvore direita e por último a raiz.
+<br>&emsp;&emsp;&emsp;&emsp; 3. `Pósfixa:` Imprime primeiro a subárvore esquerda, depois a subárvore direita e por último a raiz.
 ~~~c
 void imprimir (PArv a) {
 	if (a == NULL) return; // Condição de parada
@@ -86,6 +86,18 @@ int buscarVF (PArv a, tipoElemento v) {
 	return (buscarVF(a->esq, v) || buscarVF(a->dir, v)); // Busca na subárvore esquerda, se não achar, busca na subárvore direita. Propaga o resultado da busca
 }
 ~~~
-
+~~~c
+PArv buscarNo (PArv a, tipoElemento v) {
+	PArv aux; // Guarda o resultado da busca
+	if (a == NULL) return NULL; // Condição de parada (não achou)
+	if (a->info == v) return a; // Condição de parada (achou)
+	aux = buscarNo(a->esq, v); // Busca na subárvore esquerda
+	if (aux != NULL) return aux; // Se achou, retorna o resultado da busca
+	return buscarNo(a->dir, v); // Se não achou, retorna o resultado da busca na subárvore direita
+}
+~~~
 
 ### `4. Liberar:`
+&emsp;&emsp; Para liberar uma árvore binária, devemos liberar o nó e seus filhos na ordem `pósfixa.` Caso seja liberado na ordem `prefixa` ou `infixa,` perdemos a referência para os filhos.
+
+
