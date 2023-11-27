@@ -48,5 +48,5 @@ typedef struct ArvoreBinaria {
 typedef SArv *PArv;
 ~~~
 
-
-Continua...
+## Operações Básicas com Árvores Binárias:
+### `C
