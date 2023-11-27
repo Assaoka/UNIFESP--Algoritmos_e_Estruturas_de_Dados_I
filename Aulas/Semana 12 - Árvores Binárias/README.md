@@ -15,7 +15,7 @@ Sendo uma das `classes de estruturas de dados mais importantes,` as árvores sã
 
 ## Conceitos Básicos:
 1. `Arestas:` Conexões entre os nós da árvore.
-2. `Caminho:` Dizemos que existe um caminho entre dois nós se existir uma `sequência de arestas` que conectam os dois nós. Podemos observar por meio da definição que: `O caminho entre dois nós é único` e `Sempre existe um caminho entre a raiz e qualquer outro nó da árvore.`
+1. `Caminho:` Dizemos que existe um caminho entre dois nós se existir uma `sequência de arestas` que conectam os dois nós. Podemos observar por meio da definição que: `O caminho entre dois nós é único` e `Sempre existe um caminho entre a raiz e qualquer outro nó da árvore.`
 3. `Ancestral:` Dizemos que um nó `A` é ancestral de um nó `B` se existe um caminho de `A` até `B`. Se este caminho contiver uma única aresta, dizemos que `A` é pai de `B`.
 4. `Descendente:` Dizemos que um nó `A` é descendente de um nó `B` se existe um caminho de `B` até `A`. Se este caminho contiver uma única aresta, dizemos que `A` é filho de `B`.
 5. `Irmãos:` Dizemos que dois nós são irmãos se possuem o mesmo pai.
@@ -28,7 +28,6 @@ Sendo uma das `classes de estruturas de dados mais importantes,` as árvores sã
 
 
 ## Árvores Binárias:
-Dentre as diversas classes de árvores, as árvores binárias são as mais utilizadas.
-As árvores binarias são um `tipo especial` de árvore, onde cada nó pode ter no `máximo dois filhos.`
+Dentro da variedade de árvores, as árvores binárias são as mais usadas. Elas são um tipo especial onde `cada nó pode ter no máximo dois filhos.`
 
-
+As subárvores de uma árvore binária são chamadas de `subárvore esquerda` e `subárvore direita.` A ordem entre os filhos é importante, um filho à esquerda é diferente de um filho à direita, trocar a ordem dos filhos de um nó altera a estrutura da árvore.
