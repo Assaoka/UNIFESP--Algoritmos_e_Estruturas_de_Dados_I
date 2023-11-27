@@ -61,6 +61,7 @@ PArv cria (tipoElemento info, PArv esq, PArv dir) {
 	return novo; // Retorna o novo nó
 }
 ~~~
+&emsp;&emsp; `Como a implementação de uma árvore é recursiva,` a função cria pode ser utilizada tanto para `criar uma árvore` inteira quanto para `criar uma subárvore` e inserir em uma árvore já existente (fazendo um nó receber como filho a subárvore criada).
 
 ### `2. Imprimir:`
 &emsp;&emsp; Aqui temos que introduzir um conceito novo. `A impressão de uma árvore binária pode ser feita de três formas:`
@@ -99,5 +100,16 @@ PArv buscarNo (PArv a, tipoElemento v) {
 
 ### `4. Liberar:`
 &emsp;&emsp; Para liberar uma árvore binária, devemos liberar o nó e seus filhos na ordem `pósfixa.` Caso seja liberado na ordem `prefixa` ou `infixa,` perdemos a referência para os filhos.
+~~~c
+PArv liberar (PArv a) {
+	if (a == NULL) return; // Condição de parada
+	a->esq = liberar(a->esq); // Libera a subárvore esquerda
+	a->dir = liberar(a->dir); // Libera a subárvore direita
+	free(a); // Libera o nó
+	return NULL; // Retorna NULL
+}
+~~~
+&emsp;&emsp; Essa função também pode ser utilizada para `podar uma subárvore,` fazendo o nó pai do nó a ser podado receber NULL no ponteiro para o filho correspondente.
 
-
+## Exercícios:
+### `Questão 1:` Faça uma função recursiva que imprime a pilha.
