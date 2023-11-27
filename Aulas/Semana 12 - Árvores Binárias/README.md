@@ -13,6 +13,7 @@
 <br>&emsp;&emsp; 3. Os demais nós possuem `exatamente um pai.`
 <br>&emsp;&emsp; 4. Cada nó forma uma árvore com seus filhos, chamada de `subárvore.`
 
+
 ## Conceitos Básicos:
 1. `Arestas:` Conexões entre os nós da árvore.
 1. `Caminho:` Dizemos que existe um caminho entre dois nós se existir uma `sequência de arestas` que conectam os dois nós. Podemos observar por meio da definição que: `O caminho entre dois nós é único` e `Sempre existe um caminho entre a raiz e qualquer outro nó da árvore.`
@@ -48,6 +49,7 @@ typedef struct ArvoreBinaria {
 typedef SArv *PArv;
 ~~~
 
+
 ## Operações Básicas com Árvores Binárias:
 ### `1. Criar:`
 ~~~c
@@ -59,6 +61,7 @@ PArv cria (tipoElemento info, PArv esq, PArv dir) {
 	return novo; // Retorna o novo nó
 }
 ~~~
+
 ### `2. Imprimir:`
 &emsp;&emsp; Aqui temos que introduzir um conceito novo. `A impressão de uma árvore binária pode ser feita de três formas:`
 <br>&emsp;&emsp;&emsp;&emsp; 1. `Prefixa:` Imprime primeiro a raiz, depois a subárvore esquerda e por último a subárvore direita.
@@ -74,7 +77,15 @@ void imprimir (PArv a) {
 ~~~
 &emsp;&emsp; O código acima imprime a árvore de forma `prefixa.` Para imprimir nas outras formas, basta trocar a ordem das três últimas linhas.
 
-
 ### `3. Buscar:`
+&emsp;&emsp; Para busca em árvores binárias, podemos retornar verdadeiro ou falso, ou retornar o nó que contém a informação buscada.
+~~~c
+int buscarVF (PArv a, tipoElemento v) {
+	if (a == NULL) return 0; // Condição de parada (não achou)
+	if (a->info == v) return 1; // Condição de parada (achou)
+	return (buscarVF(a->esq, v) || buscarVF(a->dir, v)); // Busca na subárvore esquerda, se não achar, busca na subárvore direita. Propaga o resultado da busca
+}
+~~~
+
 
 ### `4. Liberar:`
