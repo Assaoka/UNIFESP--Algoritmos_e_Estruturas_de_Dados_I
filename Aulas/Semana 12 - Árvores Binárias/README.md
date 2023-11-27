@@ -112,4 +112,10 @@ PArv liberar (PArv a) {
 &emsp;&emsp; Essa função também pode ser utilizada para `podar uma subárvore,` fazendo o nó pai do nó a ser podado receber NULL no ponteiro para o filho correspondente.
 
 ## Exercícios:
-### `Questão 1:` Faça uma função recursiva que imprime a pilha.
+### `Questão 1:` Escreva uma função que conte a quantidade de nós em uma árvore binária. O protótipo da função deve ser dado por: int quant_nos(PArv arv);
+~~~c
+~~~
+
+### `Questão 2:` Escreva uma função que percorre uma árvore binária para determinar sua altura. O protótipo da função deve ser dado por: int altura(PArv arv);
+~~~c
+~~~
