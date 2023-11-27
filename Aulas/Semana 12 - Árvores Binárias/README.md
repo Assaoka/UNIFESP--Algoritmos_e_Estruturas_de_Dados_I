@@ -40,3 +40,6 @@ typedef struct ArvoreBinaria {
 } SArv;
 typedef SArv *PArv;
 ~~~
+
+
+Continua...
