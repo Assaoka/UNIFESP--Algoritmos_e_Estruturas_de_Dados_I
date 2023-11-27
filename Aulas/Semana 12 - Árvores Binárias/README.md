@@ -123,6 +123,10 @@ int quant_nos(PArv a) {
 
 ### `Questão 2:` Escreva uma função que percorre uma árvore binária para determinar sua altura. O protótipo da função deve ser dado por: int altura(PArv a);
 &emsp;&emsp; Para resolver esse problema, devemos lembrar que a altura de uma subárvore vazia é -1.
-
 ~~~c
+int maior(int a, int b) {return (a > b) ? a : b;} // Operador ternário (condição) ? (se verdadeiro) : (se falso)
+int altura(PArv a) {
+	if (a == NULL) return -1; // Condição de parada (Árvore vazia tem altura -1)
+	return (1 + maior(altura(a->esq), altura(a->dir)));
+}
 ~~~
