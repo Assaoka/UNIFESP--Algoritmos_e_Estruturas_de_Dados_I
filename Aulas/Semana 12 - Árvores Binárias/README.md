@@ -30,3 +30,13 @@ Sendo uma das `classes de estruturas de dados mais importantes,` as árvores sã
 ## Árvores Binárias:
 &emsp;&emsp; Dentro da variedade de árvores, as árvores binárias são as mais usadas. Elas são um tipo especial onde `cada nó pode ter no máximo dois filhos.`
 <br>&emsp;&emsp; As subárvores de uma árvore binária são chamadas de `subárvore esquerda` e `subárvore direita.` A ordem entre os filhos é importante, `um filho à esquerda é diferente de um filho à direita.` Se trocarmos a ordem dos filhos de um nó obtemos outra árvore.
+
+~~~c
+typedef int tipoElemento; // Tipo de dado que o nó armazena (alterar de acordo com o problema)
+typedef struct ArvoreBinaria {
+	tipoElemento info; // Informação do nó
+	struct ArvoreBinaria *esq; // Ponteiro para o no da esquerda
+	struct ArvoreBinaria *dir; // Ponteiro para o no da direita
+} SArv;
+typedef SArv *PArv;
+~~~
