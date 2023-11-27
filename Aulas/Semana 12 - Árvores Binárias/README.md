@@ -115,8 +115,14 @@ PArv liberar (PArv a) {
 ## Exercícios:
 ### `Questão 1:` Escreva uma função que conte a quantidade de nós em uma árvore binária. O protótipo da função deve ser dado por: int quant_nos(PArv a);
 ~~~c
+int quant_nos(PArv a) {
+	if (a == NULL) return 0; // Condição de parada
+	return (1 + quant_nos(a->esq) + quant_nos(a->dir)); // retorna a quantidade de descendentes + 1 para representar o próprio nó.
+}
 ~~~
 
 ### `Questão 2:` Escreva uma função que percorre uma árvore binária para determinar sua altura. O protótipo da função deve ser dado por: int altura(PArv a);
+&emsp;&emsp; Para resolver esse problema, devemos lembrar que a altura de uma subárvore vazia é -1.
+
 ~~~c
 ~~~
