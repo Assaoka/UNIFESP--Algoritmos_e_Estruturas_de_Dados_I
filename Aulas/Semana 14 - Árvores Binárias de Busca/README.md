@@ -11,9 +11,8 @@ Esse resumo ainda está em produção. Caso encontre algum erro, por favor, entr
 
 &emsp;&emsp; E é aí que entram as árvores binárias. Podemos aproveitar a estrutura hierárquica das árvores para armazenar valores de forma dinâmica e sem perder a capacidade de acessar o `"meio"` de um intervalo. Para isso, podemos `colocar valores menores que a raiz na subárvore esquerda e valores maiores que a raiz na subárvore direita.` A estrutura resultante é conhecida como `Árvore Binária de Busca (ABB).`
 
-&emsp;&emsp; Vale destacar que, `caso a árvore não esteja balanceada,` não estaremos necessariamente acessando o meio do intervalo, `o que pode comprometer a eficiência da busca em relação à busca binária.` No entanto, mesmo nesse caso, `ainda teremos uma busca mais eficiente do que a busca sequencial.` Esse problema pode ser resolvido com o uso de `árvores balanceadas,` como as `árvores AVL e as árvores rubro-negras.`
+&emsp;&emsp; Vale destacar que, `caso a árvore não esteja balanceada,` não estaremos necessariamente acessando o meio do intervalo, o que pode comprometer a eficiência da busca em relação à busca binária. No entanto, mesmo nesse caso, `ainda teremos uma busca mais eficiente do que a busca sequencial.` Esse problema pode ser resolvido com o uso de árvores balanceadas, como as `árvores AVL e as árvores rubro-negras.`
 
-&emsp;&emsp; Estrutura:
 ~~~c
 typedef int tipoElemento; // Tipo de dado que o nó armazena (alterar de acordo com o problema)
 typedef struct ArvoreBinaria {
