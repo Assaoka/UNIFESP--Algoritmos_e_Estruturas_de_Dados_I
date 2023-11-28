@@ -44,3 +44,30 @@ typedef SArv *PArv;
 ~~~
 
 
+## Exercícios:
+### `Questão 1:` Considere uma ABB A de números inteiros contendo todos os números entre 1 e 1000. Dentre as sequências abaixo, indique qual(is) a(s) que pode(m) corresponder a uma sequência de elementos de A visitados em ordem prefixa durante a operação de pesquisa do elemento 363. Para cada uma das sequências não válidas, indique o problema.
+i) 2, 252, 401, 398, 330, 344, 397, 363
+
+ii) 924, 220, 911, 244, 898, 258, 362, 363
+
+iii) 925, 202, 911, 240, 912, 245, 363
+
+iv) 2, 399, 387, 219, 266, 382, 381, 278, 363
+
+v) 935, 278, 347, 621, 299, 392, 358, 363
+
+### `Questão 2:` Escreva uma função que obtenha o menor valor da árvore. O protótipo da função deve ser dado por: int menor (PArv a);
+~~~c
+~~~
+
+### `Questão 3:` Escreva uma função que imprime todos os valores dos nós da árvore que sejam menores que x, em ordem crescente. O protótipo da função deve ser dado por: void showmenor (PArv a, int x);
+~~~c
+~~~
+
+### `Questão 4:` Escreva uma função que receba uma lista encadeada e construa uma ABB com os elementos desta lista. Liberar a lista e retornar a árvore gerada. 
+~~~c
+~~~
+
+### `Questão 5:` Escreva uma função para verificar se uma árvore binária é ABB. O protótipo da função deve ser dado por: int verificaABB (PArv a);
+~~~c
+~~~
