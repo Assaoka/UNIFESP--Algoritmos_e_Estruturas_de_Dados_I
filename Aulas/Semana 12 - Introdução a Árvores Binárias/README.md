@@ -130,3 +130,11 @@ int altura(PArv a) {
 	return (1 + maior(altura(a->esq), altura(a->dir))); // Retorna a maior altura entre as subárvores esquerda e direita + 1 para representar o próprio nó.
 }
 ~~~
+
+### `Questão 3:`  Dadas duas árvores binárias A e B faça uma função que verifique se duas árvores A e B são iguais. Esta função retorna 1 se as árvores recebidas como parâmetros forem iguais e zero caso contrário. O protótipo da função deve ser dado por: int iguais(PArv A, PArv B)
+~~~c
+~~~
+
+### `Questão 4:` Escreva uma função para excluir todas as folhas de uma Árvore Binária. O protótipo da função deve ser dado por: PArv excluir_folhas(PArv a);
+~~~c
+~~~
