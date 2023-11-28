@@ -14,11 +14,10 @@ Esse resumo ainda está em produção. Caso encontre algum erro, por favor, entr
 &emsp;&emsp; Vale destacar que, `caso a árvore não esteja balanceada,` não estaremos necessariamente acessando o meio do intervalo, o que pode comprometer a eficiência da busca em relação à busca binária. No entanto, mesmo nesse caso, `ainda teremos uma busca mais eficiente do que a busca sequencial.` Esse problema pode ser resolvido com o uso de árvores balanceadas, como as `árvores AVL e as árvores rubro-negras.`
 
 ~~~c
-typedef int tipoElemento; // Tipo de dado que o nó armazena (alterar de acordo com o problema)
 typedef struct ArvoreBinaria {
-	tipoElemento info; // Informação do nó
-	struct ArvoreBinaria *esq; // Ponteiro para o no da esquerda
-	struct ArvoreBinaria *dir; // Ponteiro para o no da direita
+	int chave; // Informação do nó
+	struct ArvoreBinaria *esq; // Ponteiro para o no da esquerda (menor)
+	struct ArvoreBinaria *dir; // Ponteiro para o no da direita (maior)
 } SArv;
 typedef SArv *PArv;
 ~~~
@@ -45,11 +44,3 @@ typedef SArv *PArv;
 ~~~
 
 
-## Exercícios:
-### `Questão 1:` ...
-~~~c
-~~~
-
-### `Questão 2:` ...
-~~~c
-~~~
