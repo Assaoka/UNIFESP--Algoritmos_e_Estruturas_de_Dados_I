@@ -80,12 +80,24 @@ PArv buscar (PArv a, int chave) {
 ~~~
 
 ### `4. Imprimir:`
+&emsp;&emsp; De acordo com a definição de árvore binária de busca, todo valor na subárvore esquerda de um nó é menor que o valor do nó e todo valor na subárvore direita de um nó é maior que o valor do nó, respectivamente. Dessa forma, podemos imprimir os valores da árvore em ordem crescente ou decrescente de forma simples.
 #### `| Ordem crescente:`
 ~~~c
+void imprimirC (PArv a) {
+	if (a == NULL) return; // Condição de parada
+	imprimirC(a->esq); // Imprime a subárvore da esquerda
+	printf("%d ", a->chave); // Imprime a raiz
+	imprimirC(a->dir); // Imprime a subárvore da direita
+}
 ~~~
-
 #### `| Ordem decrescente:`
 ~~~c
+void imprimirD (PArv a) {
+	if (a == NULL) return; // Condição de parada
+	imprimirD(a->dir); // Imprime a subárvore da direita
+	printf("%d ", a->chave); // Imprime a raiz
+	imprimirD(a->esq); // Imprime a subárvore da esquerda
+}
 ~~~
 
 
