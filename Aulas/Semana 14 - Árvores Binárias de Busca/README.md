@@ -51,7 +51,7 @@ PArv inserir_R (PArv a, int chave) {
 #### `| Inserção na forma iterativa:`
 ~~~c
 PArv inserir_I (PArv a, int chave) {
-	PArv p, ant; // Ponteiros para percorrer a árvore
+	PArv p, ant;
 	if (a == NULL) return cria(chave); // Se a árvore estiver vazia, cria o nó e retorna
 	for (ant = NULL, p = a; p != NULL;) { // Percorre a árvore até encontrar um nó vazio
 		ant = p; // Guarda o nó anterior
@@ -70,6 +70,13 @@ PArv inserir_I (PArv a, int chave) {
 
 ### `3. Buscar:`
 ~~~c
+PArv buscar (PArv a, int chave) {
+	PArv p;
+	for (p = a; p != NULL && p->chave != chave;) // Percorre a árvore até encontrar a chave ou um nó vazio (Não encontrou)
+		if (chave < p->chave) p = p->esq; // Se a chave for menor, vai para a esquerda
+		else p = p->dir; // Se a chave for maior, vai para a direita
+	return p;
+}
 ~~~
 
 ### `4. Imprimir:`
