@@ -143,10 +143,10 @@ Fazendo...
 ### `Questão 5:` Faça uma função que imprima uma árvore binária por paragrafação.
 ~~~c
 void imprimir (PArv a, int i) {
-	if (a == NULL) return;
-	for (int j = 0; j < i; j++) printf("\t");
-	printf("%d\n", a->chave);
-	imprimir(a->esq, i + 1);
-	imprimir(a->dir, i + 1);
+	if (a == NULL) return; // Condição de parada
+	for (int j = 0; j < i; j++) printf("\t"); // Imprime os tabs de acordo com o nível do nó atual (paragrafação)
+	printf("%d\n", a->chave); // Imprime a chave do nó atual
+	imprimir(a->esq, i + 1); // Imprime a subárvore da esquerda
+	imprimir(a->dir, i + 1); // Imprime a subárvore da direita
 }
 ~~~
