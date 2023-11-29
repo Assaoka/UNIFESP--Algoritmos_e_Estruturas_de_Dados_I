@@ -39,9 +39,6 @@ typedef SArv *PArv;
 ~~~c
 ~~~
 
-### `4. Liberar:`
-~~~c
-~~~
 
 
 ## Exercícios:
