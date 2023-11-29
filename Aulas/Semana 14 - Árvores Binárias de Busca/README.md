@@ -36,6 +36,12 @@ PArv cria (int chave) {
 ~~~
 #### `| Inserção na forma recursiva:`
 ~~~c
+PArv inserir_R (PArv a, int chave) {
+	if (a == NULL) return cria(chave); // Se a subárvore estiver vazia, cria o nó e retorna
+	if (chave < a->chave) a->esq = inserir_R(a->esq, chave); // Se a chave for menor, o filho a esquerda do nó atual recebe a subárvore da esquerda. Se for vazia, recebe o novo nó. Caso contrário, vai receber o próprio filho a esquerda.
+	else a->dir = inserir_R(a->dir, chave); // Se a chave for maior, o filho a direita do nó atual recebe a subárvore a direita. Mesmo caso anterior (só que a direita).
+	return a; // Retorna o nó atual
+}
 ~~~
 
 #### `| Inserção na forma iterativa:`
