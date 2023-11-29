@@ -23,7 +23,12 @@ typedef SArv *PArv;
 ~~~
 
 
-## Operações Básicas com Árvores Binárias:
+## Operações Básicas com Árvores Binárias de Busca:
+&emsp;&emsp; Para inserir uma nova chave em uma Árvore Binária de Busca devemos seguir a seguinte ordem:
+<br>&emsp;&emsp; 1. Se a árvore é `vazia, o novo nó é a raiz.` Caso contrário, continue.
+<br>&emsp;&emsp; 2. Se a `chave` do novo elemento é `menor que a raiz` da subárvore, `insere na subárvore esquerda.` Caso contrário, insere na subárvore direita.
+<br>&emsp;&emsp; 3. Caso o `local de inserção já esteja ocupado, repete` o processo a partir do passo 2.
+
 ### `1. Inserir:`
 #### `| Função auxiliar para criar um novo nó:`
 ~~~c
@@ -43,7 +48,6 @@ PArv inserir_R (PArv a, int chave) {
 	return a; // Retorna o nó atual
 }
 ~~~
-
 #### `| Inserção na forma iterativa:`
 ~~~c
 PArv inserir_I (PArv a, int chave) {
@@ -69,9 +73,13 @@ PArv inserir_I (PArv a, int chave) {
 ~~~
 
 ### `4. Imprimir:`
+#### `| Ordem crescente:`
 ~~~c
 ~~~
 
+#### `| Ordem decrescente:`
+~~~c
+~~~
 
 
 ## Exercícios:
