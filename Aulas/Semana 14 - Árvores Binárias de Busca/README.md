@@ -25,6 +25,7 @@ typedef SArv *PArv;
 
 ## Operações Básicas com Árvores Binárias:
 ### `1. Inserir:`
+#### `| Função auxiliar para criar um novo nó:`
 ~~~c
 PArv cria (int chave) {
 	PArv novo = (PArv)malloc(sizeof(SArv)); // Aloca memória para o novo nó
@@ -33,12 +34,24 @@ PArv cria (int chave) {
 	return novo; // Retorna o novo nó
 }
 ~~~
-&emsp;&emsp; Inserção na forma recursiva:
+#### `| Inserção na forma recursiva:`
 ~~~c
 ~~~
 
-&emsp;&emsp;&emsp;&emsp; Inserção na forma iterativa:
+#### `| Inserção na forma iterativa:`
 ~~~c
+PArv inserir_I (PArv a, int chave) {
+	PArv p, ant; // Ponteiros para percorrer a árvore
+	if (a == NULL) return cria(chave); // Se a árvore estiver vazia, cria o nó e retorna
+	for (ant = NULL, p = a; p != NULL;) { // Percorre a árvore até encontrar um nó vazio
+		ant = p; // Guarda o nó anterior
+		if (chave < p->chave) p = p->esq; // Se a chave for menor, vai para a esquerda
+		else p = p->dir; // Se a chave for maior, vai para a direita
+	}
+	if (chave < ant->chave) ant->esq = cria(chave); // Se a chave for menor, insere na esquerda
+	else ant->dir = cria(chave); // Se a chave for maior, insere na direita
+	return a; // Retorna a árvore
+}
 ~~~
 
 ### `2. Remover:`
