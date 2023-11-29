@@ -46,15 +46,15 @@ typedef SArv *PArv;
 
 ## Exercícios:
 ### `Questão 1:` Considere uma ABB A de números inteiros contendo todos os números entre 1 e 1000. Dentre as sequências abaixo, indique qual(is) a(s) que pode(m) corresponder a uma sequência de elementos de A visitados em ordem prefixa durante a operação de pesquisa do elemento 363. Para cada uma das sequências não válidas, indique o problema.
-I) 2, 252, 401, 398, 330, 344, 397, 363
+`I)` 2, 252, 401, 398, 330, 344, 397, 363
 
-II) 924, 220, 911, 244, 898, 258, 362, 363
+`II)` 924, 220, 911, 244, 898, 258, 362, 363
 
-III) 925, 202, 911, 240, 912, 245, 363
+`III)` 925, 202, 911, 240, 912, 245, 363
 
-IV) 2, 399, 387, 219, 266, 382, 381, 278, 363
+`IV)` 2, 399, 387, 219, 266, 382, 381, 278, 363
 
-V) 935, 278, 347, 621, 299, 392, 358, 363
+`V)` 935, 278, 347, 621, 299, 392, 358, 363
 
 ### `Questão 2:` Escreva uma função que obtenha o menor valor da árvore. O protótipo da função deve ser dado por: int menor (PArv a);
 ~~~c
