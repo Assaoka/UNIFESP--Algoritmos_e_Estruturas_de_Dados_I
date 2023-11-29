@@ -139,3 +139,14 @@ Fazendo...
 ### `Questão 4:` Escreva uma função para excluir todas as folhas de uma Árvore Binária. O protótipo da função deve ser dado por: PArv excluir_folhas(PArv a);
 ~~~c
 ~~~
+
+### `Questão 5:` Faça uma função que imprima uma árvore binária por paragrafação.
+~~~c
+void imprimir (PArv a, int i) {
+	if (a == NULL) return;
+	for (int j = 0; j < i; j++) printf("\t");
+	printf("%d\n", a->chave);
+	imprimir(a->esq, i + 1);
+	imprimir(a->dir, i + 1);
+}
+~~~
