@@ -26,6 +26,19 @@ typedef SArv *PArv;
 ## Operações Básicas com Árvores Binárias:
 ### `1. Inserir:`
 ~~~c
+PArv cria (int chave) {
+	PArv novo = (PArv)malloc(sizeof(SArv)); // Aloca memória para o novo nó
+	novo->esq = novo->dir = NULL; // Inicializa os ponteiros com NULL
+	novo->chave = chave; // Atribui a chave ao novo nó
+	return novo; // Retorna o novo nó
+}
+~~~
+&emsp;&emsp; Inserção na forma recursiva:
+~~~c
+~~~
+
+&emsp;&emsp;&emsp;&emsp; Inserção na forma iterativa:
+~~~c
 ~~~
 
 ### `2. Remover:`
@@ -36,6 +49,7 @@ typedef SArv *PArv;
 ~~~c
 ~~~
 
+### `4. Imprimir:`
 ~~~c
 ~~~
 
