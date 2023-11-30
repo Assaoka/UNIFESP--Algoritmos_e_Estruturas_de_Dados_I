@@ -126,18 +126,18 @@ PArv buscar (PArv a, int chave) {
 ~~~c
 void imprimir_C (PArv a) {
 	if (a == NULL) return; // Condição de parada
-	imprimirC(a->esq); // Imprime a subárvore da esquerda
+	imprimir_C(a->esq); // Imprime a subárvore da esquerda
 	printf("%d ", a->chave); // Imprime a raiz
-	imprimirC(a->dir); // Imprime a subárvore da direita
+	imprimir_C(a->dir); // Imprime a subárvore da direita
 }
 ~~~
 #### `| Ordem decrescente:`
 ~~~c
 void imprimir_D (PArv a) {
 	if (a == NULL) return; // Condição de parada
-	imprimirD(a->dir); // Imprime a subárvore da direita
+	imprimir_D(a->dir); // Imprime a subárvore da direita
 	printf("%d ", a->chave); // Imprime a raiz
-	imprimirD(a->esq); // Imprime a subárvore da esquerda
+	imprimir_D(a->esq); // Imprime a subárvore da esquerda
 }
 ~~~
 
@@ -166,6 +166,14 @@ int menor (PArv a) {
 
 ### `Questão 3:` Escreva uma função que imprime todos os valores dos nós da árvore que sejam menores que x, em ordem crescente. O protótipo da função deve ser dado por: void showmenor (PArv a, int x);
 ~~~c
+void showmenor (PArv a, int x) {
+	if (a == NULL) return; // Condição de parada
+	showmenor(a->esq, x); // Tenta imprimir a subárvore da esquerda
+	if (a->chave < x) { // Se a chave for menor que x, imprime
+		printf("%d ", a->chave);
+		showmenor(a->dir, x);
+	}
+}
 ~~~
 
 ### `Questão 4:` Escreva uma função que receba uma lista encadeada e construa uma ABB com os elementos desta lista. Liberar a lista e retornar a árvore gerada. 
