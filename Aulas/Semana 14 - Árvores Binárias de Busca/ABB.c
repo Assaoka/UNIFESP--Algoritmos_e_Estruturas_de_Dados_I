@@ -41,7 +41,31 @@ PArv inserir_R (PArv a, int chave) {
 // ########################################################################
 // ############################## 2. Remover ##############################
 PArv remover (PArv a, int chave) {
-	
+	PArv ant, p;
+	if (a == NULL) return NULL; // Condição de parada (não encontrou)
+	if (chave < a->chave) a->esq = remover(a->esq, chave); // Se a chave for menor, procura na subárvore da esquerda
+	else if (chave > a->chave) a->dir = remover(a->dir, chave); // Se a chave for maior, procura na subárvore da direita
+	else { // Encontrou o nó 
+		if (a->esq == NULL && a->dir == NULL) { // Nó folha
+			free(a);
+			return NULL;
+		} else if (a->dir == NULL) { // Filho a esquerda apenas
+			p = a->esq;
+			free(a);
+			return p;
+		} else if (a->esq == NULL) { // Filho a direita apenas
+			p = a->dir;
+			free (a);
+			return p;
+		} else { // Dois filhos
+			for (ant = a, p = a->esq; p->dir != NULL; ant = p, p = p->dir); // Procura o maior nó da subárvore da esquerda
+			a->chave = p->chave; // Atribui a chave do maior nó ao nó atual
+			if (ant == a) a->esq = p->esq; // Se o maior nó for o filho a esquerda do nó atual, o filho do filho a esquerda vai ser o filho a esquerda do nó atual
+			else ant->dir = p->esq; // Caso contrário, o pai do maior nó recebe a subárvore da esquerda do maior nó
+			free(p);
+		}
+	}
+	return a; // Retorna o nó atual (Sofrendo alterações ou não)
 }
 
 // ########################################################################
@@ -70,19 +94,37 @@ void imprimirD (PArv a) {
 	imprimirD(a->esq); // Imprime a subárvore da esquerda
 }
 
+void imprimir (PArv a, int i) {
+	if (a == NULL) return; // Condição de parada
+	for (int j = 0; j < i; j++) printf("\t"); // Imprime os tabs de acordo com o nível do nó atual (paragrafação)
+	printf("%d\n", a->chave); // Imprime a chave do nó atual
+	imprimir(a->esq, i + 1); // Imprime a subárvore da esquerda
+	imprimir(a->dir, i + 1); // Imprime a subárvore da direita
+}
 
 
 // Provisório (para testar as funções)
 int main () {
 	PArv a = NULL;
-	a = inserir_R(a, 50);
+	a = inserir_R(a, 90);
 	a = inserir_R(a, 30);
-	a = inserir_R(a, 70);
+	a = inserir_R(a, 100);
+	a = inserir_R(a, 150);
 	a = inserir_R(a, 20);
+	a = inserir_R(a, 10);
+	a = inserir_R(a, 15);
+	a = inserir_R(a, 50);
 	a = inserir_R(a, 40);
+	a = inserir_R(a, 70);
 	a = inserir_R(a, 60);
 	a = inserir_R(a, 80);
+	a = inserir_R(a, 65);
 	
+	imprimir(a, 0);
+	a = remover(a, 20);
+
+	printf("\n===============================\n");
+	imprimir(a, 0);
 	return 0;
 }
 
