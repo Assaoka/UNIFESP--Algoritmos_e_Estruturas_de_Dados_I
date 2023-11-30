@@ -156,7 +156,13 @@ void imprimir_D (PArv a) {
 
 ### `Questão 2:` Escreva uma função que obtenha o menor valor da árvore. O protótipo da função deve ser dado por: int menor (PArv a);
 ~~~c
+int menor (PArv a) {
+	PArv p;
+	for (p = a; p->esq != NULL; p = p->esq); // Encontra o nó mais a esquerda (menor por definição)
+	return p->chave; // Retorna a chave do nó
+}
 ~~~
+`Obs:` Para encontrar o maior valor, basta substituir `p->esq` por `p->dir`. Por definição o nó mais a direita é sempre o maior nó.
 
 ### `Questão 3:` Escreva uma função que imprime todos os valores dos nós da árvore que sejam menores que x, em ordem crescente. O protótipo da função deve ser dado por: void showmenor (PArv a, int x);
 ~~~c
