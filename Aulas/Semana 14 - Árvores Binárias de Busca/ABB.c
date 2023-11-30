@@ -110,6 +110,7 @@ int menor (PArv a) {
 	return p->chave; // Retorna a chave do nó
 }
 
+// ########################################################################
 // Questão 3: Escreva uma função que imprime todos os valores dos nós da árvore que sejam menores que x, em ordem crescente.
 void showmenor (PArv a, int x) {
 	if (a == NULL) return; // Condição de parada
@@ -120,6 +121,7 @@ void showmenor (PArv a, int x) {
 	}
 }
 
+// ########################################################################
 // Questão 4: Escreva uma função que receba uma lista encadeada e construa uma ABB com os elementos desta lista. Liberar a lista e retornar a árvore gerada.
 typedef struct No { // Lista Encadeada
 	int info; // Informação do Elemento
@@ -138,14 +140,14 @@ PArv listaParaABB (PNo lista) {
 	return a; // Retorna a árvore
 }
 
-
+// ########################################################################
 // Questão 5: Escreva uma função para verificar se uma árvore binária é ABB.
 int verificaABB (PArv a) {
-	
+	if (a == NULL) return 1; // Condição de parada
+	if (a->esq != NULL && a->esq->chave > a->chave) return 0; // Se o filho a esquerda for maior que o pai, não é ABB
+	if (a->dir != NULL && a->dir->chave < a->chave) return 0; // Se o filho a direita for menor que o pai, não é ABB
+	return verificaABB(a->esq) && verificaABB(a->dir); // Verifica se as subárvores são ABB
 }
-
-
-
 
 // Provisório (para testar as funções)
 void imprimirP (PArv a, int i) {
