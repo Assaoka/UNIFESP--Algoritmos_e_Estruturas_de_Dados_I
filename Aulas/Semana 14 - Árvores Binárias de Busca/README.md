@@ -101,6 +101,15 @@ PArv remover (PArv a, int chave) {
 ~~~
 
 ### `3. Buscar:`
+#### `| Busca na forma recursiva:`
+~~~c
+PArv buscar_R (PArv a, int chave) {
+	if (a == NULL || a->chave == chave) return a; // Condição de parada (não encontrou ou encontrou, respectivamente)
+	if (chave < a->chave) return buscar_R(a->esq, chave); // Se a chave for menor, procura na subárvore da esquerda
+	else return buscar_R(a->dir, chave); // Se a chave for maior, procura na subárvore da direita
+}
+~~~
+#### `| Busca na forma iterativa:`
 ~~~c
 PArv buscar (PArv a, int chave) {
 	PArv p;
