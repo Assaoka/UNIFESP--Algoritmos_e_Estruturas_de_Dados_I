@@ -89,25 +89,55 @@ PArv buscar_I (PArv a, int chave) {
 // ############################## 4. Imprimir #############################
 void imprimir_C (PArv a) {
 	if (a == NULL) return; // Condição de parada
-	imprimirC(a->esq); // Imprime a subárvore da esquerda
+	imprimir_C(a->esq); // Imprime a subárvore da esquerda
 	printf("%d ", a->chave); // Imprime a raiz
-	imprimirC(a->dir); // Imprime a subárvore da direita
+	imprimir_C(a->dir); // Imprime a subárvore da direita
 }
 
 void imprimir_D (PArv a) {
 	if (a == NULL) return; // Condição de parada
-	imprimirD(a->dir); // Imprime a subárvore da direita
+	imprimir_D(a->dir); // Imprime a subárvore da direita
 	printf("%d ", a->chave); // Imprime a raiz
-	imprimirD(a->esq); // Imprime a subárvore da esquerda
+	imprimir_D(a->esq); // Imprime a subárvore da esquerda
 }
+
+
+// ########################################################################
+// Questão 2: Escreva uma função que obtenha o menor valor da árvore. 
+int menor (PArv a) {
+	PArv p;
+	for (p = a; p->esq != NULL; p = p->esq); // Encontra o nó mais a esquerda (menor por definição)
+	return p->chave; // Retorna a chave do nó
+}
+
+// Questão 3: Escreva uma função que imprime todos os valores dos nós da árvore que sejam menores que x, em ordem crescente.
+void showmenor (PArv a, int x) {
+	if (a == NULL) return; // Condição de parada
+	showmenor(a->esq, x); // Tenta imprimir a subárvore da esquerda
+	if (a->chave < x) { // Se a chave for menor que x, imprime
+		printf("%d ", a->chave);
+		showmenor(a->dir, x);
+	}
+}
+
+// Questão 4: Escreva uma função que receba uma lista encadeada e construa uma ABB com os elementos desta lista. Liberar a lista e retornar a árvore gerada.
+
+
+// Questão 5: Escreva uma função para verificar se uma árvore binária é ABB.
+int verificaABB (PArv a) {
+	
+}
+
+
+
 
 // Provisório (para testar as funções)
 void imprimirP (PArv a, int i) {
 	if (a == NULL) return; // Condição de parada
 	for (int j = 0; j < i; j++) printf("\t"); // Imprime os tabs de acordo com o nível do nó atual (paragrafação)
 	printf("%d\n", a->chave); // Imprime a chave do nó atual
-	imprimir(a->esq, i + 1); // Imprime a subárvore da esquerda
-	imprimir(a->dir, i + 1); // Imprime a subárvore da direita
+	imprimirP(a->esq, i + 1); // Imprime a subárvore da esquerda
+	imprimirP(a->dir, i + 1); // Imprime a subárvore da direita
 }
 
 PArv liberar (PArv a) {
@@ -134,45 +164,9 @@ int main () {
 	a = inserir_R(a, 80);
 	a = inserir_R(a, 65);
 	
-	imprimir(a, 0);
-	a = remover(a, 20);
-
-	printf("\n===============================\n");
-	imprimir(a, 0);
+	showmenor(a, 500);
+	printf("\n");
+	showmenor(a, 50);
 	a = liberar(a);
 	return 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Questão 2: Escreva uma função que obtenha o menor valor da árvore. 
-int menor (PArv a) {
-	PArv p;
-	for (p = a; p->esq != NULL; p = p->esq); // Encontra o nó mais a esquerda (menor por definição)
-	return p->chave; // Retorna a chave do nó
-}
-
-// Questão 3: Escreva uma função que imprime todos os valores dos nós da árvore que sejam menores que x, em ordem crescente.
-void showmenor (PArv a, int x) {
-
-}
-
-// Questão 4: Escreva uma função que receba uma lista encadeada e construa uma ABB com os elementos desta lista. Liberar a lista e retornar a árvore gerada.
-
-
-// Questão 5: Escreva uma função para verificar se uma árvore binária é ABB.
-int verificaABB (PArv a) {
-	
 }
