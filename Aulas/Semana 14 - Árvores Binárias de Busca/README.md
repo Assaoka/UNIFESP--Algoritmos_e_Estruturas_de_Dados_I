@@ -199,4 +199,12 @@ PArv listaParaABB (PNo lista) {
 
 ### `Questão 5:` Escreva uma função para verificar se uma árvore binária é ABB. O protótipo da função deve ser dado por: int verificaABB (PArv a);
 ~~~c
+int verificaABB (PArv a) {
+	if (a == NULL) return 1; // Condição de parada
+	if (a->esq != NULL && a->esq->chave > a->chave) return 0; // Se o filho a esquerda for maior que o pai, não é ABB
+	if (a->dir != NULL && a->dir->chave < a->chave) return 0; // Se o filho a direita for menor que o pai, não é ABB
+	return verificaABB(a->esq) && verificaABB(a->dir); // Verifica se as subárvores são ABB
+}
 ~~~
+
+##
