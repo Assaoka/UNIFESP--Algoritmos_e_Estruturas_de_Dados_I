@@ -94,7 +94,8 @@ void imprimirD (PArv a) {
 	imprimirD(a->esq); // Imprime a subárvore da esquerda
 }
 
-void imprimir (PArv a, int i) {
+// Provisório (para testar as funções)
+void imprimirP (PArv a, int i) {
 	if (a == NULL) return; // Condição de parada
 	for (int j = 0; j < i; j++) printf("\t"); // Imprime os tabs de acordo com o nível do nó atual (paragrafação)
 	printf("%d\n", a->chave); // Imprime a chave do nó atual
@@ -102,8 +103,14 @@ void imprimir (PArv a, int i) {
 	imprimir(a->dir, i + 1); // Imprime a subárvore da direita
 }
 
+PArv liberar (PArv a) {
+	if (a == NULL) return NULL; // Condição de parada
+	liberar(a->esq); // Libera a subárvore da esquerda
+	liberar(a->dir); // Libera a subárvore da direita
+	free(a); // Libera o nó atual
+	return NULL; // Retorna NULL
+}
 
-// Provisório (para testar as funções)
 int main () {
 	PArv a = NULL;
 	a = inserir_R(a, 90);
@@ -125,6 +132,7 @@ int main () {
 
 	printf("\n===============================\n");
 	imprimir(a, 0);
+	a = liberar(a);
 	return 0;
 }
 
