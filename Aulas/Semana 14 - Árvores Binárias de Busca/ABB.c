@@ -159,7 +159,9 @@ int main () {
 
 // Questão 2: Escreva uma função que obtenha o menor valor da árvore. 
 int menor (PArv a) {
-
+	PArv p;
+	for (p = a; p->esq != NULL; p = p->esq); // Encontra o nó mais a esquerda (menor por definição)
+	return p->chave; // Retorna a chave do nó
 }
 
 // Questão 3: Escreva uma função que imprime todos os valores dos nós da árvore que sejam menores que x, em ordem crescente.
