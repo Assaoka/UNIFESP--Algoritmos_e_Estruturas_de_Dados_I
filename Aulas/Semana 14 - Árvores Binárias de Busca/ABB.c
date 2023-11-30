@@ -70,7 +70,14 @@ PArv remover (PArv a, int chave) {
 
 // ########################################################################
 // ############################## 3. Buscar ###############################
-PArv buscar (PArv a, int chave) {
+PArv buscar_R (PArv a, int chave) {
+	if (a == NULL || a->chave == chave) return a; // Condição de parada (não encontrou ou encontrou, respectivamente)
+	if (chave < a->chave) return buscar_R(a->esq, chave); // Se a chave for menor, procura na subárvore da esquerda
+	else return buscar_R(a->dir, chave); // Se a chave for maior, procura na subárvore da direita
+}
+
+
+PArv buscar_I (PArv a, int chave) {
 	PArv p;
 	for (p = a; p != NULL && p->chave != chave;) // Percorre a árvore até encontrar a chave ou um nó vazio (Não encontrou)
 		if (chave < p->chave) p = p->esq; // Se a chave for menor, vai para a esquerda
@@ -80,14 +87,14 @@ PArv buscar (PArv a, int chave) {
 
 // ########################################################################
 // ############################## 4. Imprimir #############################
-void imprimirC (PArv a) {
+void imprimir_C (PArv a) {
 	if (a == NULL) return; // Condição de parada
 	imprimirC(a->esq); // Imprime a subárvore da esquerda
 	printf("%d ", a->chave); // Imprime a raiz
 	imprimirC(a->dir); // Imprime a subárvore da direita
 }
 
-void imprimirD (PArv a) {
+void imprimir_D (PArv a) {
 	if (a == NULL) return; // Condição de parada
 	imprimirD(a->dir); // Imprime a subárvore da direita
 	printf("%d ", a->chave); // Imprime a raiz
