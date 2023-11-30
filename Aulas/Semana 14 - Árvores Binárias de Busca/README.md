@@ -64,6 +64,12 @@ PArv inserir_I (PArv a, int chave) {
 ~~~
 
 ### `2. Remover:`
+#### `| Passo a passo:`
+1. Encontre o nó a ser removido.
+2. Se o nó a ser removido é `uma folha, basta removê-lo.` Caso contrário, continue.
+3. Caso o nó a ser removido `possua apenas um filho,` basta `substituir o nó a ser removido pelo seu filho.` Caso contrário, continue.
+4. Caso o nó a ser removido `possua dois filhos,` substitua o nó a ser removido pelo `maior nó da subárvore da esquerda.`
+#### `| Função de Remoção:`
 ~~~c
 PArv remover (PArv a, int chave) {
 	PArv ant, p;
