@@ -66,6 +66,33 @@ PArv inserir_I (PArv a, int chave) {
 
 ### `2. Remover:`
 ~~~c
+PArv remover (PArv a, int chave) {
+	PArv ant, p;
+	if (a == NULL) return NULL; // Condição de parada (não encontrou)
+	if (chave < a->chave) a->esq = remover(a->esq, chave); // Se a chave for menor, procura na subárvore da esquerda
+	else if (chave > a->chave) a->dir = remover(a->dir, chave); // Se a chave for maior, procura na subárvore da direita
+	else { // Encontrou o nó 
+		if (a->esq == NULL && a->dir == NULL) { // Nó folha
+			free(a);
+			return NULL;
+		} else if (a->dir == NULL) { // Filho a esquerda apenas
+			p = a->esq;
+			free(a);
+			return p;
+		} else if (a->esq == NULL) { // Filho a direita apenas
+			p = a->dir;
+			free (a);
+			return p;
+		} else { // Dois filhos
+			for (ant = a, p = a->esq; p->dir != NULL; ant = p, p = p->dir); // Procura o maior nó da subárvore da esquerda
+			a->chave = p->chave; // Atribui a chave do maior nó ao nó atual
+			if (ant == a) a->esq = p->esq; // Se o maior nó for o filho a esquerda do nó atual, o filho do filho a esquerda vai ser o filho a esquerda do nó atual
+			else ant->dir = p->esq; // Caso contrário, o pai do maior nó recebe a subárvore da esquerda do maior nó
+			free(p);
+		}
+	}
+	return a; // Retorna o nó atual (Sofrendo alterações ou não)
+}
 ~~~
 
 ### `3. Buscar:`
@@ -83,7 +110,7 @@ PArv buscar (PArv a, int chave) {
 &emsp;&emsp; De acordo com a definição de árvore binária de busca, todo valor na subárvore esquerda de um nó é menor que o valor do nó e todo valor na subárvore direita de um nó é maior que o valor do nó, respectivamente. Dessa forma, podemos imprimir os valores da árvore em ordem crescente ou decrescente de forma simples.
 #### `| Ordem crescente:`
 ~~~c
-void imprimirC (PArv a) {
+void imprimir_C (PArv a) {
 	if (a == NULL) return; // Condição de parada
 	imprimirC(a->esq); // Imprime a subárvore da esquerda
 	printf("%d ", a->chave); // Imprime a raiz
@@ -92,7 +119,7 @@ void imprimirC (PArv a) {
 ~~~
 #### `| Ordem decrescente:`
 ~~~c
-void imprimirD (PArv a) {
+void imprimir_D (PArv a) {
 	if (a == NULL) return; // Condição de parada
 	imprimirD(a->dir); // Imprime a subárvore da direita
 	printf("%d ", a->chave); // Imprime a raiz
