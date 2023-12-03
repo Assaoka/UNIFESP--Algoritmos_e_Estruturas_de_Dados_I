@@ -8,3 +8,4 @@ typedef struct no {
 } SNo;
 typedef SNo *PNo; // ponteiro para SNo
 typedef PNo PME[MAX_LINHA]; // Vetor de ponteiros para guardar o endereço do primeiro nó de cada linha
+
