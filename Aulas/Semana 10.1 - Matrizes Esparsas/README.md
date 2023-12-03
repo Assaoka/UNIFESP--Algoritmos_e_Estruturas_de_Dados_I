@@ -37,6 +37,13 @@ void inserir (PME matriz, int valor, int linha, int coluna) {
 }
 ~~~
 
+### `Remoção:`
+~~~c
+void remover (PME matriz, int linha, int coluna) {
+
+}
+~~~
+
 
 
 
