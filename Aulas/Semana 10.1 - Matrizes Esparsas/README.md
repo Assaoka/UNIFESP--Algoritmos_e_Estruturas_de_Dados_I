@@ -37,11 +37,6 @@ void inserir (PME matriz, int valor, int linha, int coluna) {
 }
 ~~~
 
-### `Remoção:`
-
-### `Busca:`
-
-### `Impressão:`
 
 
 
