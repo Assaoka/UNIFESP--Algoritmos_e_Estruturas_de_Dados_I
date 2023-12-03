@@ -44,6 +44,13 @@ void remover (PME matriz, int linha, int coluna) {
 }
 ~~~
 
+### `Busca:`
+~~~c
+int buscar (PME matriz, int linha, int coluna) {
+
+}
+~~~
+
 
 
 
