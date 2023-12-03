@@ -1,7 +1,5 @@
 <h1 align="center"> Semana 14 - Árvores Binárias de Busca </h1>
 
-Esse resumo ainda está em produção. Caso encontre algum erro, por favor, entre em contato para que eu possa corrigir.
-
 ## Introdução:
 &emsp;&emsp; Imagine que você tem uma lista de números e deseja encontrar um valor específico nessa lista. O método convencional seria percorrer a lista de maneira sequencial, de casa em casa, até encontrar o valor desejado. No entanto, `mesmo que a lista esteja ordenada,` esse método pode se tornar `ineficiente conforme a lista cresce.`
 
