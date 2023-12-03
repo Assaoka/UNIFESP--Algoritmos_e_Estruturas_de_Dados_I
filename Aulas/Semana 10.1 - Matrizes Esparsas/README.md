@@ -51,8 +51,12 @@ int buscar (PME matriz, int linha, int coluna) {
 }
 ~~~
 
+### `Impressão:`
+~~~c
+int imprimir (PME matriz) {
 
-
+}
+~~~
 
 
 
