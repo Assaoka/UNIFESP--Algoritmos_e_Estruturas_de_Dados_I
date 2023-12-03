@@ -15,7 +15,15 @@ typedef PNo PME[MAX_LINHA]; // Vetor de ponteiros para guardar o endereço do pr
 ~~~
 
 ## Operações Básicas com Matrizes Esparsas:
+### `Inicialização:`
 
+### `Inserção:`
+
+### `Remoção:`
+
+### `Busca:`
+
+### `Impressão:`
 
 
 
