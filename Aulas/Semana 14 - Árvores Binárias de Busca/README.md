@@ -177,7 +177,7 @@ void showmenor (PArv a, int x) {
 ~~~
 
 ### `Questão 4:` Escreva uma função que receba uma lista encadeada e construa uma ABB com os elementos desta lista. Liberar a lista e retornar a árvore gerada. 
-&emsp;&emsp; Essa função foi escolhida para mostrar como poderíamos resolver o problema apresentado na introdução, pois podemos transformar uma lista (ordenada ou não) em uma ABB e dessa forma poderíamos usar a busca binária para encontrar elementos de forma eficiente. Claro que construir uma ABB vai ter um custo, mas se a lista for grande e a busca for frequente, esse custo pode ser compensado. 
+&emsp;&emsp; Essa função foi escolhida para mostrar como poderíamos resolver o problema apresentado na introdução, pois podemos transformar uma lista (ordenada ou não) em uma ABB e dessa forma poderíamos usar a busca binária para encontrar elementos de forma eficiente. Claro que construir uma ABB vai ter um custo, mas se a lista for grande e a busca for frequente, esse custo pode ser compensado. Outra observação importante é que, caso a lista esteja ordenada e não seja um tipo de árvore balanceada, a árvore resultante vai ser árvore degenerada, ou seja, uma lista (ou seja, a busca vai ter o mesmo custo de antes).
 ~~~c
 typedef struct No { // Lista Encadeada
 	int info; // Informação do Elemento
