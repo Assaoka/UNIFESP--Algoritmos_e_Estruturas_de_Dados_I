@@ -16,6 +16,12 @@ typedef PNo PME[MAX_LINHA]; // Vetor de ponteiros para guardar o endereço do pr
 
 ## Operações Básicas com Matrizes Esparsas:
 ### `Inicialização:`
+~~~c
+void inicializa(PME matriz) {
+    int i;
+    for (i = 0; i < MAX_LINHA; i++) matriz[i] = NULL;
+}
+~~~
 
 ### `Inserção:`
 
