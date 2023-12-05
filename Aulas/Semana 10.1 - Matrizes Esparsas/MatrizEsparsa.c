@@ -72,3 +72,14 @@ void imprimir (PME matriz, int colunas) {
 	}
 }
 
+// Liberar:
+void liberar (PME matriz) {
+	PNo p;
+	int i;
+	for (i = 0; i < MAX_LINHA; i++) {
+		for (p = matriz[i]; matriz[i] != NULL; p = matriz[i]) { // Percorre a linha liberando os nós
+			matriz[i] = p->prox;
+			free(p);
+		}
+	}
+}
