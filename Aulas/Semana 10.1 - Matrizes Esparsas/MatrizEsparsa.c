@@ -18,15 +18,14 @@ void inicializa(PME matriz) {
 }
 
 // Inserção:
-void inserir (PME matriz, int valor, int linha, int coluna) {
-    PNo ant, p, novo = (PNo)malloc(sizeof(SNo));
+PNo criarNo (int valor, int coluna, PNo prox) { // Aloca um novo nó com os valores passados e retorna o endereço
+    PNo novo = (PNo)malloc(sizeof(SNo));
     novo->valor = valor;
     novo->coluna = coluna;
+    novo->prox = prox;
+    return novo;
+}
 
-    for (ant = NULL, p = matriz[linha]; p != NULL && coluna > p->coluna; ant = p, p = p->prox); // percorre a linha até encontrar a posição correta
-    novo->prox = p;
-    if (ant == NULL) matriz[linha] = novo; // inserção no início da linha
-    else ant->prox = novo; // inserção no meio ou no final da linha
 }
 
 
