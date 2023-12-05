@@ -10,7 +10,6 @@ typedef struct no {
 typedef SNo *PNo; // ponteiro para SNo
 typedef PNo PME[MAX_LINHA]; // Vetor de ponteiros para guardar o endereço do primeiro nó de cada linha
 
-
 // Inicialização:
 void inicializa(PME matriz) {
 	int i;
@@ -80,6 +79,33 @@ void liberar (PME matriz) {
 		for (p = matriz[i]; matriz[i] != NULL; p = matriz[i]) { // Percorre a linha liberando os nós
 			matriz[i] = p->prox;
 			free(p);
+		}
+	}
+}
+
+
+// Questão 1: Crie uma função que encontra o maior valor em uma matriz esparsa e substituí a primeira ocorrência desse valor por 0.
+
+// Questão 2: Faça uma função que receba como parâmetros duas matrizes esparsas e retorne uma matriz esparsa que seja a soma das duas matrizes recebidas. Considere que as matrizes recebidas possuem o mesmo número de linhas e colunas.
+void somaMatrizes (PME matriz1, PME matriz2, PME resposta) {
+	int i, j, valor; 
+	PNo p, q, ant;
+	for (i = 0; i < MAX_LINHA; i++) {
+		for (ant = NULL, p = matriz1[i], q = matriz2[i], j = 0; j < MAX_LINHA; j++) { // Percorre as duas linhas ao mesmo tempo
+			valor = 0;
+			if (p != NULL && p->coluna == j) { // Se existe um elemento na posição na primeira matriz, soma e avança
+				valor += p->valor;
+				p = p->prox;
+			} if (q != NULL && q->coluna == j) { // Se existe um elemento na posição na segunda matriz, soma e avança
+				valor += q->valor;
+				q = q->prox;
+			} if (valor != 0) { // Se o resultado da soma é diferente de zero, insere na matriz resposta
+				if (ant == NULL) resposta[i] = ant = criarNo(valor, j, NULL); // Se é o primeiro elemento da linha
+				else { // Caso contrário
+					ant->prox = criarNo(valor, j, NULL); // Insere no final da linha
+					ant = ant->prox; // Atualiza o ponteiro para o último elemento da linha
+				}
+			}
 		}
 	}
 }
