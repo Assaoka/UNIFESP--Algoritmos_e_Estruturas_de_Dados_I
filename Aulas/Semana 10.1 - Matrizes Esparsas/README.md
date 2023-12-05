@@ -107,6 +107,27 @@ void liberar (PME matriz) {
 ## Exercícios:
 ### `Questão 1:` Crie uma função que encontra o maior valor em uma matriz esparsa e substituí a primeira ocorrência desse valor por 0.
 &emsp;&emsp; Essa questão possui uma pegadinha, pois substituir um elemento por 0 significa remover o elemento da matriz esparsa.
+~~~c
+void apagarMaior (PME matriz) {
+	int i, linhaM;
+	PNo ant, p, antM, pM;
+	for (i = 0, p = matriz[i]; p == NULL && i < MAX_LINHA; i++, p = matriz[i]); // Encontra a primeira linha não vazia
+	for (antM = NULL, pM = matriz[i], linhaM = i; i < MAX_LINHA; i++) {
+		for (ant = NULL, p = matriz[i]; p != NULL; ant = p, p = p->prox) // Percorre a linha
+			if (p->valor > pM->valor) { // Se o valor do elemento é maior que o maior valor encontrado até agora
+				pM = p;
+				antM = ant;
+				linhaM = i;
+			}
+	}
+	if (pM != NULL) { // Se encontrou um elemento (a matriz não é vazia)
+		if (antM == NULL) matriz[linhaM] = pM->prox; 
+		else antM->prox = pM->prox;
+		free(pM);
+	}
+}
+~~~
+
 
 ### `Questão 2:` Faça uma função que receba como parâmetros duas matrizes esparsas e retorne uma matriz esparsa que seja a soma das duas matrizes recebidas. Considere que as matrizes recebidas possuem o mesmo número de linhas e colunas.
 &emsp;&emsp; Essa questão possui a mesma pegadinha da questão 1, pois a soma de duas matrizes esparsas pode resultar em um elemento igual a zero, ou seja, um elemento que não deve ser inserido na matriz esparsa resposta.
