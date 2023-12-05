@@ -56,6 +56,17 @@ int buscar (PME matriz, int linha, int coluna) {
 }
 
 // Impressão:
-int imprimir (PME matriz) {
-
+void imprimir (PME matriz, int linhas, int colunas) {
+	PNo p;
+	int i, j;
+	for (i = 0; i < linhas; i++) {
+		for (j = 0, p = matriz[i]; j < colunas; j++) {
+			if (p != NULL && p->coluna == j) { // Se existe um elemento na posição
+				printf("%d\t", p->valor); // Imprime o valor
+				p = p->prox; // Avança para o próximo elemento da linha
+			} else printf("0\t"); // Se não existe um elemento na posição, imprime 0
+		}
+		printf("\n");
+	}
 }
+
