@@ -15,7 +15,7 @@ typedef PNo PME[MAX_LINHA]; // Vetor de ponteiros para guardar o endereço do pr
 ~~~
 
 ## Operações Básicas com Matrizes Esparsas:
-### `Inicialização:`
+### `1. Inicialização:`
 ~~~c
 void inicializa(PME matriz) {
 	int i;
@@ -23,7 +23,7 @@ void inicializa(PME matriz) {
 }
 ~~~
 
-### `Inserção:`
+### `2. Inserção:`
 ~~~c
 PNo criarNo (int valor, int coluna, PNo prox) { // Aloca um novo nó com os valores passados e retorna o endereço
 	PNo novo = (PNo)malloc(sizeof(SNo));
@@ -44,7 +44,7 @@ void inserir (PME matriz, int valor, int linha, int coluna) {
 }
 ~~~
 
-### `Remoção:`
+### `3. Remoção:`
 &emsp;&emsp; Uma coisa importante a se notar é que remover um elemento de uma matriz esparsa significa zerar o valor da posição na matriz esparsa, pois se um elemento não está na lista, ele é considerado zero.
 ~~~c
 void remover (PME matriz, int linha, int coluna) {
@@ -58,7 +58,7 @@ void remover (PME matriz, int linha, int coluna) {
 }
 ~~~
 
-### `Busca:`
+### `4. Busca:`
 &emsp;&emsp; Essa operação é bem simples e permite acessar o valor de uma posição da matriz esparsa como se fosse uma matriz normal. Essa operação não é eficiente para fazer operações que utilizam diversos elementos próximos da matriz, como multiplicação de matrizes ou uma simples impressão da matriz, pois é necessário percorrer a lista até encontrar o elemento desejado toda vez que for acessar um elemento da matriz.
 ~~~c
 int buscar (PME matriz, int linha, int coluna) {
@@ -69,12 +69,24 @@ int buscar (PME matriz, int linha, int coluna) {
 }
 ~~~
 
-### `Impressão:`
+### `5. Impressão:`
 ~~~c
-int imprimir (PME matriz) {
-
+void imprimir (PME matriz, int linhas, int colunas) {
+	PNo p;
+	int i, j;
+	for (i = 0; i < linhas; i++) {
+		for (j = 0, p = matriz[i]; j < colunas; j++) {
+			if (p != NULL && p->coluna == j) { // Se existe um elemento na posição
+				printf("%d\t", p->valor); // Imprime o valor
+				p = p->prox; // Avança para o próximo elemento da linha
+			} else printf("0\t"); // Se não existe um elemento na posição, imprime 0
+		}
+		printf("\n");
+	}
 }
 ~~~
+
+### `6. Liberar:`
 
 
 
