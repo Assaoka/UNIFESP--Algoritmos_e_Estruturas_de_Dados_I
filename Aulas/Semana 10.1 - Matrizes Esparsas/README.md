@@ -105,4 +105,32 @@ void liberar (PME matriz) {
 
 
 ## Exercícios:
-### `Questão 1:`
+### `Questão 1:` Crie uma função que encontra o maior valor em uma matriz esparsa e substituí a primeira ocorrência desse valor por 0.
+&emsp;&emsp; Essa questão possui uma pegadinha, pois substituir um elemento por 0 significa remover o elemento da matriz esparsa.
+
+### `Questão 2:` Faça uma função que receba como parâmetros duas matrizes esparsas e retorne uma matriz esparsa que seja a soma das duas matrizes recebidas. Considere que as matrizes recebidas possuem o mesmo número de linhas e colunas.
+&emsp;&emsp; Essa questão possui a mesma pegadinha da questão 1, pois a soma de duas matrizes esparsas pode resultar em um elemento igual a zero, ou seja, um elemento que não deve ser inserido na matriz esparsa resposta.
+~~~c
+void somaMatrizes (PME matriz1, PME matriz2, PME resposta) {
+	int i, j, valor; 
+	PNo p, q, ant;
+	for (i = 0; i < MAX_LINHA; i++) {
+		for (ant = NULL, p = matriz1[i], q = matriz2[i], j = 0; j < MAX_LINHA; j++) { // Percorre as duas linhas ao mesmo tempo
+			valor = 0;
+			if (p != NULL && p->coluna == j) { // Se existe um elemento na posição na primeira matriz, soma e avança
+				valor += p->valor;
+				p = p->prox;
+			} if (q != NULL && q->coluna == j) { // Se existe um elemento na posição na segunda matriz, soma e avança
+				valor += q->valor;
+				q = q->prox;
+			} if (valor != 0) { // Se o resultado da soma é diferente de zero, insere na matriz resposta
+				if (ant == NULL) resposta[i] = ant = criarNo(valor, j, NULL); // Se é o primeiro elemento da linha
+				else { // Caso contrário
+					ant->prox = criarNo(valor, j, NULL); // Insere no final da linha
+					ant = ant->prox; // Atualiza o ponteiro para o último elemento da linha
+				}
+			}
+		}
+	}
+}
+~~~
