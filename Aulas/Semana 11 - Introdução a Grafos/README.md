@@ -58,4 +58,20 @@ Dos 36 espaços da matriz, apenas 8 são preenchidos. Ou seja, apenas 22% da mat
 &emsp;&emsp; Apropriada para grafos mais esparsos (com poucas arestas) e para casos em que é necessário percorrer todos os vértices adjacentes a um vértice rapidamente.
 
 
+## Matriz de Incidência:
 &emsp;&emsp; Uma matriz de ordem n x m, sendo n o número de vértices e m o número de arestas, onde cada posição representa se uma aresta está ligada a um vértice.
+
+&emsp;&emsp; Caso exista uma aresta que sai do vértice i e chega no vértice j, a linha i coluna ij da matriz recebe o valor 1. Caso exista uma aresta que sai de j e chega em i, a linha i coluna ij recebe o valor -1. Caso contrário, recebe o valor 0. Caso seja um grafo não direcionado, a matriz possui apenas valores 0 e 1.
+
+
+### `| Exemplo:`
+![Alt text](image.png)
+|   |`1,2`|`1,3`|`1,4`|`2,3`|`3,3`|`3,4`|`5,6`|
+|---|-----|-----|-----|-----|-----|-----|-----|
+|`1`|  1  | -1  |  1  |  0  |  0  |  0  |  0  |
+|`2`| -1  |  0  |  0  |  1  |  0  |  0  |  0  |
+|`3`|  0  |  1  |  0  | -1  |  1  |  1  |  0  |
+|`4`|  0  |  0  |  1  |  0  |  0  | -1  |  0  |
+|`5`|  0  |  0  |  0  |  0  |  0  |  0  | -1  |
+|`6`|  0  |  0  |  0  |  0  |  1  |  0  |  1  |
+
