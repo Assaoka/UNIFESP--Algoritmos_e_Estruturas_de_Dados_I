@@ -52,3 +52,11 @@ Dos 36 espaços da matriz, apenas 8 são preenchidos. Ou seja, apenas 22% da mat
 2. A simples inicialização da matriz pode ser dominante na execução global do algoritmo.
 3. Pode sequer ser possível inicializar a matriz se o número de vértices for muito grande.
 
+### `Lista de Adjacência:`
+&emsp;&emsp; Essa representação é basicamente uma versão compacta da matriz de adjacência. Cada vértice é uma lista encadeada que guarda os vértices adjacentes a ele, ou seja, temos uma matriz esparsa (tema abordado na semana 10).
+
+&emsp;&emsp; Apropriada para grafos mais esparsos (com poucas arestas) e para casos em que é necessário percorrer todos os vértices adjacentes a um vértice rapidamente.
+
+
+### Matriz de Incidência:
+&emsp;&emsp; Uma matriz de ordem n x m, sendo n o número de vértices e m o número de arestas, onde cada posição representa se uma aresta está ligada a um vértice.
