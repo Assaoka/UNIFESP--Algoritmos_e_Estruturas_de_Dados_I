@@ -41,3 +41,14 @@
 Dos 36 espaços da matriz, apenas 8 são preenchidos. Ou seja, apenas 22% da matriz é utilizada nesse caso.
 
 
+#### `| Vantagens:`
+1. Acesso rápido a existência de uma aresta entre dois vértices.
+2. Adição e remoção de arestas é simples.
+3. Fácil evitar a existência de arestas paralelas.
+4. Arranjo bidimensional de booleanos.
+
+#### `| Desvantagens:`
+1. Ocupa uma quantidade de memória proporcional a n². Não é apropriada para grafos esparsos (com poucas arestas).
+2. A simples inicialização da matriz pode ser dominante na execução global do algoritmo.
+3. Pode sequer ser possível inicializar a matriz se o número de vértices for muito grande.
+
