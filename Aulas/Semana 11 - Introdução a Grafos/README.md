@@ -20,3 +20,24 @@
 17. `Sub-Grafo:` Grafo que possui um subconjunto de vértices e arestas de um grafo maior.
 18. `Completo:` Grafo em que todos os vértices são adjacentes entre si. Ou seja, todos os vértices possuem arestas que os ligam a todos os outros vértices.
 
+## Representação de Grafos:
+### `Matriz de Adjacência:`
+&emsp;&emsp; Uma matriz quadrada de ordem n, sendo n o número de vértices, onde cada posição representa uma aresta do grafo.
+&emsp;&emsp; Caso exista uma aresta que sai do vértice i e chega no vértice j, a posição linha i coluna j da matriz recebe o valor 1. Caso contrário, recebe o valor 0.
+
+&emsp;&emsp; Apropriada para grafos mais densos (com muitas arestas) e para casos em que é necessário verificar se existe uma aresta entre dois vértices rapidamente.
+
+#### `| Exemplo:`
+![Alt text](image.png)
+|   |`1`|`2`|`3`|`4`|`5`|`6`|
+|---|---|---|---|---|---|---|
+|`1`| 0 | 1 | 0 | 1 | 0 | 0 |
+|`2`| 0 | 0 | 1 | 0 | 0 | 0 |
+|`3`| 1 | 0 | 1 | 1 | 0 | 0 |
+|`4`| 1 | 0 | 0 | 0 | 0 | 0 |
+|`5`| 0 | 0 | 0 | 0 | 0 | 0 |
+|`6`| 0 | 0 | 0 | 0 | 1 | 0 |
+
+Dos 36 espaços da matriz, apenas 8 são preenchidos. Ou seja, apenas 22% da matriz é utilizada nesse caso.
+
+
