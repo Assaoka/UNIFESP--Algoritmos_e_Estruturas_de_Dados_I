@@ -1,4 +1,3 @@
-Semana 11 - Introdução a Grafos/README.md
 <h1 align="center"> Semana 11 - Introdução a Grafos </h1>
 
 ## Terminologia:
