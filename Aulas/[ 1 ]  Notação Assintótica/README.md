@@ -1,7 +1,7 @@
-<h1 align="center"> Semana 2 - Notação Assintótica </h1>
+<h1 align="center"> Notação Assintótica </h1>
 
 ## Explicação do Conteúdo 
-Em Breve ... (Dezembro de 2023)
+Em Breve ...
 
 
 ## Problema 1 - Contagem de Letras em Strings

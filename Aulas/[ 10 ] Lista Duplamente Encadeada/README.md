@@ -1,4 +1,4 @@
-<h1 align="center"> Semana 8.2 - Lista Duplamente Encadeada </h1>
+<h1 align="center"> Lista Duplamente Encadeada </h1>
 
 ## Definição de Lista Duplamente Encadeada:
 Uma Lista Duplamente Encadeada é uma Lista em que Cada Nó Possui Dois Ponteiros (Um para o Próximo Elemento e Outro para o Elemento Anterior).
