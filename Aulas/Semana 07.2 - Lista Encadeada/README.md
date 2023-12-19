@@ -20,7 +20,7 @@ typedef SNo *PNo;
 
 
 
-## Operações Básicas com Pilhas Encadeadas:
+## Operações Básicas com Lista Encadeada:
 ### `1. Inserir Nó:`
 #### `| Início:`
 ~~~c
