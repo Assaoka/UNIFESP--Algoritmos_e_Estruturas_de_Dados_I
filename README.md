@@ -2,12 +2,27 @@
 &emsp;&emsp; Este espaço foi criado com o propósito de compartilhar os conteúdos e projetos relacionados ao curso de Algoritmos e Estruturas de Dados I do 2º semestre de 2023 na UNIFESP. Aqui, você terá acesso aos exercícios propostos pelo professor, bem como às minhas soluções. Espero que este material seja útil para aqueles que desejam aprender ou revisar conceitos fundamentais de algoritmos e estruturas de dados em linguagem C.
 
 ## `Materiais:`
-🔹 [Semana 5 - Pilha Sequencial](./Aulas/Semana%205%20-%20Pilha%20Sequencial)
-<br>🔹 [Semana 6 - Pilha Encadeada](./Aulas/Semana%206%20-%20Pilha%20Encadeada)
-<br>🔹 [Semana 7.1 - Fila Encadeada](./Aulas/Semana%207.1%20-%20Fila%20Encadeada)
-<br>🔹 [Semana 7.2 - Lista Encadeada](./Aulas/Semana%207.2%20-%20Lista%20Encadeada)
-<br>🔹 [Semana 8.1 - Lista Encadeada Circular](./Aulas/Semana%208.1%20-%20Lista%20Encadeada%20Circular)
-<br>🔹 Em Breve...
+`Observação:` Alguns materiais ainda estão sendo desenvolvidos, portanto, podem conter erros ou estarem incompletos. Caso encontre algum erro, por favor, entre em contato comigo.
+
+📫 Contato: joaovictorar11@gmail.com
+
+📁 [Notação Assintótica](./Aulas/[%20%201%20]%20%20Notação%20Assintótica/)
+<br> 📁 [Struct e Ponteiro](./Aulas/[%20%202%20]%20Struct%20e%20Ponteiro/)
+<br> 📁 [Alocação de Vetores e Matrizes](./Aulas/[%20%203%20]%20Alocação%20de%20Vetores%20e%20Matrizes/)
+<br> 📁 [Arquivos](./Aulas/[%20%204%20]%20Arquivos/)
+<br> 📁 [Pilha Sequencial](./Aulas/[%20%205%20]%20Pilha%20Sequencial/)
+<br> 📁 [Pilha Encadeada](./Aulas/[%20%206%20]%20Pilha%20Encadeada/)
+<br> 📁 [Fila Encadeada](./Aulas/[%20%207%20]%20Fila%20Encadeada/)
+<br> 📁 [Lista Encadeada](./Aulas/[%20%208%20]%20Lista%20Encadeada/)
+<br> 📁 [Lista Encadeada Circular](./Aulas/[%20%209%20]%20Lista%20Encadeada%20Circular/)
+<br> 📁 [Lista Duplamente Encadeada](./Aulas/[%2010%20]%20Lista%20Duplamente%20Encadeada/)
+<br> 📁 [Lista Genérica](./Aulas/[%2011%20]%20Lista%20Genérica/)
+<br> 📁 [Matrizes Esparsas](./Aulas/[%2012%20]%20Matrizes%20Esparsas/)
+<br> 📁 [Introdução a Grafos](./Aulas/[%2013%20]%20Introdução%20a%20Grafos/)
+<br> 📁 [Introdução a Árvores](./Aulas/[%2014%20]%20Introdução%20a%20Árvores%20Binárias/)
+<br> 📁 [Árvores Genéricas](./Aulas/[%2015%20]%20Árvores%20Genéricas/)
+<br> 📁 [Árvores de Expressão](./Aulas/[%2016%20]%20Árvores%20de%20Expressão/)
+<br> 📁 [Árvores Binárias de Busca](./Aulas/[%2017%20]%20Árvores%20Binárias%20de%20Busca/)
 
 
 
