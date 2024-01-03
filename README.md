@@ -6,9 +6,9 @@
 
 📫 Contato: joaovictorar11@gmail.com
 
-📁 [Notação Assintótica](./Aulas/[%20%201%20]%20%20Notação%20Assintótica/)
+📁 [Definições Iniciais](./Aulas/[%20%201%20]%20%20Definições%20Iniciais/)
 <br> 📁 [Struct e Ponteiro](./Aulas/[%20%202%20]%20Struct%20e%20Ponteiro/)
-<br> 📁 [Alocação de Vetores e Matrizes](./Aulas/[%20%203%20]%20Alocação%20de%20Vetores%20e%20Matrizes/)
+<br> 📁 [Alocação Dinâmica de Vetores e Matrizes](./Aulas/[%20%203%20]%20Alocação%20Dinâmica%20de%20Vetores%20e%20Matrizes/)
 <br> 📁 [Arquivos](./Aulas/[%20%204%20]%20Arquivos/)
 <br> 📁 [Pilha Sequencial](./Aulas/[%20%205%20]%20Pilha%20Sequencial/)
 <br> 📁 [Pilha Encadeada](./Aulas/[%20%206%20]%20Pilha%20Encadeada/)
