@@ -7,7 +7,7 @@
 📁 [Definições Iniciais](./[%20%201%20]%20%20Definições%20Iniciais/)
 <br> 📁 [Struct e Ponteiro](./[%20%202%20]%20Struct%20e%20Ponteiro/)
 <br> 📁 [Alocação Dinâmica de Vetores e Matrizes](./[%20%203%20]%20Alocação%20Dinâmica%20de%20Vetores%20e%20Matrizes/)
-<br> 📁 [Arquivos](./[%20%204%20]%20Arquivos/)
+<br> 📁 [Manipulação de Arquivos](./[%20%204%20]%20Manipulação%20de%20Arquivos/)
 <br> 📁 [Pilha Sequencial](./[%20%205%20]%20Pilha%20Sequencial/)
 <br> 📁 [Pilha Encadeada](./[%20%206%20]%20Pilha%20Encadeada/)
 <br> 📁 [Fila Encadeada](./[%20%207%20]%20Fila%20Encadeada/)
