@@ -1,6 +1,6 @@
-<h1 align="center"> Lista Encadeada </h1>
+<h1 align="center" style="text-decoration: underline; font-weight: bold;"> Lista Encadeada </h1>
 
-## Definição de Lista Encadeada:
+# Definição de Lista Encadeada:
 Uma Lista Encadeada é uma Generalização das Pilhas e Filas:
 <br>&emsp;&emsp; 1. O `Novo Elemento` pode ser Inserido em `Qualquer Posição da Lista.`
 <br>&emsp;&emsp; 2. O `Novo Elemento` pode ser Retirado em `Qualquer Posição da Lista.`
@@ -20,9 +20,9 @@ typedef SNo *PNo;
 
 
 
-## Operações Básicas com Lista Encadeada:
-### `1. Inserir Nó:`
-#### `| Início:`
+# Operações Básicas com Lista Encadeada:
+## `1. Inserir Nó:`
+### `| Início:`
 ~~~c
 PNo inserirIni (PNo lista, tipoElemento v) {
 	PNo novo = (PNo) malloc(sizeof(SNo)); // Aloca Memória para o Novo Nó
@@ -32,7 +32,7 @@ PNo inserirIni (PNo lista, tipoElemento v) {
 	return lista; // Retorna a Lista Atualizada (Novo Nó)
 }
 ~~~
-#### `| Fim:`
+### `| Fim:`
 ~~~c
 PNo inserirFim (PNo lista, tipoElemento v) {
 	PNo novo = (PNo) malloc (sizeof(SNo)); // Aloca Memória para o Novo Nó
@@ -47,7 +47,7 @@ PNo inserirFim (PNo lista, tipoElemento v) {
 	return lista; // Retorna a Lista Atualizada (Primeiro Elemento, Sofrendo Alterações ou Não)
 }
 ~~~
-#### `| Índex:`
+### `| Índex:`
 Iremos considerar que 0 representa a primeira posição na lista. Além disso, a inserção ocorrerá no início se o índice for menor que 0 e no final se for maior do que o tamanho da lista, como tratamento de erros.
 ~~~c
 PNo inserirIndex (PNo lista, tipoElemento v, int index) { 
@@ -69,8 +69,8 @@ PNo inserirIndex (PNo lista, tipoElemento v, int index) {
 }
 ~~~
 
-### `2. Remover Nó:`
-#### `| Início:`
+## `2. Remover Nó:`
+### `| Início:`
 ~~~c
 PNo removerIni (PNo lista, tipoElemento *v) {
 	PNo lixo = lista; // Ponteiro para o Nó que Será Removido
@@ -82,7 +82,7 @@ PNo removerIni (PNo lista, tipoElemento *v) {
 	return lista; // Retorna a Lista Atualizada (Próximo do Nó Removido)
 }
 ~~~
-#### `| Fim:`
+### `| Fim:`
 ~~~c
 PNo removerFim (PNo lista, tipoElemento *v) {
 	PNo ant, lixo; // ant = Ponteiro para o Nó Anterior, lixo = Ponteiro para o Nó que Será Removido
@@ -98,7 +98,7 @@ PNo removerFim (PNo lista, tipoElemento *v) {
 	return lista; // Retorna a Lista Atualizada (Primeiro Elemento, Sofrendo Alterações ou Não)
 }
 ~~~
-#### `| Índex:`
+### `| Índex:`
 ~~~c
 PNo removerIndex (PNo lista, tipoElemento *v, int index) {
 	PNo ant, lixo; // ant = Ponteiro para o Nó Anterior, lixo = Ponteiro para o Nó que Será Removido
@@ -115,7 +115,7 @@ PNo removerIndex (PNo lista, tipoElemento *v, int index) {
 }
 ~~~
 
-### `3. Buscar:`
+## `3. Buscar:`
 ~~~c
 PNo buscar (PNo lista, tipoElemento v) {
 	PNo procurado; // Ponteiro para Percorrer a Lista
@@ -125,7 +125,7 @@ PNo buscar (PNo lista, tipoElemento v) {
 }
 ~~~
 
-### `4. Listar:`
+## `4. Listar:`
 ~~~c
 void listar (PNo lista) {
 	PNo aux; // Ponteiro Auxiliar para Percorrer a Lista
@@ -135,7 +135,7 @@ void listar (PNo lista) {
 }
 ~~~
 
-### `5. Liberar:`
+## `5. Liberar:`
 ~~~c
 PNo liberar (PNo lista) {
 	PNo aux; // Ponteiro Auxiliar para Percorrer a Lista
@@ -149,7 +149,7 @@ PNo liberar (PNo lista) {
 
 
 
-## Teste para as Funções:
+# Teste para as Funções:
 ~~~c
 int main () {
 	PNo lista = NULL, auxBusca;
