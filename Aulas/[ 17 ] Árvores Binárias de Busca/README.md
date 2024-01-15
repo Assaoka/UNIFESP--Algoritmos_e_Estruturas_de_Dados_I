@@ -27,7 +27,7 @@ typedef SArv *PArv;
 1. Se a árvore é `vazia, o novo nó é a raiz.` Caso contrário, continue.
 2. Se a `chave` do novo elemento é `menor que a raiz` da subárvore, `insere na subárvore esquerda.` Caso contrário, insere na subárvore direita.
 3. Caso o `local de inserção já esteja ocupado, repete` o processo a partir do passo 2.
-#### `| Função auxiliar para criar um novo nó:`
+### `| Função auxiliar para criar um novo nó:`
 ~~~c
 PArv cria (int chave) {
 	PArv novo = (PArv)malloc(sizeof(SArv)); // Aloca memória para o novo nó
