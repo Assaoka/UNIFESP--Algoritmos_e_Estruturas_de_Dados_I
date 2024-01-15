@@ -1,3 +1,0 @@
-<h1 align="center"> Arquivos </h1>
-
-Em Breve...
