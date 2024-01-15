@@ -1,4 +1,4 @@
-<b><h1 align="center"> Materiais de Algoritmos e Estruturas de Dados I </h1>
+<h1 align="center" style="text-decoration: underline; font-weight: bold;"> Materiais de Algoritmos e Estruturas de Dados I </h1>
 
 `Observação:` Alguns materiais ainda estão sendo desenvolvidos, portanto, podem conter erros ou estarem incompletos. Caso encontre algum erro, por favor, entre em contato comigo.
 
@@ -21,4 +21,3 @@
 <br> 📁 [Árvores Genéricas](./[%2015%20]%20Árvores%20Genéricas/)
 <br> 📁 [Árvores de Expressão](./[%2016%20]%20Árvores%20de%20Expressão/)
 <br> 📁 [Árvores Binárias de Busca](./[%2017%20]%20Árvores%20Binárias%20de%20Busca/)
-</b>

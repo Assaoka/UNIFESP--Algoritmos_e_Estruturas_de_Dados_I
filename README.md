@@ -1,7 +1,7 @@
-<h1  align="center"> Olá! Bem-vindo ao Repositório <br>de Algoritmos e Estruturas de Dados I </h1>
+<h1 align="center" style="text-decoration: underline; font-weight: bold;"> Olá! Bem-vindo ao Repositório <br>de Algoritmos e Estruturas de Dados I </h1>
 &emsp;&emsp; Este espaço foi criado com o propósito de compartilhar os conteúdos e projetos relacionados ao curso de Algoritmos e Estruturas de Dados I do 2º semestre de 2023 na UNIFESP. Aqui, você terá acesso aos exercícios propostos pelo professor, bem como às minhas soluções. Espero que este material seja útil para aqueles que desejam aprender ou revisar conceitos fundamentais de algoritmos e estruturas de dados em linguagem C.
 
-## `Materiais:`
+# Materiais:
 `Observação:` Alguns materiais ainda estão sendo desenvolvidos, portanto, podem conter erros ou estarem incompletos. Caso encontre algum erro, por favor, entre em contato comigo.
 
 📫 Contato: joaovictorar11@gmail.com
@@ -26,7 +26,7 @@
 
 
 
-## `Sobre o Autor:`
+# Sobre o Autor:
 <img src="https://avatars.githubusercontent.com/u/130188340?s=200&u=83c9d36fc760730d693236248c76d9464e4b92fc&v=4" alt="Minha Foto" align="left" width="15%" height="15%" style="margin-right: 10px">
 
 <p align="justify">

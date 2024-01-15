@@ -1,6 +1,6 @@
-<h1 align="center"> Árvores Binárias de Busca </h1>
+<h1 align="center" style="text-decoration: underline; font-weight: bold;"> Árvores Binárias de Busca </h1>
 
-## Introdução:
+# Introdução:
 &emsp;&emsp; Imagine que você tem uma lista de números e deseja encontrar um valor específico nessa lista. O método convencional seria percorrer a lista de maneira sequencial, de casa em casa, até encontrar o valor desejado. No entanto, `mesmo que a lista esteja ordenada,` esse método pode se tornar `ineficiente conforme a lista cresce.`
 
 &emsp;&emsp; Uma alternativa seria `dividir a lista ordenada em duas partes` (uma parte com os valores menores e outra com os valores maiores) e verificar em qual das duas partes o valor desejado se encontra. Se o valor desejado for menor que o valor do meio da lista, então o valor desejado só pode estar na primeira metade da lista. Caso contrário, o valor desejado só pode estar na segunda metade da lista. `Esse método é conhecido como busca binária.`
@@ -21,9 +21,9 @@ typedef SArv *PArv;
 ~~~
 
 
-## Operações Básicas com Árvores Binárias de Busca:
-### `1. Inserir:`
-#### `| Passo a passo:`
+# Operações Básicas com Árvores Binárias de Busca:
+## `1. Inserir:`
+### `| Passo a passo:`
 1. Se a árvore é `vazia, o novo nó é a raiz.` Caso contrário, continue.
 2. Se a `chave` do novo elemento é `menor que a raiz` da subárvore, `insere na subárvore esquerda.` Caso contrário, insere na subárvore direita.
 3. Caso o `local de inserção já esteja ocupado, repete` o processo a partir do passo 2.
@@ -36,7 +36,7 @@ PArv cria (int chave) {
 	return novo; // Retorna o novo nó
 }
 ~~~
-#### `| Inserção na forma recursiva:`
+### `| Inserção na forma recursiva:`
 ~~~c
 PArv inserir_R (PArv a, int chave) {
 	if (a == NULL) return cria(chave); // Se a subárvore estiver vazia, cria o nó e retorna
@@ -45,7 +45,7 @@ PArv inserir_R (PArv a, int chave) {
 	return a; // Retorna o nó atual
 }
 ~~~
-#### `| Inserção na forma iterativa:`
+### `| Inserção na forma iterativa:`
 ~~~c
 PArv inserir_I (PArv a, int chave) {
 	PArv p, ant;
@@ -61,13 +61,13 @@ PArv inserir_I (PArv a, int chave) {
 }
 ~~~
 
-### `2. Remover:`
-#### `| Passo a passo:`
+## `2. Remover:`
+### `| Passo a passo:`
 1. Encontre o nó a ser removido.
 2. Se o nó a ser removido é `uma folha, basta removê-lo.` Caso contrário, continue.
 3. Caso o nó a ser removido `possua apenas um filho,` basta `substituir o nó a ser removido pelo seu filho.` Caso contrário, continue.
 4. Caso o nó a ser removido `possua dois filhos,` substitua o nó a ser removido pelo `maior nó da subárvore da esquerda.`
-#### `| Função de Remoção:`
+### `| Função de Remoção:`
 ~~~c
 PArv remover (PArv a, int chave) {
 	PArv ant, p;
@@ -98,8 +98,8 @@ PArv remover (PArv a, int chave) {
 }
 ~~~
 
-### `3. Buscar:`
-#### `| Busca na forma recursiva:`
+## `3. Buscar:`
+### `| Busca na forma recursiva:`
 ~~~c
 PArv buscar_R (PArv a, int chave) {
 	if (a == NULL || a->chave == chave) return a; // Condição de parada (não encontrou ou encontrou, respectivamente)
@@ -107,7 +107,7 @@ PArv buscar_R (PArv a, int chave) {
 	else return buscar_R(a->dir, chave); // Se a chave for maior, procura na subárvore da direita
 }
 ~~~
-#### `| Busca na forma iterativa:`
+### `| Busca na forma iterativa:`
 ~~~c
 PArv buscar (PArv a, int chave) {
 	PArv p;
@@ -118,9 +118,9 @@ PArv buscar (PArv a, int chave) {
 }
 ~~~
 
-### `4. Imprimir:`
+## `4. Imprimir:`
 &emsp;&emsp; De acordo com a definição de árvore binária de busca, todo valor na subárvore esquerda de um nó é menor que o valor do nó e todo valor na subárvore direita de um nó é maior que o valor do nó, respectivamente. Dessa forma, podemos imprimir os valores da árvore em ordem crescente ou decrescente de forma simples.
-#### `| Ordem crescente:`
+### `| Ordem crescente:`
 ~~~c
 void imprimir_C (PArv a) {
 	if (a == NULL) return; // Condição de parada
@@ -129,7 +129,7 @@ void imprimir_C (PArv a) {
 	imprimir_C(a->dir); // Imprime a subárvore da direita
 }
 ~~~
-#### `| Ordem decrescente:`
+### `| Ordem decrescente:`
 ~~~c
 void imprimir_D (PArv a) {
 	if (a == NULL) return; // Condição de parada
@@ -140,8 +140,8 @@ void imprimir_D (PArv a) {
 ~~~
 
 
-## Exercícios:
-### `Questão 1:` Considere uma ABB A de números inteiros contendo todos os números entre 1 e 1000. Dentre as sequências abaixo, indique qual(is) a(s) que pode(m) corresponder a uma sequência de elementos de A visitados em ordem prefixa durante a operação de pesquisa do elemento 363. Para cada uma das sequências não válidas, indique o problema.
+# Exercícios:
+## `Questão 1:` Considere uma ABB A de números inteiros contendo todos os números entre 1 e 1000. Dentre as sequências abaixo, indique qual(is) a(s) que pode(m) corresponder a uma sequência de elementos de A visitados em ordem prefixa durante a operação de pesquisa do elemento 363. Para cada uma das sequências não válidas, indique o problema.
 &emsp;&emsp; Para resolver essa questão, basta lembrar que se um elemento está a esquerda da raiz, ele é menor que a raiz. Se ele está a direita da raiz, ele é maior que a raiz.
 
 &emsp;&emsp; Utilizando essa definição é fácil checar se uma sequência é válida ou não. Basta olhar a cada operação os próximos elementos, caso o elemento atual seja menor que o procurado, devemos procurar na subárvore da direita (logo todos os elementos devem ser maiores que dois).
@@ -161,7 +161,7 @@ void imprimir_D (PArv a) {
 `Gabarito:` I - Verdadeiro, II - Verdadeiro, III - Falso (911 -> 912), IV - Verdadeiro, V - Falso (347 -> 299)
 
 
-### `Questão 2:` Escreva uma função que obtenha o menor valor da árvore. O protótipo da função deve ser dado por: int menor (PArv a);
+## `Questão 2:` Escreva uma função que obtenha o menor valor da árvore. O protótipo da função deve ser dado por: int menor (PArv a);
 ~~~c
 int menor (PArv a) {
 	PArv p;
@@ -171,7 +171,7 @@ int menor (PArv a) {
 ~~~
 `Obs:` Para encontrar o maior valor, basta substituir `p->esq` por `p->dir`. Por definição o nó mais a direita é sempre o maior nó.
 
-### `Questão 3:` Escreva uma função que imprime todos os valores dos nós da árvore que sejam menores que x, em ordem crescente. O protótipo da função deve ser dado por: void showmenor (PArv a, int x);
+## `Questão 3:` Escreva uma função que imprime todos os valores dos nós da árvore que sejam menores que x, em ordem crescente. O protótipo da função deve ser dado por: void showmenor (PArv a, int x);
 ~~~c
 void showmenor (PArv a, int x) {
 	if (a == NULL) return; // Condição de parada
@@ -183,7 +183,7 @@ void showmenor (PArv a, int x) {
 }
 ~~~
 
-### `Questão 4:` Escreva uma função que receba uma lista encadeada e construa uma ABB com os elementos desta lista. Liberar a lista e retornar a árvore gerada. 
+## `Questão 4:` Escreva uma função que receba uma lista encadeada e construa uma ABB com os elementos desta lista. Liberar a lista e retornar a árvore gerada. 
 &emsp;&emsp; Essa função foi escolhida para mostrar como poderíamos resolver o problema apresentado na introdução, pois podemos transformar uma lista (ordenada ou não) em uma ABB e dessa forma poderíamos usar a busca binária para encontrar elementos de forma eficiente. Claro que construir uma ABB vai ter um custo, mas se a lista for grande e a busca for frequente, esse custo pode ser compensado. Outra observação importante é que, caso a lista esteja ordenada e não seja um tipo de árvore balanceada, a árvore resultante vai ser árvore degenerada, ou seja, uma lista (ou seja, a busca vai ter o mesmo custo de antes).
 ~~~c
 typedef struct No { // Lista Encadeada
@@ -204,7 +204,7 @@ PArv listaParaABB (PNo lista) {
 }
 ~~~
 
-### `Questão 5:` Escreva uma função para verificar se uma árvore binária é ABB. O protótipo da função deve ser dado por: int verificaABB (PArv a);
+## `Questão 5:` Escreva uma função para verificar se uma árvore binária é ABB. O protótipo da função deve ser dado por: int verificaABB (PArv a);
 ~~~c
 int verificaABB (PArv a) {
 	if (a == NULL) return 1; // Condição de parada
