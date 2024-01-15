@@ -1,6 +1,6 @@
-<h1 align="center"> Fila Encadeada </h1>
+<h1 align="center" style="text-decoration: underline; font-weight: bold;"> Fila Encadeada </h1>
  
-## Definição de Fila Encadeada:
+# Definição de Fila Encadeada:
 Uma Fila Encadeada é uma Estrutura de Dados que Segue o Princípio `FIFO` (First In First Out), ou seja, `O Primeiro Elemento a Entrar na Fila é o Primeiro a Sair.`
 <br>&emsp;&emsp;1. O `Novo Elemento` Sempre é `Inserido no Final` (Ordem de Chegada);
 <br>&emsp;&emsp;2. O `Elemento Removido` é Sempre o que `Chegou há Mais Tempo na Fila`;
@@ -26,10 +26,8 @@ typedef SFila *PFila;
 
 
 
-
-
-## Operações Básicas com Filas Encadeadas:
-### `1. Criar uma Fila Vazia:`
+# Operações Básicas com Filas Encadeadas:
+## `1. Criar uma Fila Vazia:`
 ~~~c
 PFila inicializar () { 
 	PFila novo = (PFila) malloc(sizeof(SFila)); // Aloca Espaço para a Fila
@@ -39,7 +37,7 @@ PFila inicializar () {
 }
 ~~~
 
-### `2. Inserir Elemento (Insere no Fim):`
+## `2. Inserir Elemento (Insere no Fim):`
 ~~~c
 PNo insere (PFila fila, tipoElemento v) {
 	if (fila == NULL) return NULL; // Fila Não Inicializada (Erro)
@@ -56,7 +54,7 @@ PNo insere (PFila fila, tipoElemento v) {
 }
 ~~~
 
-### `3. Remover Elemento (Retirar do Início):`
+## `3. Remover Elemento (Retirar do Início):`
 ~~~c
 PNo remover (PFila fila, tipoElemento *v) {
 	if (fila == NULL) return NULL; // Fila Não Inicializada (Erro)
@@ -73,7 +71,7 @@ PNo remover (PFila fila, tipoElemento *v) {
 }
 ~~~
 
-### `4. Listar Elementos da Fila:`
+## `4. Listar Elementos da Fila:`
 A Impressão dos Elementos da Fila pode ser Feita com uma Lógica Semelhante a da Impressão de uma Pilha Encadeada.
 ~~~c
 void listar (PNo ini) {
@@ -94,7 +92,7 @@ void listarR (PNo ini) {
 }
 ~~~
 
-### `5. Liberar Espaços Alocados:`
+## `5. Liberar Espaços Alocados:`
 ~~~c
 PFila liberar (PFila fila) {
 	PNo aux; // Ponteiro Auxiliar para Percorrer a Fila
@@ -110,10 +108,9 @@ PFila liberar (PFila fila) {
 
 
 
-## Exercícios:
-### `Questão 1:` Faça uma função que receba 3 filas (f, f_pares e f_impares) e separe todos os valores guardados em f de tal forma que os valores pares sejam movidos para f_pares e os impares, para f_impares. No final, f deve estar vazia. Considere que f_pares e f_impares ainda não existem.
+# Exercícios:
+## `Questão 1:` Faça uma função que receba 3 filas (f, f_pares e f_impares) e separe todos os valores guardados em f de tal forma que os valores pares sejam movidos para f_pares e os impares, para f_impares. No final, f deve estar vazia. Considere que f_pares e f_impares ainda não existem.
 ~~~c
-// João Victor Assaoka Ribeiro - rn168863
 #include <stdio.h>
 #include <stdlib.h>
 

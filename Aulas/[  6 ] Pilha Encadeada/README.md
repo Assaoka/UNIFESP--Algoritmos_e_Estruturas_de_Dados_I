@@ -1,9 +1,9 @@
-<h1 align="center"> Pilha Encadeada </h1>
+<h1 align="center" style="text-decoration: underline; font-weight: bold;"> Pilha Encadeada </h1>
 
-## Encadeamento:
+# Encadeamento:
 &emsp;&emsp; A partir de agora, iniciaremos nosso estudo sobre `Estruturas de Dados Encadeadas.` Essas estruturas são `Alocadas Dinamicamente`, o que significa que `Não Precisamos Conhecer Antecipadamente o Número de Elementos` que elas conterão. Isso as `Diferencia dos Vetores`, onde os elementos são `Armazenados em Posições Sequências na Memória.`
 
-## Definição de Pilha: 
+# Definição de Pilha: 
 `Último a Entrar, Primeiro a Sair` ("Last In, First Out" -> `LIFO`)	
 <br>&emsp;&emsp;1. O `Novo Elemento` é Sempre Inserido no `Topo da Pilha.`
 <br>&emsp;&emsp;2. O `Elemento Removido` é Sempre o que `Chegou a Menos Tempo na Pilha.`
@@ -22,8 +22,8 @@ typedef SPilha *PPilha;
 
 
 
-## Operações Básicas com Pilhas Encadeadas:
-### `1. Empilhar Elemento:` Push
+# Operações Básicas com Pilhas Encadeadas:
+## `1. Empilhar Elemento:` Push
 ~~~c
 PPilha push (PPilha topo, int v) {
 	PPilha novo = (PPilha)malloc(sizeof(SPilha)); // Aloca Espaço para o Novo Elemento
@@ -33,7 +33,7 @@ PPilha push (PPilha topo, int v) {
 }
 ~~~
 
-### `2. Desempilhar Elemento:` Pop
+## `2. Desempilhar Elemento:` Pop
 ~~~c
 PPilha pop (PPilha topo, int *v) {
 	PPilha p = topo; // Ponteiro Auxiliar para o Elemento a Ser Removido
@@ -47,7 +47,7 @@ PPilha pop (PPilha topo, int *v) {
 ~~~
 
 
-### `3. Listar Elementos da Pilha:`
+## `3. Listar Elementos da Pilha:`
 ~~~c
 void listar (PPilha topo) {
 	PPilha p; // Ponteiro Auxiliar para Percorrer a Pilha
@@ -58,7 +58,7 @@ void listar (PPilha topo) {
 ~~~
 
 
-### `4. Liberar Espaços Alocados:`
+## `4. Liberar Espaços Alocados:`
 ~~~c
 PPilha liberar (PPilha topo) {
 	PPilha p; // Ponteiro Auxiliar para Percorrer a Pilha
@@ -72,8 +72,8 @@ PPilha liberar (PPilha topo) {
 
 
 
-## Exercícios:
-### `Questão 1:` Faça uma função recursiva que imprime a pilha.
+# Exercícios:
+## `Questão 1:` Faça uma função recursiva que imprime a pilha.
 ~~~c
 void listarR (PPilha topo) {
 	if (topo == NULL) return; // Pilha Vazia
@@ -90,7 +90,7 @@ void listarRInv (PPilha topo) {
 }
 ~~~
 
-### `Questão 2:` Faça uma função recursiva que libera a pilha.
+## `Questão 2:` Faça uma função recursiva que libera a pilha.
 ~~~c
 PPilha liberarR (PPilha topo) {
 	if (topo == NULL) return NULL; // Pilha Vazia
@@ -100,12 +100,11 @@ PPilha liberarR (PPilha topo) {
 }
 ~~~
 
-### `JUDGE:` Expressões Numéricas em RNP
+## `JUDGE:` Expressões Numéricas em RNP
 &emsp;&emsp;Algumas calculadoras que realização cálculos financeiros, como a HP 12C, utilizam o método Notação Polonesa Reversa, (RPN, em inglês, Reverse Polish Notation ou muitas vezes conhecida por método pós-fixo - Postfix), para encontrar o valor das expressões numéricas digitadas. Por exemplo, para avaliarmos uma expressão na notação usual (Infix) como: (1+2)*(8-3), em notação Postfix temos: 12+83-*, cujo resultado é 15.
 <br>`Objetivo:` Dado uma expressão na forma de RPN (Postfix), calcular o valor final da mesma.
 <br> `Testes:` 10/10 
 ~~~c
-// João Victor Assaoka Ribeiro - rn168863
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
