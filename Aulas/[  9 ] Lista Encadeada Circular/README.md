@@ -117,9 +117,9 @@ PNo removerIndex (PNo ult, tipoElemento *v, int index) {
 	for (i = 0, ant = ult, paux = ult->prox; i < index; i++, paux = paux->prox) ant = paux; // Percorrendo a Lista até o Índice
 	lixo = ant->prox; // O Nó que Será Removido é o Próximo do Anterior de Onde Ele Será Removido
 	*v = lixo->info; // Retorna a Informação do Nó a Ser Removido
-    if (ant->prox == ant) ult = NULL; // Se o Anterior Apontar para ele Mesmo, Significa que a Lista Só Possui um Elemento (Ficará Vazia Após a Remoção)
-    else if (lixo == ult) ult = ant; // Se o Nó a Ser Removido for o Último Elemento, o Último Elemento Passa a Ser o Anterior (Pois o Último Será Removido)
-    ant->prox = lixo->prox; // O Anterior Aponta para o Próximo do Nó a Ser Removido
+	if (ant->prox == ant) ult = NULL; // Se o Anterior Apontar para ele Mesmo, Significa que a Lista Só Possui um Elemento (Ficará Vazia Após a Remoção)
+	else if (lixo == ult) ult = ant; // Se o Nó a Ser Removido for o Último Elemento, o Último Elemento Passa a Ser o Anterior (Pois o Último Será Removido)
+	ant->prox = lixo->prox; // O Anterior Aponta para o Próximo do Nó a Ser Removido
 	free(lixo); // Libera a Memória Alocada para o Nó
 
 	return ult; // Atualiza o Ponteiro para o Último Elemento da Lista (Que Será o Anterior do Nó Removido, ou NULL)
