@@ -1,4 +1,4 @@
-<h1 align="center" style="text-decoration: underline; font-weight: bold;"> Pilha Encadeada </h1>
+<h1 align="center"> Pilha Encadeada </h1>
 
 # Encadeamento:
 &emsp;&emsp; A partir de agora, iniciaremos nosso estudo sobre `Estruturas de Dados Encadeadas.` Essas estruturas são `Alocadas Dinamicamente`, o que significa que `Não Precisamos Conhecer Antecipadamente o Número de Elementos` que elas conterão. Isso as `Diferencia dos Vetores`, onde os elementos são `Armazenados em Posições Sequências na Memória.`

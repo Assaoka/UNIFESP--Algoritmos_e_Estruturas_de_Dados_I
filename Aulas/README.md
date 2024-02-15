@@ -1,4 +1,4 @@
-<h1 align="center" style="text-decoration: underline; font-weight: bold;"> Materiais de Algoritmos e Estruturas de Dados I </h1>
+<h1 align="center"> Materiais de Algoritmos e Estruturas de Dados I </h1>
 
 `Observação:` Alguns materiais ainda estão sendo desenvolvidos, portanto, podem conter erros ou estarem incompletos. Caso encontre algum erro, por favor, entre em contato comigo.
 

@@ -1,4 +1,4 @@
-<h1 align="center" style="text-decoration: underline; font-weight: bold;"> Introdução a Grafos </h1>
+<h1 align="center"> Introdução a Grafos </h1>
 
 # Terminologia:
 1. `Grafo:` Conjunto de vértices e arestas.

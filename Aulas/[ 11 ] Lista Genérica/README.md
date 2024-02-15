@@ -1,3 +1,3 @@
-<h1 align="center" style="text-decoration: underline; font-weight: bold;"> Lista Genérica </h1>
+<h1 align="center"> Lista Genérica </h1>
 
 Em Breve...

@@ -1,3 +1,3 @@
-<h1 align="center" style="text-decoration: underline; font-weight: bold;"> Árvores Genéricas </h1>
+<h1 align="center"> Árvores Genéricas </h1>
 
 Em Breve...

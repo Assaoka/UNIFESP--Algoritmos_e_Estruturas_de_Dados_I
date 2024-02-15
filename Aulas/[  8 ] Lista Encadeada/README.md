@@ -1,4 +1,4 @@
-<h1 align="center" style="text-decoration: underline; font-weight: bold;"> Lista Encadeada </h1>
+<h1 align="center"> Lista Encadeada </h1>
 
 # Definição de Lista Encadeada:
 Uma Lista Encadeada é uma Generalização das Pilhas e Filas:

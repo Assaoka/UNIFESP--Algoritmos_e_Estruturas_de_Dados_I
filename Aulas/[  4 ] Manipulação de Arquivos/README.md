@@ -1,4 +1,4 @@
-<h1 align="center" style="text-decoration: underline; font-weight: bold;"> Manipulação de Arquivos </h1>
+<h1 align="center"> Manipulação de Arquivos </h1>
 
 
 # Abrindo um Arquivo: fopen()

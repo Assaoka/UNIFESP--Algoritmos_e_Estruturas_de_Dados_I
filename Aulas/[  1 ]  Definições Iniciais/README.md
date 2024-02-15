@@ -1,4 +1,4 @@
-<h1 align="center" style="text-decoration: underline; font-weight: bold;"> Definições Iniciais </h1>
+<h1 align="center"> Definições Iniciais </h1>
 
 # Introdução:
 &emsp;&emsp; Um algoritmo corresponde a uma descrição de um padrão de comportamento, representado por uma sequência finita de instruções, que, quando executadas, resolvem um determinado problema.

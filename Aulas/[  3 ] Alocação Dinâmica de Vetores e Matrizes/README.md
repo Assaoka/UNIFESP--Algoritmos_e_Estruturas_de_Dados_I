@@ -1,4 +1,4 @@
-<h1 align="center" style="text-decoration: underline; font-weight: bold;"> Alocação Dinâmica de Vetores e Matrizes </h1>
+<h1 align="center"> Alocação Dinâmica de Vetores e Matrizes </h1>
 
 # Vetores na Linguagem C:
 &emsp;&emsp; Vetores são estruturas de dados que armazenam um conjunto de valores do mesmo tipo. Para a linguagem C, um vetor é um ponteiro para o primeiro elemento do conjunto de valores. A partir do endereço do primeiro elemento, é possível acessar qualquer outro elemento com o uso de aritmética de ponteiros.

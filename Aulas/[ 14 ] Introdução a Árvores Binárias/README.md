@@ -1,4 +1,4 @@
-<h1 align="center" style="text-decoration: underline; font-weight: bold;"> Introdução a Árvores Binárias </h1>
+<h1 align="center"> Introdução a Árvores Binárias </h1>
 
 # Introdução a Árvores:
 &emsp;&emsp; Sendo uma das `classes de estruturas de dados mais importantes,` as árvores são estruturas de dados que `permitem representar dados com hierarquias,` o que é muito útil para representar alguns tipos de dados como:

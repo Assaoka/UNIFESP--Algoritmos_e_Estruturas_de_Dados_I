@@ -1,4 +1,4 @@
-<h1 align="center" style="text-decoration: underline; font-weight: bold;"> Lista Encadeada Circular </h1>
+<h1 align="center"> Lista Encadeada Circular </h1>
 
 # Definição de Lista Encadeada Circular:
 Uma Lista Encadeada Circular é uma Lista Encadeada em que o `Último Elemento` Aponta para o `Primeiro Elemento.` 

@@ -1,4 +1,4 @@
-<h1 align="center" style="text-decoration: underline; font-weight: bold;"> Struct e Ponteiro </h1>
+<h1 align="center"> Struct e Ponteiro </h1>
 
 # Struct:
 &emsp;&emsp; Structs são tipos de dados estruturados que permitem agrupar diferentes tipos de dados (inclusive outros structs) em uma única variável. Por exemplo, podemos criar uma struct para representar um aluno, que contém o nome, a matrícula e a nota do aluno. A struct abaixo representa um aluno:
