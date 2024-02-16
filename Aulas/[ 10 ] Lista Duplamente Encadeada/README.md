@@ -1,8 +1,9 @@
 <h1 align="center"> Lista Duplamente Encadeada </h1>
 
 # Definição de Lista Duplamente Encadeada:
-Uma Lista Duplamente Encadeada é uma Lista em que Cada Nó Possui Dois Ponteiros (Um para o Próximo Elemento e Outro para o Elemento Anterior). Isso Permite que a Lista Seja Percorrida em Ambos os Sentidos (Do Início para o Fim e do Fim para o Início).
+&emsp;&emsp; Da mesma forma que os outros tipos de lista, uma Lista Duplamente Encadeada é uma Estrutura de Dados Dinâmica que Armazena Elementos de Forma Encadeada. A Diferença é que Cada Nó Possui Dois Ponteiros (Um para o Próximo Elemento e Outro para o Elemento Anterior). Isso Permite que a Lista Seja Percorrida em Ambos os Sentidos (Do Início para o Fim e do Fim para o Início).
 
+&emsp;&emsp; De certa forma, isso facilita a inserção e remoção de elementos, mas ao mesmo tempo, torna essas operações mais complexas, pois precisamos atualizar mais ponteiros para manter a lista corretamente encadeada. Podemos criar uma estrutura de nó da seguinte forma:
 ~~~c
 typedef int tipoElemento; // Tipo de Dado que o Nó Armazena (Alterar de Acordo com o Problema)
 typedef struct No {
@@ -25,8 +26,7 @@ PNo inserirIni (PNo lista, tipoElemento v) {
     novo->ant = NULL; // O Novo Nó Aponta para NULL (Início da Lista)
     
 	if (lista != NULL) lista->ant = novo; // O Primeiro Elemento da Lista Aponta para o Novo Nó
-	lista = novo; // O Primeiro Elemento da Lista Agora é o Novo Nó
-	return lista; // Retorna a Lista Atualizada (Novo Nó)
+	return novo; // Retorna a Lista Atualizada (Novo Nó)
 }
 ~~~
 ### `| Fim:`
@@ -72,7 +72,9 @@ PNo inserirIndex (PNo lista, tipoElemento v, int index) {
 ~~~
 
 ## `2. Remover Nó:`
-&emsp;&emsp; Uma vantagem da Lista Duplamente Encadeada é que podemos remover um elemento conhecendo apenas o endereço do elemento a ser removido. Podemos fazer isso da seguinte forma:
+&emsp;&emsp; Uma desvantagem da Lista Simplesmente Encadeada é a dificuldade de remover um elemento. Mesmo que saibamos o endereço do elemento a ser removido, é necessário percorrer a lista para encontrar o elemento anterior ao que será removido. 
+
+&emsp;&emsp; A Lista Duplamente Encadeada resolve esse problema, pois podemos percorrer a lista em ambos os sentidos. Basta encontrar o elemento a ser removido e atualizar os ponteiros do elemento anterior e do elemento posterior ao que será removido.
 ~~~c
 PNo remover (PNo removido, PNo lista) {
 	if (removido == NULL) return lista; // Se não deve remover nada, retorna a lista
@@ -120,3 +122,14 @@ PNo liberar (PNo lista) {
 	return NULL; // Retorna NULL (Lista Vazia)
 }
 ~~~
+
+# Lista Duplamente Encadeada e Circular:
+&emsp;&emsp; A Lista Duplamente Encadeada e Circular é uma Lista Duplamente Encadeada em que o Último Elemento Aponta para o Primeiro Elemento e o Primeiro Elemento Aponta para o Último Elemento. Você pode escolher guardar o endereço do último ou do primeiro elemento, pois ambos são equivalentes (se você tiver o endereço do último elemento, pode obter o endereço do primeiro elemento e vice-versa, então é possível inserir e remover elementos no início e no fim da lista com a mesma complexidade idependente de qual endereço você escolher guardar). Não tenho a intenção de refazer todas as funções para a lista circular, mas você pode fazer isso se quiser.
+
+# Exercícios:
+## 1. Escreva uma função que remova de uma lista duplamente encadeada todos os elementos que contêm o valor de y.
+&emsp;&emsp; Dica: Utilize a função `remover` e a função `buscar` para encontrar os elementos a serem removidos.
+
+## 2. Escreva uma função que insira um elemento em ordem crescente em uma lista duplamente encadeada
+
+#
