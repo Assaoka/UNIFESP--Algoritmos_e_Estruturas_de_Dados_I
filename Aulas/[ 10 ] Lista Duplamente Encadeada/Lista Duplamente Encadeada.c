@@ -94,7 +94,6 @@ PNo liberar (PNo lista) {
 
 int main () {
 	PNo lista = NULL; // Inicializa a Lista Vazia
-	int index; // Variável para Armazenar o Índice do Nó
 
 	lista = inserirIni(lista, 2); // Insere o Elemento 2 no Início da Lista
 	lista = inserirIni(lista, 1); // Insere o Elemento 1 no Início da Lista
