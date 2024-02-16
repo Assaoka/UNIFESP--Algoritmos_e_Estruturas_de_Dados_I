@@ -14,6 +14,8 @@ typedef struct No {
 typedef SNo *PNo;
 ~~~
 
+&emsp;&emsp; Uma coisa importante a se notar é que nessa estrutura de dados, o ultimo elemento não aponta para `NULL`, mas sim para o primeiro elemento da lista. Isso é essencial para montar as operações de inserção e remoção de elementos.
+
 
 
 # Operações Básicas com Lista Encadeada Circular:
@@ -35,6 +37,7 @@ PNo inserirIni (PNo ult, tipoElemento v) {
 }
 ~~~
 ### `| Fim:`
+&emsp;&emsp; A única diferença entre inserir no início e no fim é que no fim, o ponteiro para o último elemento da lista é atualizado para o novo elemento. Essa função pode ser utilizada para uma fila encadeada circular.
 ~~~c
 PNo inserirFim (PNo ult, tipoElemento v) {
 	PNo novo = (PNo) malloc(sizeof(SNo)); // Alocando Memória para o Novo Nó
@@ -51,7 +54,7 @@ PNo inserirFim (PNo ult, tipoElemento v) {
 }
 ~~~
 ### `| Índex:`
-Iremos considerar que 0 representa a primeira posição na lista. A inserção ocorrerá no início se o índice for menor que 0. Caso o índice seja maior que o número de elementos, vamos continuar percorrendo a lista até o índice.
+&emsp;&emsp; Iremos considerar que 0 representa a primeira posição na lista. A inserção ocorrerá no início se o índice for menor que 0. Caso o índice seja maior que o número de elementos, vamos continuar percorrendo a lista até o índice.
 ~~~c
 PNo inserirIndex (PNo ult, tipoElemento v, int index) {
 	PNo novo = (PNo) malloc(sizeof(SNo)); // Alocando Memória para o Novo Nó
@@ -63,18 +66,20 @@ PNo inserirIndex (PNo ult, tipoElemento v, int index) {
 		novo->prox = novo; // O Novo Nó Aponta para Ele Mesmo
 		return novo; // O Novo Nó Se Torna o Último (E Único) Elemento da Lista
 	}
+	
 	for (i = 0, ant = ult, paux = ult->prox; i < index; i++, paux = paux->prox) ant = paux; // Percorrendo a Lista até o Índice
 	
-	if (ant == ult->prox && index != 0) ult = novo; // Se o Anterior Apontar para o Primeiro Elemento, Significa que o Novo Nó é o Último Elemento da Lista ou o Primeiro. Decidiremos de acordo com o Índice.
 	novo->prox = ant->prox; // O Novo Nó Aponta para o Próximo Elemento do Anterior de Onde Ele Será Inserido
 	ant->prox = novo; // O Anterior Aponta para o Novo Nó
-	
-	return ult; // Retorna o Último Elemento da Lista (Sofrendo Alterações ou Não)
+
+	if (ant == ult && index != 0) return novo; // Se o Índice for 0, o Novo Nó Será o Novo Último
+	else return ult; // Retorna o Último Elemento da Lista (Sofrendo Alterações ou Não)
 }
 ~~~
 
 ## `2. Remover Nó:`
 ### `| Início:`
+&emsp;&emsp; Utilizando essa função em conjunto com a função de inserção no fim, podemos implementar uma fila encadeada circular sem a necessidade de uma estrutura auxiliar `Fila`.
 ~~~c
 PNo removerIni (PNo ult, tipoElemento *v) {
 	PNo lixo; // Ponteiro para o Nó que Será Removido
@@ -110,19 +115,20 @@ PNo removerFim (PNo ult, tipoElemento *v) {
 ### `| Índex:`
 ~~~c
 PNo removerIndex (PNo ult, tipoElemento *v, int index) {
-	PNo ant, lixo, paux; // ant = Ponteiro para o Nó Anterior; lixo = Ponteiro para o Nó que Será Removido; paux = Ponteiro Auxiliar para Percorrer a Lista
-	int i; // Contador
+	PNo ant, lixo;
+	int i;
 
 	if (ult == NULL) return NULL; // Se a Lista Estiver Vazia, Retorna NULL
-	for (i = 0, ant = ult, paux = ult->prox; i < index; i++, paux = paux->prox) ant = paux; // Percorrendo a Lista até o Índice
-	lixo = ant->prox; // O Nó que Será Removido é o Próximo do Anterior de Onde Ele Será Removido
-	*v = lixo->info; // Retorna a Informação do Nó a Ser Removido
-	if (ant->prox == ant) ult = NULL; // Se o Anterior Apontar para ele Mesmo, Significa que a Lista Só Possui um Elemento (Ficará Vazia Após a Remoção)
-	else if (lixo == ult) ult = ant; // Se o Nó a Ser Removido for o Último Elemento, o Último Elemento Passa a Ser o Anterior (Pois o Último Será Removido)
-	ant->prox = lixo->prox; // O Anterior Aponta para o Próximo do Nó a Ser Removido
-	free(lixo); // Libera a Memória Alocada para o Nó
+	for (i = 0, ant = ult, lixo = ult->prox; i < index; i++, ant = lixo, lixo = lixo->prox); // Percorrendo a Lista até o Índice
 
-	return ult; // Atualiza o Ponteiro para o Último Elemento da Lista (Que Será o Anterior do Nó Removido, ou NULL)
+	*v = lixo->info; // Retorna a Informação do Nó a Ser Removido
+	if (ant == lixo) ant = NULL;
+	else ant->prox = lixo->prox; // Caso Contrário, o Anterior Aponta para o Próximo do Nó a Ser Removido
+
+	free(lixo); // Libera a Memória Alocada para o Nó
+	if (ult == lixo) return ant; 
+	//ult = ant; // Se o Último Elemento da Lista for o Nó a Ser Removido, o Anterior Será o Novo Último
+	else return ult; // Retorna o Último Elemento da Lista (Que Pode Ter Sido Alterado)
 }
 ~~~
 
@@ -166,3 +172,5 @@ PNo liberar (PNo ult) {
 	return NULL; // Retorna NULL (Lista Vazia)
 }
 ~~~
+
+#

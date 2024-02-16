@@ -46,13 +46,14 @@ PNo inserirIndex (PNo ult, tipoElemento v, int index) {
 		novo->prox = novo; // O Novo Nó Aponta para Ele Mesmo
 		return novo; // O Novo Nó Se Torna o Último (E Único) Elemento da Lista
 	}
+	
 	for (i = 0, ant = ult, paux = ult->prox; i < index; i++, paux = paux->prox) ant = paux; // Percorrendo a Lista até o Índice
 	
-	if (ant == ult->prox && index != 0) ult = novo; // Se o Anterior Apontar para o Primeiro Elemento, Significa que o Novo Nó é o Último Elemento da Lista ou o Primeiro. Decidiremos de acordo com o Índice.
 	novo->prox = ant->prox; // O Novo Nó Aponta para o Próximo Elemento do Anterior de Onde Ele Será Inserido
 	ant->prox = novo; // O Anterior Aponta para o Novo Nó
-	
-	return ult; // Retorna o Último Elemento da Lista (Sofrendo Alterações ou Não)
+
+	if (ant == ult && index != 0) return novo; // Se o Índice for 0, o Novo Nó Será o Novo Último
+	else return ult; // Retorna o Último Elemento da Lista (Sofrendo Alterações ou Não)
 }
 
 PNo removerIni (PNo ult, tipoElemento *v) {
@@ -85,19 +86,20 @@ PNo removerFim (PNo ult, tipoElemento *v) {
 }
 
 PNo removerIndex (PNo ult, tipoElemento *v, int index) {
-	PNo ant, lixo, paux; // ant = Ponteiro para o Nó Anterior; lixo = Ponteiro para o Nó que Será Removido; paux = Ponteiro Auxiliar para Percorrer a Lista
-	int i; // Contador
+	PNo ant, lixo;
+	int i;
 
 	if (ult == NULL) return NULL; // Se a Lista Estiver Vazia, Retorna NULL
-	for (i = 0, ant = ult, paux = ult->prox; i < index; i++, paux = paux->prox) ant = paux; // Percorrendo a Lista até o Índice
-	lixo = ant->prox; // O Nó que Será Removido é o Próximo do Anterior de Onde Ele Será Removido
-	*v = lixo->info; // Retorna a Informação do Nó a Ser Removido
-    if (ant->prox == ant) ult = NULL; // Se o Anterior Apontar para ele Mesmo, Significa que a Lista Só Possui um Elemento (Ficará Vazia Após a Remoção)
-    else if (lixo == ult) ult = ant; // Se o Nó a Ser Removido for o Último Elemento, o Último Elemento Passa a Ser o Anterior (Pois o Último Será Removido)
-    ant->prox = lixo->prox; // O Anterior Aponta para o Próximo do Nó a Ser Removido
-	free(lixo); // Libera a Memória Alocada para o Nó
+	for (i = 0, ant = ult, lixo = ult->prox; i < index; i++, ant = lixo, lixo = lixo->prox); // Percorrendo a Lista até o Índice
 
-	return ult; // Atualiza o Ponteiro para o Último Elemento da Lista (Que Será o Anterior do Nó Removido, ou NULL)
+	*v = lixo->info; // Retorna a Informação do Nó a Ser Removido
+	if (ant == lixo) ant = NULL;
+	else ant->prox = lixo->prox; // Caso Contrário, o Anterior Aponta para o Próximo do Nó a Ser Removido
+
+	free(lixo); // Libera a Memória Alocada para o Nó
+	if (ult == lixo) return ant; 
+	//ult = ant; // Se o Último Elemento da Lista for o Nó a Ser Removido, o Anterior Será o Novo Último
+	else return ult; // Retorna o Último Elemento da Lista (Que Pode Ter Sido Alterado)
 }
 
 PNo buscar (PNo ult, tipoElemento v) {
@@ -131,3 +133,53 @@ PNo liberar (PNo ult) {
 
 	return NULL; // Retorna NULL (Lista Vazia)
 }
+
+int main () {
+	PNo ult = NULL; // Ponteiro para o Último Elemento da Lista
+	tipoElemento v; // Variável para Armazenar o Valor do Nó
+
+	ult = inserirIni(ult, 2); // Inserindo o Valor 2 no Início da Lista
+	listar(ult); // Listando a Lista
+
+	ult = inserirIni(ult, 1); // Inserindo o Valor 1 no Início da Lista
+	listar(ult); // Listando a Lista
+	
+	ult = inserirFim(ult, 4); // Inserindo o Valor 3 no Fim da Lista
+	listar(ult); // Listando a Lista
+	
+	ult = inserirFim(ult, 5); // Inserindo o Valor 4 no Fim da Lista
+	listar(ult); // Listando a Lista
+
+	ult = inserirIndex(ult, 0, 0); // Inserindo o Valor 0 no Índice 0 da Lista
+	listar(ult); // Listando a Lista
+
+	ult = inserirIndex(ult, 3, 3); // Inserindo o Valor 3 no Índice 3 da Lista
+	listar(ult); // Listando a Lista
+
+	ult = inserirIndex(ult, 6, 6); // Inserindo o Valor 6 no Índice 6 da Lista
+	listar(ult); // Listando a Lista
+
+	ult = removerIndex(ult, &v, 0); // Removendo o Valor do Índice 0 da Lista
+	printf("\n\nRemovido: %d\n", v); // Imprimindo o Valor Removido
+	listar(ult); // Listando a Lista
+
+	ult = removerIndex(ult, &v, 3); // Removendo o Valor do Índice 3 da Lista
+	printf("\n\nRemovido: %d\n", v); // Imprimindo o Valor Removido
+	listar(ult); // Listando a Lista
+
+	ult = removerIndex(ult, &v, 4); // Removendo o Valor do Índice 4 da Lista
+	printf("\n\nRemovido: %d\n", v); // Imprimindo o Valor Removido
+	listar(ult); // Listando a Lista
+
+	ult = removerIni(ult, &v); // Removendo o Primeiro Elemento da Lista
+	printf("\n\nRemovido: %d\n", v); // Imprimindo o Valor Removido
+	listar(ult); // Listando a Lista
+
+	ult = removerFim(ult, &v); // Removendo o Último Elemento da Lista
+	printf("\n\nRemovido: %d\n", v); // Imprimindo o Valor Removido
+	listar(ult); // Listando a Lista
+
+	ult = liberar(ult); // Liberando a Memória Alocada para a Lista
+	return 0;
+}
+
