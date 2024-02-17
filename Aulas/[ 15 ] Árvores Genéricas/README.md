@@ -21,7 +21,7 @@ typedef SArv *PArv;
 &emsp;&emsp; Note que mesmo possuindo um número variável de filhos, a árvore genérica possui apenas dois ponteiros. Dessa forma, podemos representar graficamente a árvore genérica de duas formas:
 
 ## `1. Árvore Genérica:`
-&emsp;&emsp; Essa forma é mais fácil de entender, pois representa o que queremos realmente. Nele, o pai se liga para todos os seus filhos (se repetindo para cada filho).
+&emsp;&emsp; Essa forma é mais fácil de entender, pois representa o que queremos realmente. Nele, o pai se liga para todos os seus filhos (essa regra é recursiva, se repetindo para cada filho).
 
 ~~~mermaid
 graph TD;
@@ -39,7 +39,8 @@ graph TD;
 ~~~
 
 ## `2. Árvore Binária:`
-&emsp;&emsp; Essa forma é mais fácil de implementar, pois é como armazenamos a árvore genérica. Nela, o pai se liga para o primeiro filho e o primeiro filho se liga para o próximo irmão.
+&emsp;&emsp; Essa forma é mais fácil de implementar, pois é assim que nossa estrutura de dados guarda a árvore. Nessa representação, o pai se liga para o primeiro filho e cada filho se liga para o próximo irmão.
+
 ~~~mermaid
 graph TD;
     s(Setores);
@@ -65,6 +66,64 @@ graph TD;
                                 d2-- Filho -->i9((Fim));
                                 d2-- Irmão -->i10((Fim));
                         D-- Irmão -->i11((Fim));
+~~~
+
+## `3. Floresta:`
+&emsp;&emsp; Uma floresta é um conjunto de árvores. Observe então que se a raiz de uma árvore genérica possui irmãos, então temos uma floresta. Vamos supos que temos as seguintes árvores genéricas separadas:
+~~~mermaid
+graph TD;
+    A(A)-->B(B);
+    A-->C(C);
+    A-->D(D);
+
+    E(E)-->F(F);
+
+    G(G)-->H(H);
+    G-->I(I);
+~~~
+
+&emsp;&emsp; Transformando cada árvore em uma árvore binária, temos:
+~~~mermaid
+graph TD;
+    A(A) -- Filho --> B(B);
+        B -- Filho --> i2((Fim));
+        B -- Irmão --> C(C);
+            C -- Filho --> i3((Fim));
+            C -- Irmão --> D(D);
+                D -- Filho --> i4((Fim));
+                D -- Irmão --> i5((Fim));
+    A -- Irmão --> i1((Fim));
+
+    E(E) -- Filho --> F(F);
+    E -- Irmão --> i6((Fim));
+
+    G(G) -- Filho --> H(H);
+        H -- Filho --> i8((Fim));
+        H -- Irmão --> I(I);
+            I -- Filho --> i9((Fim));
+            I -- Irmão --> i10((Fim));
+    G -- Irmão --> i7((Fim));
+~~~
+
+&emsp;&emsp; Por fim, podemos combinar todas as árvores em uma floresta (colocando A, E e G como irmãos):
+~~~mermaid
+graph TD;
+    A(A) -- Filho --> B(B);
+        B -- Filho --> i2((Fim));
+        B -- Irmão --> C(C);
+            C -- Filho --> i3((Fim));
+            C -- Irmão --> D(D);
+                D -- Filho --> i4((Fim));
+                D -- Irmão --> i5((Fim));
+    A -- Irmão --> E(E);
+        E -- Filho --> F(F);
+        E -- Irmão --> G(G);
+            G -- Filho --> H(H);
+                H -- Filho --> i8((Fim));
+                H -- Irmão --> I(I);
+                    I -- Filho --> i9((Fim));
+                    I -- Irmão --> i10((Fim));
+            G -- Irmão --> i7((Fim));
 ~~~
 
 
@@ -125,4 +184,3 @@ PArv libera (PArv a) {
 
 
 # Exercícios:
- 
