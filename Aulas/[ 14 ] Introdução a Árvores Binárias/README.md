@@ -61,6 +61,16 @@ PArv cria (tipoElemento info, PArv esq, PArv dir) {
 	return novo; // Retorna o novo nó
 }
 ~~~
+
+&emsp;&emsp; Você também pode criar um nó com a inicialização por chaves:
+~~~c
+PArv cria (tipoElemento info, PArv esq, PArv dir) {
+	PArv novo = (PArv)malloc(sizeof(SArv)); // Aloca memória para o novo nó
+	*novo = (SArv){info, esq, dir}; // Inicializa o novo nó com as informações passadas
+	return novo; // Retorna o novo nó
+}
+~~~
+
 &emsp;&emsp; `Como a implementação de uma árvore é recursiva,` a função cria pode ser utilizada tanto para `criar uma árvore` inteira quanto para `criar uma subárvore` e inserir em uma árvore já existente (fazendo um nó receber como filho a subárvore criada).
 
 ## `2. Imprimir:`
@@ -132,13 +142,8 @@ int altura(PArv a) {
 ~~~
 
 ## `Questão 3:`  Dadas duas árvores binárias A e B faça uma função que verifique se duas árvores A e B são iguais. Esta função retorna 1 se as árvores recebidas como parâmetros forem iguais e zero caso contrário. O protótipo da função deve ser dado por: int iguais(PArv A, PArv B)
-Fazendo...
-~~~c
-~~~
 
 ## `Questão 4:` Escreva uma função para excluir todas as folhas de uma Árvore Binária. O protótipo da função deve ser dado por: PArv excluir_folhas(PArv a);
-~~~c
-~~~
 
 ## `Questão 5:` Faça uma função que imprima uma árvore binária por paragrafação.
 ~~~c
