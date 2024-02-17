@@ -66,3 +66,63 @@ graph TD;
                                 d2-- Irmão -->i10((Fim));
                         D-- Irmão -->i11((Fim));
 ~~~
+
+
+
+# Operações Básicas:
+&emsp;&emsp; Vamos implementar apenas a criação de um nó, a adição de um filho, a impressão da árvore genérica e a liberação da memória. A remoção de um filho é uma operação que depende do problema, por isso não será implementada.
+## `1. Criar Nó:`
+~~~c
+PArv cria (tipoElemento x, PArv prim, PArv prox) {
+    PArv p = (PArv) malloc(sizeof(SArv)); // Alocando Memória
+    p->info = x; // Atribuindo o Valor
+    p->prim = prim; // Atribuindo o Primeiro Filho
+    p->prox = prox; // Atribuindo o Próximo Irmão
+    return p; // Retornando o Nó
+}
+~~~
+
+## `2. Adicionar Filho:`
+~~~c
+void adicionaFilho (PArv pai, tipoElemento x) {
+    PArv novo = cria(x, NULL, pai->prim); // Criando o Novo Nó
+    pai->prim = novo; // Adicionando o Novo Nó
+}
+~~~
+
+## `3. Imprimir:`
+~~~c
+void imprime (PArv a) {
+    if (a == NULL) return; // Condição de Parada
+    printf("%d\n", a->info); // Imprimindo o Nó
+    imprime(a->prim); // Imprimindo os Filhos
+    imprime(a->prox); // Imprimindo os Irmãos
+}
+~~~
+
+&emsp;&emsp; Caso queira imprimir a árvore de forma hierárquica, podemos adicionar um parâmetro `nivel` que indica a profundidade do nó. Dessa forma, podemos adicionar espaços para indicar a hierarquia.
+~~~c
+void imprime (PArv a, int nivel) {
+    if (a == NULL) return; // Condição de Parada
+    for (int i = 0; i < nivel; i++) printf("  "); // Adicionando Hierarquia
+    printf("%d\n", a->info); // Imprimindo o Nó
+    imprime(a->prim, nivel + 1); // Imprimindo os Filhos
+    imprime(a->prox, nivel); // Imprimindo os Irmãos
+}
+~~~
+
+## `4. Liberação de Memória:`
+~~~c
+PArv libera (PArv a) {
+    if (a == NULL) return; // Condição de Parada
+    a->prim = libera(a->prim); // Liberando os Filhos
+    a->prox = libera(a->prox); // Liberando os Irmãos
+    free(a); // Liberando o Nó
+    return NULL; // Retornando NULL
+}
+~~~
+
+
+
+# Exercícios:
+ 
