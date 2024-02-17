@@ -1,12 +1,11 @@
 <h1 align="center"> Árvores Genéricas </h1>
 
-EM DESENVOLVIMENTO...
+&emsp;&emsp; Árvores genéricas são árvores que possuem um número variável de filhos por nó. A árvore genérica é uma generalização da árvore binária, onde cada nó pode ter um número arbitrário de filhos. A árvore genérica é uma estrutura de dados que é usada para representar hierarquias mais complexas, como a estrutura de um diretório de arquivos.
 
-&emsp;&emsp; Árvores genéricas são árvores que possuem um número variável de filhos por nó. A árvore genérica é uma generalização da árvore binária, onde cada nó pode ter um número arbitrário de filhos. A árvore genérica é uma estrutura de dados que é usada para representar hierarquias mais complexas, como a estrutura de um arquivo em um sistema operacional ou a árvore genealógica de uma família.
 
-&emsp;&emsp; Não confunda o genérica de Árvores e a genérica de Listas. A genérica de Listas é uma lista que pode conter qualquer tipo de dado, enquanto a genérica de Árvores é uma árvore que pode ter qualquer número de filhos por nó.
+&emsp;&emsp; Não confunda a generalização em árvores com a generalização em listas. A generalização em listas refere-se a uma lista que pode conter qualquer tipo de dado, enquanto a generalização em árvores diz respeito a uma árvore que pode ter qualquer número de filhos por nó.
 
-&emsp;&emsp; Essa estrutura de dados utiliza uma `lista de filhos` e uma `lista de irmãos`. O primeiro é um ponteiro para o primeiro filho do nó, para acessar os outros filhos percorremos a lista de irmãos. Podemos definir uma árvore genérica da seguinte forma:
+&emsp;&emsp; Essa estrutura de dados utiliza uma `lista de filhos` e uma `lista de irmãos`. O primeiro é um ponteiro para o primeiro filho do nó, para acessar os outros filhos percorremos a lista de irmãos do primeiro filho. Podemos definir uma árvore genérica da seguinte forma:
 ~~~c
 typedef int tipoElemento; // Tipo de Dado que o Nó Armazena (Alterar de Acordo com o Problema)
 typedef struct ArvoreGenerica {
@@ -39,33 +38,34 @@ graph TD;
 ~~~
 
 ## `2. Árvore Binária:`
-&emsp;&emsp; Essa forma é mais fácil de implementar, pois é assim que nossa estrutura de dados guarda a árvore. Nessa representação, o pai se liga para o primeiro filho e cada filho se liga para o próximo irmão.
+&emsp;&emsp; Essa forma é mais fácil de implementar, pois é assim que nossa estrutura de dados guarda a árvore. Nessa representação, o pai se liga para o primeiro filho e cada filho se liga para o próximo irmão. Observação: As bolinhas vazias tem valor NULL.
 
 ~~~mermaid
 graph TD;
     s(Setores);
         s-- Filho -->A(Informática);
             A-- Filho -->a1(Suporte);
-            a1-- Filho -->i1((Fim));
+            a1-- Filho -->i1(( ));
             a1-- Irmão -->a2(Desenvolvimento);
-                a2-- Filho -->i2((Fim));
-                a2-- Irmão -->i3((Fim));
+                a2-- Filho -->i2(( ));
+                a2-- Irmão -->i3(( ));
 
             A-- Irmão -->B(Recursos Humanos);
-                B-- Filho -->i4((Fim));
+                B-- Filho -->i4(( ));
                 B-- Irmão -->C(Financeiro);
                     C-- Filho -->c1(Contas a Pagar);
-                        c1-- Irmão -->i5((Fim));
+                        c1-- Irmão -->i5(( ));
                         c1-- Irmão -->c2(Contas a Receber);
-                            c2-- Filho -->i6((Fim));
-                            c2-- Irmão -->i7((Fim));
+                            c2-- Filho -->i6(( ));
+                            c2-- Irmão -->i7(( ));
                     C-- Irmão -->D(Comercial);
                         D-- Filho -->d1(Mercado Nacional);
-                            d1-- Filho -->i8((Fim));
+                            d1-- Filho -->i8(( ));
                             d1-- Irmão -->d2(Mercado Internacional);
-                                d2-- Filho -->i9((Fim));
-                                d2-- Irmão -->i10((Fim));
-                        D-- Irmão -->i11((Fim));
+                                d2-- Filho -->i9(( ));
+                                d2-- Irmão -->i10(( ));
+                        D-- Irmão -->i11(( ));
+    s-- Irmão -->i12(( ));
 ~~~
 
 ## `3. Floresta:`
@@ -86,44 +86,44 @@ graph TD;
 ~~~mermaid
 graph TD;
     A(A) -- Filho --> B(B);
-        B -- Filho --> i2((Fim));
+        B -- Filho --> i2(( ));
         B -- Irmão --> C(C);
-            C -- Filho --> i3((Fim));
+            C -- Filho --> i3(( ));
             C -- Irmão --> D(D);
-                D -- Filho --> i4((Fim));
-                D -- Irmão --> i5((Fim));
-    A -- Irmão --> i1((Fim));
+                D -- Filho --> i4(( ));
+                D -- Irmão --> i5(( ));
+    A -- Irmão --> i1(( ));
 
     E(E) -- Filho --> F(F);
-    E -- Irmão --> i6((Fim));
+    E -- Irmão --> i6(( ));
 
     G(G) -- Filho --> H(H);
-        H -- Filho --> i8((Fim));
+        H -- Filho --> i8(( ));
         H -- Irmão --> I(I);
-            I -- Filho --> i9((Fim));
-            I -- Irmão --> i10((Fim));
-    G -- Irmão --> i7((Fim));
+            I -- Filho --> i9(( ));
+            I -- Irmão --> i10(( ));
+    G -- Irmão --> i7(( ));
 ~~~
 
 &emsp;&emsp; Por fim, podemos combinar todas as árvores em uma floresta (colocando A, E e G como irmãos):
 ~~~mermaid
 graph TD;
     A(A) -- Filho --> B(B);
-        B -- Filho --> i2((Fim));
+        B -- Filho --> i2(( ));
         B -- Irmão --> C(C);
-            C -- Filho --> i3((Fim));
+            C -- Filho --> i3(( ));
             C -- Irmão --> D(D);
-                D -- Filho --> i4((Fim));
-                D -- Irmão --> i5((Fim));
+                D -- Filho --> i4(( ));
+                D -- Irmão --> i5(( ));
     A -- Irmão --> E(E);
         E -- Filho --> F(F);
         E -- Irmão --> G(G);
             G -- Filho --> H(H);
-                H -- Filho --> i8((Fim));
+                H -- Filho --> i8(( ));
                 H -- Irmão --> I(I);
-                    I -- Filho --> i9((Fim));
-                    I -- Irmão --> i10((Fim));
-            G -- Irmão --> i7((Fim));
+                    I -- Filho --> i9(( ));
+                    I -- Irmão --> i10(( ));
+            G -- Irmão --> i7(( ));
 ~~~
 
 
@@ -184,3 +184,65 @@ PArv libera (PArv a) {
 
 
 # Exercícios:
+## `QUESTÃO 1:` Desenhe as duas árvores genéricas abaixo em uma floresta:
+Crie uma arvore diferente do exemplo, faça elas mais profundas
+
+~~~mermaid
+graph TD;
+    A(A)-->B(B);
+        B-->E(E);
+    A-->C(C);
+    A-->D(D);
+        D-->F(F);
+        D-->G(G);
+
+    H(H)-->I(I);
+        I-->J(J);
+        I-->K(K);
+        I-->L(L);
+~~~
+
+
+## `QUESTÃO 2:` Crie uma função que busca um nó por seu valor e imprime o valor de todos os seus filhos. Caso o nó não exista, imprima "Nó não encontrado".
+
+
+
+
+## `QUESTÃO 2:` Faça um programa que leia n nomes e coloque os nomes em diferentes níveis dependendo da inicial do nome. No final, exiba a lista de nomes, agrupadas de acordo com a letra inicial do nome (os grupos devem estar em ordem alfabética).
+### | Entrada:
+~~~
+11
+João
+Andrey
+Lucas
+José
+Gabrieli
+Thomas
+Ana
+Gustavo
+Miguel
+Júlia
+Maria
+~~~
+### | Saída:
+~~~
+A
+    Andrey
+    Ana
+G
+    Gabrieli
+    Gustavo
+J
+    João
+    José
+    Júlia
+L
+    Lucas
+M
+    Miguel
+    Maria
+T
+    Thomas
+~~~
+
+#
