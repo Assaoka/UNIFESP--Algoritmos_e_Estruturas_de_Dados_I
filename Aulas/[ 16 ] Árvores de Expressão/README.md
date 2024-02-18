@@ -96,3 +96,51 @@ graph TD
 </details>
 
 
+## `Questão 2:` Transforme as expressões na forma pré-fixada a seguir em árvores de expressão e escreva as outras duas formas de notação.
+
+<details><summary><h3> A) * - 4 2 6 </h3></summary>
+
+~~~mermaid
+graph TD
+    op1((*)) --> op2(("-"))
+        op2 --> n1(4)
+        op2 --> n2(2)
+    op1 --> n3(6)
+~~~
+**Infixa:** `((4 - 2) * 6)`
+<br>**Pós-fixada:** `4 2 - 6 *`
+</details>
+
+
+<details><summary><h3> B) - / 20 + 4 1 2 </h3></summary>
+
+~~~mermaid
+graph TD
+    op1(("-")) --> op2(("/"))
+        op2 --> n1(20)
+        op2 --> op3(("+"))
+            op3 --> n2(4)
+            op3 --> n3(1)
+    op1 --> n4(2)
+~~~
+**Infixa:** `((20 / (4 + 1)) - 2)`
+<br>**Pós-fixada:** `20 4 1 + / 2 -`
+</details>
+
+
+<details><summary><h3> C) - + / 25 5 3 1 </h3></summary>
+
+~~~mermaid
+graph TD
+    op1(("-")) --> op2(("+"))
+        op2 --> op3(("/"))
+            op3 --> n1(25)
+            op3 --> n2(5)
+        op2 --> n3(3)
+    op1 --> n4(1)
+~~~
+**Infixa:** `(((25 / 5) + 3) - 1)`
+<br>**Pós-fixada:** `25 5 / 3 + 1 -`
+</details>
+
+
