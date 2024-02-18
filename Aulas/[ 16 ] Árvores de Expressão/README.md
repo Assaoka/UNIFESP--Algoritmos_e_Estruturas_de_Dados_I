@@ -43,55 +43,56 @@ graph TD
 
 
 # Exercícios:
-## `Questão 1:` Transforme as expressões a seguir em árvores de expressão e imprima-as nas três formas de notação.
-### `a)` 5 + 3 * 2
-### `b)` (4 - 2) * 6
-### `c)` 10 / 2 + 7
+## `Questão 1:` Transforme as expressões a seguir em árvores de expressão e escreva as outras duas formas de notação.
 
-## `Questão 2:` Transforme as expressões na forma pré-fixada a seguir em árvores de expressão e imprima-as nas três formas de notação.
-### `a)` - 15 * 4 2
-<details><summary>Resposta</summary>
+<details><summary><h3> A) 5 + 3 * 2</h3></summary>
 
+&emsp;&emsp; Devemos resolver a expressão da seguinte forma: `(5 + (3 * 2))`
 ~~~mermaid
 graph TD
-    op1(("-")) --> n1(15)
+    op1((+)) --> n1(5)
     op1 --> op2((*))
-        op2 --> n2(4)
+        op2 --> n2(3)
         op2 --> n3(2)
 ~~~
-pós: 15 4 2 * -
-
-infixa: 15 - 4 * 2
+**Pré-Fixada:** `+ 5 * 3 2`
+<br>**Pós-Fixada:** `5 3 2 * +`
 </details>
 
-### `b)` / 20 + 4 1
 
-<details><summary>Resposta</summary>
+<details><summary><h3> B) 15 - 4 * 2 + 3</h3></summary>
 
+&emsp;&emsp; Devemos resolver a expressão da seguinte forma: `((15 - (4 * 2)) + 3)`
 ~~~mermaid
 graph TD
-    op1(("/")) --> n1(20)
-    op1 --> op2(("+"))
-        op2 --> n2(4)
-        op2 --> n3(1)
+    op1((+)) --> op2(("-"))
+        op2 --> n1(15)
+        op2 --> op3((*))
+            op3 --> n2(4)
+            op3 --> n3(2)
+    op1 --> n4(3)
 ~~~
-pós: 20 4 1 + /
-
-infixa: 20 / 4 + 1
+**Pré-fixada:** `+ - 15 * 4 2 3`
+<br>**Pós-fixada:** `15 4 2 * - 3 +`
 </details>
 
 
+<details><summary><h3> C) 30 / (3 * 2) - 4 + 8</h3></summary>
+
+&emsp;&emsp; Devemos resolver a expressão da seguinte forma: `(((30 / (3 * 2)) - 4) + 8)`
+~~~mermaid
+graph TD
+    op1((+)) --> op2(("-"))
+        op2 --> op3(("/"))
+            op3--> n1(30)
+            op3 --> op4((*))
+                op4 --> n2(3)
+                op4 --> n3(2)
+        op2 --> n4(4)
+    op1 --> n5(8)
+~~~
+**Pré-fixada:** `+ - / 30 * 3 2 4 8`
+<br>**Pós-fixada:** `30 3 2 * / 4 - 8 +`
 </details>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-8 * 3 - 4
 
-25 / 5 + 3
 
-(6 + 2) * 4
-
-30 / (3 * 2)
