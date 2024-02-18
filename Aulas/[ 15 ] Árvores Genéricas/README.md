@@ -208,7 +208,7 @@ graph TD;
 
 
 
-## `QUESTÃO 2:` Faça um programa que leia n nomes e coloque os nomes em diferentes níveis dependendo da inicial do nome. No final, exiba a lista de nomes, agrupadas de acordo com a letra inicial do nome (os grupos devem estar em ordem alfabética).
+## `QUESTÃO 3:` Faça um programa que leia n nomes e coloque os nomes em diferentes níveis dependendo da inicial do nome. No final, exiba a lista de nomes, agrupadas de acordo com a letra inicial do nome (os grupos devem estar em ordem alfabética).
 ### | Entrada:
 ~~~
 11
