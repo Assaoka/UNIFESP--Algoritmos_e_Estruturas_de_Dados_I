@@ -144,3 +144,52 @@ graph TD
 </details>
 
 
+## `Questão 3:` Transforme as expressões na forma pós-fixada a seguir em árvores de expressão e escreva as outras duas formas de notação.
+
+<details><summary><h3> A) 10 2 / 7 + </h3></summary>
+
+~~~mermaid
+graph TD
+    op1((+)) --> op2(("/"))
+        op2 --> n1(10)
+        op2 --> n2(2)
+    op1 --> n3(7)
+~~~
+**Infixa:** `((10 / 2) + 7)`
+<br>**Pré-fixada:** `+ / 10 2 7`
+</details>
+
+
+<details><summary><h3> B) 8 3 * 4 - 5 + </h3></summary>
+
+~~~mermaid
+graph TD
+    op1((+)) --> op2(("-"))
+        op2 --> op3((*))
+            op3 --> n1(8)
+            op3 --> n2(3)
+        op2 --> n3(4)
+    op1 --> n4(5)
+~~~
+**Infixa:** `(((8 * 3) - 4) + 5)`
+<br>**Pré-fixada:** `+ - * 8 3 4 5`
+</details>
+
+
+<details><summary><h3> C) 6 2 + 4 7 + * </h3></summary>
+
+~~~mermaid
+graph TD
+    op1((*)) --> op2((+))
+        op2 --> n1(6)
+        op2 --> n2(2)
+    op1 --> op3((+))
+        op3 --> n3(4)
+        op3 --> n4(7)
+~~~
+**Infixa:** `((6 + 2) * (4 + 7))`
+<br>**Pré-fixada:** `* + 6 2 + 4 7`
+</details>
+
+
+
