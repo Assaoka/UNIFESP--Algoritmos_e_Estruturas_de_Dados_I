@@ -1,7 +1,5 @@
 <h1 align="center"> Árvores de Expressão </h1>
 
-Os exercícios estão em desenvolvimento. Provavelmente, serão postados ainda nesta madrugada.
-
 # Definição:
 &emsp;&emsp; Árvores de expressão são estruturas de dados que permitem representar e avaliar expressões matemáticas de forma hierárquica. Elas são compostas por nós, que podem ser operadores (como +, -, *, /) ou operandos (números ou variáveis).
 
@@ -191,5 +189,23 @@ graph TD
 <br>**Pré-fixada:** `* + 6 2 + 4 7`
 </details>
 
+## `Questão 4:` Resolva a Árvore de Expressão a seguir:
+~~~mermaid
+graph TD
+    op1((+)) --> op2(("-"))
+        op2 --> n1(15)
+        op2 --> op3((*))
+            op3 --> n2(4)
+            op3 --> n3(2)
+    op1 --> op5(("*"))
+        op5 --> n4(10)
+        op5 --> op6(("/"))
+            op6 --> n5(5)
+            op6 --> n7(2)
+~~~
 
-
+**Resposta:**
+<br>&emsp;&emsp; = `((15 - (4 * 2)) + (10 * (5 / 2)))`
+<br>&emsp;&emsp; = `((15 - 8) + (10 * 2.5))`
+<br>&emsp;&emsp; = `(7 + 25)`
+<br>&emsp;&emsp; = `32`
