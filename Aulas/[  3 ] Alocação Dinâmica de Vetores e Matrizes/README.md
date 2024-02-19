@@ -17,10 +17,13 @@ for (i = 0; i < 10; i++)
 
 # Combinação dos Operadores ++ e *:
 &emsp;&emsp; Esses dois operadores podem ser combinados de diversas formas para operar sobre vetores. Vamos analisar cada uma das expressões, considerando que p aponta para o primeiro elemento de um vetor v.
-1. `*p++` e `*(p++)`: Ambos retornam o valor apontado por p e, em seguida, incrementam o ponteiro para apontar para a próxima posição de memória. Ou seja, acessa v[0] e passa a apontar para v[1].
-2. `(*p)++`: Nesse caso você acessa o valor apontado por p e, em seguida, incrementa esse valor em 1. Isso significa que, primeiro você retorna o valor de v[0] e, em seguida,incrementamos o valor de v[0] em 1.
-3. `*++p`: Nesse caso você anda com o ponteiro para a próxima posição de memória e, em seguida, retorna o valor apontado por p. Ou seja, acessa e passa a apontar para v[1]
-4. `++*p` e `++(*p)`: Ambos acessam o valor apontado por p, incrementam esse valor em 1 e, em seguida, retornam o valor incrementado. Ou seja, v[0] passa a valer v[0] + 1 e retorna o novo valor de v[0].
+
+| `Combinação`      | `Operação`                                                                                                                  | `Resultado`                                                                         |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `*p++` e `*(p++)` | Ambos retornam o valor apontado por p e, em seguida, incrementam o ponteiro para apontar para a próxima posição de memória. | Retorna o valor de v[0], em seguida, passa a apontar para v[1].                     |
+| `(*p)++`          | Acessa o valor apontado por p e, em seguida, incrementa esse valor em 1.                                                    | primeiro retorna o valor de v[0] e, em seguida, incrementamos o valor de v[0] em 1. |
+| `*++p`            | Anda com o ponteiro para a próxima posição de memória e, em seguida, retorna o valor apontado por p.                        | Avança para v[1] e retorna o valor de v[1].                                         |
+| `++*p` e `++(*p)` | Acessa o valor apontado por p, incrementa esse valor em 1 e, em seguida, retorna o valor incrementado.                      | v[0] passa a valer v[0] + 1 e retorna o novo valor de v[0].                         |
 
 `Observação:` Essas expressões podem ser utilizadas apenas com ponteiros. Por mais que um vetor seja um ponteiro, se ele tiver sido declarado como vetor não é possível trocar o seu endereço de memória.
 
@@ -98,14 +101,15 @@ for (i = 0; i < 10; i++)
 free(m); // libera o vetor de ponteiros
 ~~~
 
-# Atividade 2: Corrida Maluca
+# JUDGE:
+## `| Corrida Maluca:`
 &emsp;&emsp; A corrida maluca sempre foi disputada por 11 carros, com a participação de Dick Vigarista e sua turma. As corridas são sempre marcadas por muitas reviravoltas, o que tornaram essas corridas muito famosas mundialmente. Isso atraiu a atenção de muitas pessoas, que se interessaram em aderir à competição. Porém, para que uma grande quantidade de carros possa disputar a prova, seria preciso também a adoção de um sistema automático para acompanhar o progresso da prova, pois uma prova geralmente tem muitas ultrapassagens. 
 
 &emsp;&emsp; Com o advento de novas tecnologias digitais em categorias profissionais de automobilismo, a organização da corrida maluca decidiu implantar um sistema informatizado que recebe informações em tempo-real do andamento da prova. Esse sistema, envia dados à central, informando cada ultrapassagem realizada durante a prova. Porém, o fornecedor deste sistema não forneceu nenhum software para gerenciar essas informações. A sua tarefa, portanto, é escrever um programa que processe as informações de ultrapassagens na prova e determine os três primeiros colocados no final da corrida.
 
 &emsp;&emsp; Você deverá criar uma estrutura de dados para guardar o nome e o número de um corredor, que será alocada dinamicamente conforme for utilizá-la. Deverá também utilizar alocação dinâmica para vetor que armazenará os dados dos corredores. Atenção: o exercício só terá validade se for utilizado alocação dinâmica para qualquer vetor utilizado e para cada estrutura que for utilizada!!
 
-## Entrada:
+### Entrada:
 &emsp;&emsp; A primeira linha da entrada contém o número N (3≤N≤1000) de participantes da corrida.
 
 &emsp;&emsp; As próximas N linhas contêm os seguintes dados dos competidores: número do carro e nome. O número do carro é um inteiro positivo e único. O nome é um nome simples (sem espaço) de até 20 caracteres. 
@@ -114,16 +118,16 @@ free(m); // libera o vetor de ponteiros
 
 &emsp;&emsp; Nas linhas seguintes, são apresentadas as ultrapassagens. Cada uma dessas linhas contém o número do carro que faz a ultrapassagem sobre o carro a sua frente. A última linha contém o número -1, indicando o final da entrada. Na implementação, sempre verifique se a ultrapassagem indicada é válida. Só execute ultrapassagens válidas. Se for digitada ultrapassagem inválida, ignore-a
 
-## Saída:
+### Saída:
 &emsp;&emsp; Você deve imprimir a lista com o número e o nome dos três primeiros colocados da corrida, sendo um participante por linha, do primeiro para o terceiro lugar. 
 
-## Exemplos:
+### Exemplos:
 | `Entrada`                                                                                              | `Saída`                         |
 | ------------------------------------------------------------------------------------------------------ | ------------------------------- |
 | 3<br>1 Rufus<br>2 Penelope<br>3 Dick<br>1 2 3<br>3<br>3<br>1<br>-1                                     | 1 Rufus<br>3 Dick<br>2 Penelope |
 | 5<br>1 Zorzi<br>2 Coston<br>3 Vos<br>4 Kokubun<br>5 Nobles<br>2 5 4 1 3<br>5<br>2<br>1<br>3<br>1<br>-1 | 2 Coston<br>1 Zorzi<br>5 Nobles |
 
-## Solução:
+### Solução:
 ~~~c
 #include <stdio.h>
 #include <stdlib.h>

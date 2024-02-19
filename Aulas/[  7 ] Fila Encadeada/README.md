@@ -1,11 +1,11 @@
 <h1 align="center"> Fila Encadeada </h1>
  
 # Definição de Fila Encadeada:
-Uma Fila Encadeada é uma Estrutura de Dados que Segue o Princípio `FIFO` (First In First Out), ou seja, `O Primeiro Elemento a Entrar na Fila é o Primeiro a Sair.`
-<br>&emsp;&emsp;1. O `Novo Elemento` Sempre é `Inserido no Final` (Ordem de Chegada);
-<br>&emsp;&emsp;2. O `Elemento Removido` é Sempre o que `Chegou há Mais Tempo na Fila`;
+&emsp;&emsp; Uma Fila Encadeada é uma Estrutura de Dados que segue o princípio `FIFO` (First In First Out), ou seja, `O Primeiro Elemento a Entrar na Fila é o Primeiro a Sair.` Dessa forma:
+<br>&emsp;&emsp;1. O `Novo Elemento` sempre é `Inserido no Final` (Ordem de Chegada);
+<br>&emsp;&emsp;2. O `Elemento Removido` é sempre o que `Chegou há Mais Tempo na Fila`;
 
-<br>Cada `Elemento` é Representado por uma `Estrutura` que Contém um `Ponteiro para o Próximo Elemento` da Fila e o `Valor` do Elemento.
+&emsp;&emsp; Cada `Elemento` é representado por uma `Estrutura` que contém um `Ponteiro para o Próximo Elemento` da Fila e o `Valor do Elemento.`
 ~~~c
 typedef int tipoElemento; // Tipo de Dado que a Fila Armazena (Alterar de Acordo com o Problema)
 typedef struct No {
@@ -15,7 +15,7 @@ typedef struct No {
 typedef SNo *PNo;
 ~~~
 
-<br>Uma `Fila Encadeada` pode ser Implementada Usando `Outra Estrutura` que Contém um `Ponteiro para o Primeiro Elemento` da Fila e um `Ponteiro para o Último Elemento` da Fila.
+&emsp;&emsp; Uma `Fila Encadeada` pode ser implementada usando `Outra Estrutura` que contém um `Ponteiro para o Primeiro Elemento` da Fila e um `Ponteiro para o Último Elemento` da Fila.
 ~~~c
 typedef struct Fila {
 	PNo ini; // Primeiro Elemento da Fila
@@ -72,7 +72,6 @@ PNo remover (PFila fila, tipoElemento *v) {
 ~~~
 
 ## `4. Listar Elementos da Fila:`
-A Impressão dos Elementos da Fila pode ser Feita com uma Lógica Semelhante a da Impressão de uma Pilha Encadeada.
 ~~~c
 void listar (PNo ini) {
 	PNo aux; // Ponteiro Auxiliar para Percorrer a Fila

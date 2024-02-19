@@ -27,9 +27,12 @@ int main() {
 ~~~
 
 # Ponteiro:
-&emsp;&emsp; Ponteiros são variáveis que armazenam endereços de memória. Elas podem ser declaradas adicionando um asterisco (*) antes do nome da variável. Antes de utilizar um ponteiro, é necessário inicializá-lo.
+&emsp;&emsp; Ponteiros são variáveis que armazenam endereços de memória. Elas podem ser declaradas adicionando um asterisco (*) antes do nome da variável. 
+~~~c
+int *p;
+~~~
 
-&emsp;&emsp; Não fazer isso é perigoso, pois o ponteiro (preenchido com lixo) pode apontar para algum endereço de memória que não pertence ao programa. Para inicializar um ponteiro, podemos atribuir a ele o valor NULL, que é um valor especial que indica que o ponteiro não aponta para nenhum endereço de memória. Podemos criar um ponteiro para um inteiro e inicializá-lo da seguinte forma:
+&emsp;&emsp; Antes de utilizar um ponteiro, é necessário inicializá-lo. Não fazer isso é perigoso, pois o ponteiro (preenchido com lixo) pode apontar para algum endereço de memória que não pertence ao programa. Para inicializar um ponteiro, podemos atribuir a ele o valor NULL, que é um valor especial que indica que o ponteiro não aponta para nenhum endereço de memória. Podemos criar um ponteiro para um inteiro e inicializá-lo da seguinte forma:
 ~~~c
 int *p; // Podemos inicializar ele como NULL aqui mesmo com: int *p = NULL;
 p = NULL; 

@@ -1,7 +1,7 @@
 <h1 align="center"> Pilha Encadeada </h1>
 
 # Encadeamento:
-&emsp;&emsp; A partir de agora, iniciaremos nosso estudo sobre `Estruturas de Dados Encadeadas.` Essas estruturas são `Alocadas Dinamicamente`, o que significa que `Não Precisamos Conhecer Antecipadamente o Número de Elementos` que elas conterão. Isso as `Diferencia dos Vetores`, onde os elementos são `Armazenados em Posições Sequências na Memória.`
+&emsp;&emsp; A partir de agora, iniciaremos nosso estudo sobre `Estruturas de Dados Encadeadas.` Essas estruturas são `Alocadas Dinamicamente`, o que significa que `Não Precisamos Conhecer Antecipadamente o Número de Elementos` que elas conterão. Essa `Flexibilidade` é uma das `Principais Vantagens` das Estruturas Encadeadas em relação às Estruturas Estáticas (como vetores, onde inclusão/exclusão de elementos é mais custoso).
 
 # Definição de Pilha: 
 `Último a Entrar, Primeiro a Sair` ("Last In, First Out" -> `LIFO`)	
@@ -100,10 +100,24 @@ PPilha liberarR (PPilha topo) {
 }
 ~~~
 
-## `JUDGE:` Expressões Numéricas em RNP
-&emsp;&emsp;Algumas calculadoras que realização cálculos financeiros, como a HP 12C, utilizam o método Notação Polonesa Reversa, (RPN, em inglês, Reverse Polish Notation ou muitas vezes conhecida por método pós-fixo - Postfix), para encontrar o valor das expressões numéricas digitadas. Por exemplo, para avaliarmos uma expressão na notação usual (Infix) como: (1+2)*(8-3), em notação Postfix temos: 12+83-*, cujo resultado é 15.
-<br>`Objetivo:` Dado uma expressão na forma de RPN (Postfix), calcular o valor final da mesma.
-<br> `Testes:` 10/10 
+# JUDGE:
+## `| Expressões Numéricas em RNP:`
+&emsp;&emsp;Algumas calculadoras que realização cálculos financeiros, como a HP 12C, utilizam o método Notação Polonesa Reversa, (RPN, em inglês, Reverse Polish Notation ou muitas vezes conhecida por método pós-fixo - Postfix), para encontrar o valor das expressões numéricas digitadas. Por exemplo, para avaliarmos uma expressão na notação usual (Infix) como: (1 + 2) *(8 - 3), em notação Postfix temos: 1 2 + 8 3 - *, cujo resultado é 15.
+
+### Entrada:
+&emsp;&emsp; A entrada para cada teste inicia-se informado a string da expressão numérica na forma Postfix (RPN). O tamanho máximo da string correspondente a entrada é N, onde (1 ≤ N ≤ 1024). A string NÃO DEVE possuir espaços em branco. Os valores numéricos possuem APENAS um dígito, ou seja, TODOS os dígitos para as operações só conterão valores de 0 a 9, assim, a expressão 56+ significa, 5+6.
+
+### Saída:
+&emsp;&emsp; A saída do programa deve ser mostrada em uma linha a qual mostra o resultado da expressão numérica. Caso a expressão de entrada seja invalida deve-se exibir: Invalid Expression
+
+### Exemplo:
+| `Entrada` | `Saída`            |
+| --------- | ------------------ |
+| 235+3*+   | 26                 |
+| 32*1-     | 5                  |
+| 4*        | Invalid Expression |
+
+### Solução:
 ~~~c
 #include <stdio.h>
 #include <stdlib.h>

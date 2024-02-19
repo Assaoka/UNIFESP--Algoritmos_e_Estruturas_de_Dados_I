@@ -18,8 +18,6 @@ typedef struct No {
 typedef SNo *PNo;
 ~~~
 
-
-
 # Operações Básicas com Lista Encadeada:
 ## `1. Inserir Nó:`
 ### `| Início:`
