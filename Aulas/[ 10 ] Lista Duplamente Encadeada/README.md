@@ -1,9 +1,9 @@
 <h1 align="center"> Lista Duplamente Encadeada </h1>
 
 # Definição de Lista Duplamente Encadeada:
-&emsp;&emsp; Da mesma forma que os outros tipos de lista, uma Lista Duplamente Encadeada é uma Estrutura de Dados Dinâmica que Armazena Elementos de Forma Encadeada. A Diferença é que Cada Nó Possui Dois Ponteiros (Um para o Próximo Elemento e Outro para o Elemento Anterior). Isso Permite que a Lista Seja Percorrida em Ambos os Sentidos (Do Início para o Fim e do Fim para o Início).
+&emsp;&emsp; Da mesma forma que os outros tipos de lista, uma Lista Duplamente Encadeada é uma estrutura de dados que Armazena Elementos de Forma Encadeada. A diferença é que cada Nó possui `Dois Ponteiros` (Um para o Próximo Elemento e outro para o Elemento Anterior). `Isso Permite que a Lista Seja Percorrida em Ambos os Sentidos` (Do Início para o Fim e do Fim para o Início).
 
-&emsp;&emsp; De certa forma, isso facilita a inserção e remoção de elementos, mas ao mesmo tempo, torna essas operações mais complexas, pois precisamos atualizar mais ponteiros para manter a lista corretamente encadeada. Podemos criar uma estrutura de nó da seguinte forma:
+&emsp;&emsp; De certa forma, isso `facilita a remoção de elementos` (pois não precisamos percorrer a lista para encontrar o elemento anterior ao que será removido), `mas ao mesmo tempo, torna as operações mais complexas` (pois precisamos atualizar mais ponteiros para manter a lista corretamente encadeada). Podemos criar uma estrutura de nó da seguinte forma:
 ~~~c
 typedef int tipoElemento; // Tipo de Dado que o Nó Armazena (Alterar de Acordo com o Problema)
 typedef struct No {
@@ -124,7 +124,7 @@ PNo liberar (PNo lista) {
 ~~~
 
 # Lista Duplamente Encadeada e Circular:
-&emsp;&emsp; A Lista Duplamente Encadeada e Circular é uma Lista Duplamente Encadeada em que o Último Elemento Aponta para o Primeiro Elemento e o Primeiro Elemento Aponta para o Último Elemento. Você pode escolher guardar o endereço do último ou do primeiro elemento, pois ambos são equivalentes (se você tiver o endereço do último elemento, pode obter o endereço do primeiro elemento e vice-versa, então é possível inserir e remover elementos no início e no fim da lista com a mesma complexidade idependente de qual endereço você escolher guardar). Não tenho a intenção de refazer todas as funções para a lista circular, mas você pode fazer isso se quiser.
+&emsp;&emsp; A Lista Duplamente Encadeada e Circular é uma Lista Duplamente Encadeada em que o Último Elemento aponta para o Primeiro Elemento e o Primeiro Elemento aponta para o Último Elemento. Você pode escolher guardar o endereço do último ou do primeiro elemento, pois ambos são "equivalentes" (se você tiver o endereço do último elemento, pode obter o endereço do primeiro elemento e vice-versa, então é possível inserir e remover elementos no início e no fim da lista com a mesma complexidade idependente de qual endereço você escolher guardar). Não tenho a intenção de refazer todas as funções para a lista circular, mas você pode fazer isso se quiser.
 
 # Exercícios:
 ## 1. Escreva uma função que remova de uma lista duplamente encadeada todos os elementos que contêm o valor de y.

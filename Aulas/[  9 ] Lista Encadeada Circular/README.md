@@ -1,11 +1,11 @@
 <h1 align="center"> Lista Encadeada Circular </h1>
 
 # Definição de Lista Encadeada Circular:
-&emsp;&emsp; Da mesma forma que uma Lista Encadeada Simples, uma Lista Encadeada Circular é uma Estrutura de Dados Dinâmica que Armazena Elementos de Forma Encadeada. A Diferença é que o `Último Elemento` da Lista Aponta para o `Primeiro Elemento`, Formando um `Ciclo`.
+&emsp;&emsp; Da mesma forma que uma Lista Encadeada Simples, uma Lista Encadeada Circular é uma estrutura de dados que armazena elementos de Forma Encadeada. A Diferença é que o `Último Elemento` de uma Lista Encadeada Circular aponta para o `Primeiro Elemento`, Formando um `Ciclo`.
 
-&emsp;&emsp; Essa estrutura pode ser útil em várias situações, como quando precisamos percorrer uma lista de forma cíclica ou quando precisamos acessar o ultimo elemento da lista constantemente (como em uma fila). É comum guardar o ponteiro para o último elemento da lista ao invés do primeiro, pois isso permite inserir elementos no fim e remover elementos do começo da lista em tempo constante.
+&emsp;&emsp; Essa estrutura pode ser útil em várias situações, como quando precisamos `percorrer uma lista de forma cíclica` ou quando precisamos `acessar o ultimo elemento da lista constantemente (como em uma fila).` Considerando essa particularidade, `é comum guardar o ponteiro para o último elemento` da lista ao invés do primeiro, pois isso permite inserir elementos no fim e remover elementos do começo da lista em `tempo constante.`
 
-&emsp;&emsp; A Struct pode ser a mesma da Lista Encadeada Simples, mas o comportamento é diferente.
+&emsp;&emsp; `A Struct pode ser a mesma` da Lista Encadeada Simples, mas `o comportamento é diferente.`
 ~~~c
 typedef int tipoElemento; // Tipo de Dado que o Nó Armazena (Alterar de Acordo com o Problema)
 typedef struct No {
@@ -15,7 +15,7 @@ typedef struct No {
 typedef SNo *PNo;
 ~~~
 
-`ATENÇÃO:` Como o `Último Elemento` da Lista Aponta para o `Primeiro Elemento`, não podemos utilizar o `NULL` para indicar o fim da lista. É importante tomar cuidado com isso para evitar loops infinitos. Além disso, é necessário tomar um cuidado especial na inserção e remoção de elementos para garantir que a lista continue circular.
+`ATENÇÃO:` Como o `Último Elemento` da Lista aponta para o `Primeiro Elemento`, não podemos utilizar o `NULL` para indicar o fim da lista. É importante tomar cuidado com isso para evitar loops infinitos. Além disso, é necessário tomar um cuidado especial na inserção e remoção de elementos para garantir que a lista continue circular.
 
 
 

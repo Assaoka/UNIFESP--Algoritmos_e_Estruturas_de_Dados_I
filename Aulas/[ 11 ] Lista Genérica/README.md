@@ -2,9 +2,9 @@
 
 &emsp;&emsp; A lista genérica é uma `lista encadeada mais flexível,` ela permite a criação de listas heterogêneas, ou seja, listas que `armazenam elementos de diferentes tipos.` Vamos supor que precisamos armazenar dados sobre retângulos, triângulos e círculos na mesma estrutura de dados. Como podemos fazer isso?
 
-&emsp;&emsp; Você deve saber que `tipos de dados diferentes ocupam diferentes quantidades de memória,` então não podemos criar uma lista que armazena diretamente esses tipos de dados. A solução para esse problema é criar uma lista que armazena o endereço de memória onde esses dados estão armazenados (ponteiros) e não os dados em si. 
+&emsp;&emsp; Você deve saber que `tipos de dados diferentes ocupam diferentes quantidades de memória,` então não podemos criar uma lista que armazena diretamente esses tipos de dados. A solução para esse problema é `criar uma lista que armazena o endereço de memória onde esses dados estão` armazenados (ponteiros) e não os dados em si. 
 
-&emsp;&emsp; `Um ponteiro ocupa sempre ocupa a mesma quantidade de memória,` independente do tipo de dado para o qual ele aponta. Criando uma lista que armazena ponteiros genéricos (`void *`), podemos armazenar ponteiros para diferentes tipos de dados na mesma lista. Além disso, `precisamos de algo que informe qual o tipo de dado que está sendo apontado.` A estrutura abaixo é uma sugestão para uma lista genérica simplesmente encadeada (você pode usar a mesma ideia para as outras estruturas de dados):
+&emsp;&emsp; `Um ponteiro ocupa sempre ocupa a mesma quantidade de memória,` independente do tipo de dado para o qual ele aponta. Criando uma lista que armazena ponteiros genéricos (`void *`), podemos armazenar ponteiros para diferentes tipos de dados na mesma lista. Além disso, `precisamos de algo que informe qual o tipo de dado que está sendo apontado.` A estrutura abaixo é uma sugestão para uma lista genérica simplesmente encadeada:
 ~~~c
 typedef struct No {
 	void *info; // Ponteiro Genérico para a Informação do Elemento
@@ -55,7 +55,7 @@ PNo criarRet (float base, float altura) {
 }
 ~~~
 
-&emsp;&emsp; O exemplo acima aloca o nó para deixar mais claro que `estamos fazendo duas alocações de memória` (uma para o nó e outra para a informação do nó). Abaixo temos uma outra função que cria um retângulo, porém retornando o endereço da informação do nó:
+&emsp;&emsp; O exemplo acima aloca o nó para deixar mais claro que `estamos fazendo duas alocações de memória` (uma para o nó e outra para a informação do nó). Abaixo temos uma outra função que cria um retângulo, porém sem alocar o nó, apenas retornando o endereço da informação do nó:
 ~~~c
 PRetangulo criarRet (float base, float altura) {
     PRetangulo ret = (PRetangulo) malloc(sizeof(SRetangulo));
@@ -65,11 +65,11 @@ PRetangulo criarRet (float base, float altura) {
 }
 ~~~
 
-&emsp;&emsp; Você poderia enviar a função acima (fazendo a conversão de tipo: `(void *) criarRet(base, altura)`) como a informação do nó para a função de inserção desejada.
-
-
 ## `2. Acesso e Liberação:`
-&emsp;&emsp; Depois de criar o nó, podemos utilizar as funções que já conhecemos para a maioria das operações (basta alterar o `typedef int tipoElemento;` para `typedef void *tipoElemento;`). Porém devemos tomar cuidado com o acesso a informação do nó (pois estamos lidando com ponteiros genéricos) e com a liberação da lista (pois estamos alocando o nó e a informação do nó).
+&emsp;&emsp; Depois de criar o nó, podemos utilizar as funções que já conhecemos para a maioria das operações (basta alterar o `typedef int tipoElemento;` para `typedef void *tipoElemento;`). Podemos, por exemplo, enviar a função `criarRet` (fazendo a conversão de tipo: `(void *) criarRet(base, altura)`) como a informação do nó para alguma função de inserção que já conhecemos.
+
+&emsp;&emsp; Porém devemos tomar cuidado com o `acesso a informação` do nó (pois estamos lidando com ponteiros genéricos) e com a `liberação da lista` (pois estamos alocando o nó e a informação do nó).
+
 ### `| Listar:`
 ~~~c
 void listar (PNo lista) {

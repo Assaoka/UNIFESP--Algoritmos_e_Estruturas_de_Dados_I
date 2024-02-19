@@ -1,9 +1,5 @@
 <h1 align="center"> Materiais de Algoritmos e Estruturas de Dados I </h1>
 
-`Observação:` Alguns materiais ainda estão sendo desenvolvidos, portanto, podem conter erros ou estarem incompletos. Caso encontre algum erro, por favor, entre em contato comigo.
-
-📫 Contato: joaovictorar11@gmail.com
-
 📁 [Definições Iniciais](./[%20%201%20]%20%20Definições%20Iniciais/)
 <br> 📁 [Struct e Ponteiro](./[%20%202%20]%20Struct%20e%20Ponteiro/)
 <br> 📁 [Alocação Dinâmica de Vetores e Matrizes](./[%20%203%20]%20Alocação%20Dinâmica%20de%20Vetores%20e%20Matrizes/)

@@ -1,11 +1,11 @@
 <h1 align="center"> Lista Encadeada </h1>
 
 # Definição de Lista Encadeada:
-Uma Lista Encadeada é uma Generalização das Pilhas e Filas:
+&emsp;&emsp; Uma Lista Encadeada é uma generalização das Pilhas e Filas. Dessa forma:
 <br>&emsp;&emsp; 1. O `Novo Elemento` pode ser Inserido em `Qualquer Posição da Lista.`
-<br>&emsp;&emsp; 2. O `Novo Elemento` pode ser Retirado em `Qualquer Posição da Lista.`
+<br>&emsp;&emsp; 2. Um `Elemento` pode ser Retirado de `Qualquer Posição da Lista.`
 
-Cada Elemento da lista é chamado de Nó, e cada nó possui dois campos:
+&emsp;&emsp; Cada Elemento da lista é chamado de Nó, e cada nó possui dois campos:
 <br>&emsp;&emsp;1. Um Campo que Armazena `Informação do Elemento.`
 <br>&emsp;&emsp;2. Um `Ponteiro` que Aponta para o `Próximo Elemento.`
 
@@ -46,7 +46,7 @@ PNo inserirFim (PNo lista, tipoElemento v) {
 }
 ~~~
 ### `| Índex:`
-Iremos considerar que 0 representa a primeira posição na lista. Além disso, a inserção ocorrerá no início se o índice for menor que 0 e no final se for maior do que o tamanho da lista, como tratamento de erros.
+&emsp;&emsp; Iremos considerar que 0 representa a primeira posição na lista. Além disso, a inserção ocorrerá no início se o índice for menor que 0 e no final se for maior do que o tamanho da lista, como tratamento de erros.
 ~~~c
 PNo inserirIndex (PNo lista, tipoElemento v, int index) { 
 	PNo novo = (PNo) malloc(sizeof(SNo)); // Aloca Memória para o Novo Nó

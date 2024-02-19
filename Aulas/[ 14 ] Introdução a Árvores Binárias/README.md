@@ -15,17 +15,19 @@
 
 
 # Conceitos Básicos:
-1. `Arestas:` Conexões entre os nós da árvore.
-1. `Caminho:` Dizemos que existe um caminho entre dois nós se existir uma `sequência de arestas` que conectam os dois nós. Podemos observar por meio da definição que: `O caminho entre dois nós é único` e `Sempre existe um caminho entre a raiz e qualquer outro nó da árvore.`
-3. `Ancestral:` Dizemos que um nó `A` é ancestral de um nó `B` se existe um caminho de `A` até `B`. Se este caminho contiver uma única aresta, dizemos que `A` é pai de `B`.
-4. `Descendente:` Dizemos que um nó `A` é descendente de um nó `B` se existe um caminho de `B` até `A`. Se este caminho contiver uma única aresta, dizemos que `A` é filho de `B`.
-5. `Irmãos:` Dizemos que dois nós são irmãos se possuem o mesmo pai.
-6. `Nós Folha/Terminal:` Nós que não possuem filhos (nós com grau zero). 
-7. `Grau:` Número de filhos de um nó. O grau de uma árvore é o `maior grau de seus nós.`
-8. `Nível:` Número de arestas entre um nó e a raiz. O nível da raiz é zero. Se um nó está no nível `n`, seus filhos estão no nível `n+1`. O nível de uma árvore é o `maior nível de seus nós.`
-9. `Árvore Completa:` Uma árvore de grau G é completa se todos os seus nós possuem exatamente `G filhos` e todas as `folhas estão no mesmo nível.`
-10. `Floresta:` Conjunto de árvores. Se removermos a raiz de uma árvore, obtemos uma floresta com cada uma das subárvores da árvore original.
-11. `Altura/Profundidade:` Número de arestas entre um nó e a folha mais distante. Uma árvore vazia possui altura -1. 
+| `Termo:`              | `Significado:`                                                                                                                                                                                                                                                       |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Arestas`             | Conexões entre os nós da árvore.                                                                                                                                                                                                                                     |
+| `Caminho`             | Dizemos que existe um caminho entre dois nós se existir uma `sequência de arestas` que conectam os dois nós. Podemos observar por meio da definição que: `O caminho entre dois nós é único` e `Sempre existe um caminho entre a raiz e qualquer outro nó da árvore.` |
+| `Ancestral`           | Dizemos que um nó `A` é ancestral de um nó `B` se existe um caminho de `A` até `B`. Se este caminho contiver uma única aresta, dizemos que `A` é pai de `B`.                                                                                                         |
+| `Descendente`         | Dizemos que um nó `A` é descendente de um nó `B` se existe um caminho de `B` até `A`. Se este caminho contiver uma única aresta, dizemos que `A` é filho de `B`.                                                                                                     |
+| `Irmãos`              | Dizemos que dois nós são irmãos se possuem o mesmo pai.                                                                                                                                                                                                              |
+| `Nós Folha/Terminal`  | Nós que não possuem filhos (nós com grau zero).                                                                                                                                                                                                                      |
+| `Grau`                | Número de filhos de um nó. O grau de uma árvore é o `maior grau de seus nós.`                                                                                                                                                                                        |
+| `Nível`               | Número de arestas entre um nó e a raiz. O nível da raiz é zero. Se um nó está no nível `n`, seus filhos estão no nível `n+1`. O nível de uma árvore é o `maior nível de seus nós.`                                                                                   |
+| `Árvore Completa`     | Uma árvore de grau G é completa se todos os seus nós possuem exatamente `G filhos` e todas as `folhas estão no mesmo nível.`                                                                                                                                         |
+| `Floresta`            | Conjunto de árvores. Se removermos a raiz de uma árvore, obtemos uma floresta com cada uma das subárvores da árvore original.                                                                                                                                        |
+| `Altura/Profundidade` | Número de arestas entre um nó e a folha mais distante. Uma árvore vazia possui altura -1.                                                                                                                                                                            |
 
 
 # Árvores Binárias:
