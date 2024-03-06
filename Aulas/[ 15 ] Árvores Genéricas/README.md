@@ -1,5 +1,6 @@
 <h1 align="center"> Árvores Genéricas </h1>
 
+# Definição de Árvore Genérica:
 &emsp;&emsp; Árvores genéricas são árvores que possuem um número variável de filhos por nó. A árvore genérica é uma generalização da árvore binária, onde cada nó pode ter um número arbitrário de filhos. A árvore genérica é uma estrutura de dados que é usada para representar hierarquias mais complexas, como a estrutura de um diretório de arquivos.
 
 
@@ -204,9 +205,6 @@ graph TD;
 
 
 ## `QUESTÃO 2:` Crie uma função que busca um nó por seu valor e imprime o valor de todos os seus filhos. Caso o nó não exista, imprima "Nó não encontrado".
-
-
-
 
 ## `QUESTÃO 3:` Faça um programa que leia n nomes e coloque os nomes em diferentes níveis dependendo da inicial do nome. No final, exiba a lista de nomes, agrupadas de acordo com a letra inicial do nome (os grupos devem estar em ordem alfabética).
 ### | Entrada:
