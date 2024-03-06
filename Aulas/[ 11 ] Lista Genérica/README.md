@@ -1,5 +1,6 @@
 <h1 align="center"> Lista Genérica </h1>
 
+# Definição de Lista Genérica:
 &emsp;&emsp; A lista genérica é uma `lista encadeada mais flexível,` ela permite a criação de listas heterogêneas, ou seja, listas que `armazenam elementos de diferentes tipos.` Vamos supor que precisamos armazenar dados sobre retângulos, triângulos e círculos na mesma estrutura de dados. Como podemos fazer isso?
 
 &emsp;&emsp; Você deve saber que `tipos de dados diferentes ocupam diferentes quantidades de memória,` então não podemos criar uma lista que armazena diretamente esses tipos de dados. A solução para esse problema é `criar uma lista que armazena o endereço de memória onde esses dados estão` armazenados (ponteiros) e não os dados em si. 
