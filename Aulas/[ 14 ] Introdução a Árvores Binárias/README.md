@@ -1,6 +1,6 @@
 <h1 align="center"> Introdução a Árvores Binárias </h1>
 
-# Introdução a Árvores:
+# Definição de Árvores:
 &emsp;&emsp; Sendo uma das `classes de estruturas de dados mais importantes,` as árvores são estruturas de dados que `permitem representar dados com hierarquias,` o que é muito útil para representar alguns tipos de dados como:
 <br>&emsp;&emsp; 1. Um sistema de arquivos de um computador.
 <br>&emsp;&emsp; 2. O organograma de uma empresa.
@@ -30,7 +30,7 @@
 | `Altura/Profundidade` | Número de arestas entre um nó e a folha mais distante. Uma árvore vazia possui altura -1.                                                                                                                                                                            |
 
 
-# Árvores Binárias:
+# Definição de Árvores Binárias:
 &emsp;&emsp; Dentro da variedade de árvores, as árvores binárias são as mais usadas. Elas são um caso especial onde  `nenhum nó tem grau maior do que dois,` ou seja, cada nó pode ter no máximo dois filhos.
 
 &emsp;&emsp; As subárvores de uma árvore binária são chamadas de `subárvore esquerda` e `subárvore direita.` A ordem entre os filhos é importante, `um filho à esquerda é diferente de um filho à direita.` Se trocarmos a ordem dos filhos de um nó obtemos outra árvore.
@@ -144,8 +144,28 @@ int altura(PArv a) {
 ~~~
 
 ## `Questão 3:`  Dadas duas árvores binárias A e B faça uma função que verifique se duas árvores A e B são iguais. Esta função retorna 1 se as árvores recebidas como parâmetros forem iguais e zero caso contrário. O protótipo da função deve ser dado por: int iguais(PArv A, PArv B)
+~~~c
+int iguais(PArv A, PArv B) {
+	if (A == NULL && B == NULL) return 1; // Condição de parada (Se ambas as árvores são vazias, elas são iguais)
+	if (A == NULL || B == NULL) return 0; // Condição de parada (Se uma árvore é vazia e a outra não, elas são diferentes)
+	if (A->info != B->info) return 0; // Condição de parada (Se os nós são diferentes, as árvores são diferentes)
+	return (iguais(A->esq, B->esq) && iguais(A->dir, B->dir)); // Verifica se as subárvores esquerda e direita são iguais
+}
+~~~
 
 ## `Questão 4:` Escreva uma função para excluir todas as folhas de uma Árvore Binária. O protótipo da função deve ser dado por: PArv excluir_folhas(PArv a);
+~~~c	
+PArv excluir_folhas(PArv a) {
+	if (a == NULL) return NULL; // Condição de parada
+	if (a->esq == NULL && a->dir == NULL) { // Se o nó é uma folha
+		free(a); // Libera o nó
+		return NULL; // Retorna NULL
+	}
+	a->esq = excluir_folhas(a->esq); // Exclui as folhas da subárvore esquerda
+	a->dir = excluir_folhas(a->dir); // Exclui as folhas da subárvore direita
+	return a; // Retorna o nó
+}
+~~~
 
 ## `Questão 5:` Faça uma função que imprima uma árvore binária por paragrafação.
 ~~~c
