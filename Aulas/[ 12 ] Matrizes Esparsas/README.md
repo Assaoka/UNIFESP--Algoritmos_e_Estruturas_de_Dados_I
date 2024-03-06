@@ -1,6 +1,6 @@
 <h1 align="center"> Matrizes Esparsas </h1>
 
-# Introdução:
+# Definição de Matriz Esparsa:
 &emsp;&emsp; Matrizes esparsas são matrizes que possuem a maioria de seus elementos iguais a zero. Para economizar espaço, é possível armazenar apenas os elementos diferentes de zero e suas respectivas posições.
 
 &emsp;&emsp; Existem diversas formas de se implementar uma matriz esparsa, vamos utilizar um vetor de listas encadeadas para armazenar os elementos diferentes de zero e suas posições.
