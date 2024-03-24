@@ -1,5 +1,5 @@
 <h1 align="center"> Matrizes Esparsas <br>
-  <a href="../[ 11 ] Lista Genérica/"><img src="https://img.shields.io/badge/Anterior-Pilha_Lista GenéricaEncadeada-215a36" alt="Anterior"></a>
+  <a href="../[ 11 ] Lista Genérica/"><img src="https://img.shields.io/badge/Anterior-Lista Genérica-215a36" alt="Anterior"></a>
   <a href="../[ 13 ] Introdução a Grafos/"><img src="https://img.shields.io/badge/Próximo-Introdução a Grafos-215a36" alt="Próximo"></a>
 </h1>
 

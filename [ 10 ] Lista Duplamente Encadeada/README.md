@@ -130,9 +130,9 @@ PNo liberar (PNo lista) {
 &emsp;&emsp; A Lista Duplamente Encadeada e Circular é uma Lista Duplamente Encadeada em que o Último Elemento aponta para o Primeiro Elemento e o Primeiro Elemento aponta para o Último Elemento. Você pode escolher guardar o endereço do último ou do primeiro elemento, pois ambos são "equivalentes" (se você tiver o endereço do último elemento, pode obter o endereço do primeiro elemento e vice-versa, então é possível inserir e remover elementos no início e no fim da lista com a mesma complexidade idependente de qual endereço você escolher guardar). Não tenho a intenção de refazer todas as funções para a lista circular, mas você pode fazer isso se quiser.
 
 # Exercícios:
-## 1. Escreva uma função que remova de uma lista duplamente encadeada todos os elementos que contêm o valor de y.
+## `Questão 1:` Escreva uma função que remova de uma lista duplamente encadeada todos os elementos que contêm o valor de y.
 &emsp;&emsp; Dica: Utilize a função `remover` e a função `buscar` para encontrar os elementos a serem removidos.
 
-## 2. Escreva uma função que insira um elemento em ordem crescente em uma lista duplamente encadeada
+## `Questão 2:` Escreva uma função que insira um elemento em ordem crescente em uma lista duplamente encadeada
 
 ---

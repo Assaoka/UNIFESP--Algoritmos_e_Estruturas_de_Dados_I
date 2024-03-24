@@ -1,4 +1,7 @@
-<h1 align="center"> Introdução a Árvores Binárias </h1>
+<h1 align="center"> Introdução a Árvores Binárias <br>
+  <a href="../[ 13 ] Introdução a Grafos/"><img src="https://img.shields.io/badge/Anterior-Introdução a Grafos-215a36" alt="Anterior"></a>
+  <a href="../[ 15 ] Árvores Genéricas/"><img src="https://img.shields.io/badge/Próximo-Árvores Genéricas-215a36" alt="Próximo"></a>
+</h1>
 
 # Definição de Árvores:
 &emsp;&emsp; Sendo uma das `classes de estruturas de dados mais importantes,` as árvores são estruturas de dados que `permitem representar dados com hierarquias,` o que é muito útil para representar alguns tipos de dados como:
@@ -177,3 +180,5 @@ void imprimir (PArv a, int i) {
 	imprimir(a->dir, i + 1); // Imprime a subárvore da direita
 }
 ~~~
+
+---

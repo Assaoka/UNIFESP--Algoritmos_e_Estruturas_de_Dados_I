@@ -6,9 +6,9 @@
 &emsp;&emsp; Este espaço foi criado com o propósito de compartilhar os conteúdos da disciplina de Algoritmos e Estruturas de Dados I do 2º semestre de 2023 na UNIFESP (Universidade Federal de São Paulo). Aqui, você terá acesso a resumos sobre os conteúdos abordados em aula, bem como exercícios propostos e suas respectivas soluções. Espero que este material seja útil para aqueles que desejam aprender ou revisar conceitos fundamentais de algoritmos e estruturas de dados em linguagem C. 
 
 # Materiais:
-📁 [Definições Iniciais](./[%20%201%20]%20%20Definições%20Iniciais/)
+📁 [Definições Iniciais](./[%20%201%20]%20Definições%20Iniciais/)
 <br> 📁 [Struct e Ponteiro](./[%20%202%20]%20Struct%20e%20Ponteiro/)
-<br> 📁 [Alocação Dinâmica de Vetores e Matrizes](./[%20%203%20]%20Alocação%20Dinâmica%20de%20Vetores%20e%20Matrizes/)
+<br> 📁 [Alocação Dinâmica](./[%20%203%20]%20Alocação%20Dinâmica/)
 <br> 📁 [Manipulação de Arquivos](./[%20%204%20]%20Manipulação%20de%20Arquivos/)
 <br> 📁 [Pilha Sequencial](./[%20%205%20]%20Pilha%20Sequencial/)
 <br> 📁 [Pilha Encadeada](./[%20%206%20]%20Pilha%20Encadeada/)
