@@ -1,9 +1,7 @@
-<h1 align="center"> Bem-vindo ao Repositório de Algoritmos e Estruturas de Dados I </h1>
-
-<p align="center">
+<h1 align="center"> Bem-vindo ao Repositório de Algoritmos e Estruturas de Dados I <br>
   <img src="https://img.shields.io/badge/UNIFESP-Universidade%20Federal%20de%20S%C3%A3o%20Paulo-215a36" alt="UNIFESP">
   <img src="https://img.shields.io/badge/Jo%C3%A3o%20Victor%20Assaoka%20Ribeiro-2023.2-215a36" alt="João Victor Assaoka">
-</p>
+</h1>
 
 &emsp;&emsp; Este espaço foi criado com o propósito de compartilhar os conteúdos da disciplina de Algoritmos e Estruturas de Dados I do 2º semestre de 2023 na UNIFESP (Universidade Federal de São Paulo). Aqui, você terá acesso a resumos sobre os conteúdos abordados em aula, bem como exercícios propostos e suas respectivas soluções. Espero que este material seja útil para aqueles que desejam aprender ou revisar conceitos fundamentais de algoritmos e estruturas de dados em linguagem C. 
 

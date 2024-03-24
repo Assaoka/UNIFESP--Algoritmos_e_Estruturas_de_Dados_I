@@ -1,11 +1,10 @@
 <h1 align="center"> Árvores Binárias de Busca <br>
-  <a href="../ Árvores de Expressão/"><img src="https://img.shields.io/badge/Anterior-Pilha_Encadeada-215a36" alt="Anterior"></a>
-  <a href="../../UNIFESP--Algoritmos_e_Estruturas_de_Dados_II/"><img src="https://img.shields.io/badge/Próxima-Algoritmos_e_Estruturas_de_Dados_II-215a36" alt="Próxima"></a>
+  <a href="../[ 16 ] Árvores de Expressão/"><img src="https://img.shields.io/badge/Anterior-Árvores de Expressão-215a36" alt="Anterior"></a>
 </h1>
 
 
 
-# Introdução:
+# Definição de Árvore Binária de Busca:
 &emsp;&emsp; Imagine que você tem uma lista de números e deseja encontrar um valor específico nessa lista. O método convencional seria percorrer a lista de maneira sequencial, de casa em casa, até encontrar o valor desejado. No entanto, `mesmo que a lista esteja ordenada,` esse método pode se tornar `ineficiente conforme a lista cresce.`
 
 &emsp;&emsp; Uma alternativa seria `dividir a lista ordenada em duas partes` (uma parte com os valores menores e outra com os valores maiores) e verificar em qual das duas partes o valor desejado se encontra. Se o valor desejado for menor que o valor do meio da lista, então o valor desejado só pode estar na primeira metade da lista. Caso contrário, o valor desejado só pode estar na segunda metade da lista. `Esse método é conhecido como busca binária.`
@@ -219,4 +218,4 @@ int verificaABB (PArv a) {
 }
 ~~~
 
-##
+---
