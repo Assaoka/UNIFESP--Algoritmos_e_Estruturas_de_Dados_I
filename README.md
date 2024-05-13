@@ -8,6 +8,29 @@
 </p>
 
 # Materiais:
+| **Nº** | **Conteúdo Abordado** | **Link para o Material** |
+|:--:|:--------:|:--------:|
+| 1 | Definições Iniciais | <a href="./[  1 ] Definições Iniciais/"><img src="https://img.shields.io/badge/Ver_Material-215a36" alt="Ver_Material"></a> |
+| 2 | Struct e Ponteiro | <a href="./[  2 ] Struct e Ponteiro/"><img src="https://img.shields.io/badge/Ver_Material-5f5f5f" alt="Ver_Material"></a> |
+| 3 | Alocação Dinâmica | <a href="./[  3 ] Alocação Dinâmica/"><img src="https://img.shields.io/badge/Ver_Material-215a36" alt="Ver_Material"></a> |
+| 4 | Manipulação de Arquivos | <a href="./[  4 ] Manipulação de Arquivos/"><img src="https://img.shields.io/badge/Ver_Material-5f5f5f" alt="Ver_Material"></a> |
+| 5 | Pilha Sequencial | <a href="./[  5 ] Pilha Sequencial/"><img src="https://img.shields.io/badge/Ver_Material-215a36" alt="Ver_Material"></a> |
+| 6 | Pilha Encadeada | <a href="./[  6 ] Pilha Encadeada/"><img src="https://img.shields.io/badge/Ver_Material-5f5f5f" alt="Ver_Material"></a> |
+| 7 | Fila Encadeada | <a href="./[  7 ] Fila Encadeada/"><img src="https://img.shields.io/badge/Ver_Material-215a36" alt="Ver_Material"></a> |
+| 8 | Lista Encadeada | <a href="./[  8 ] Lista Encadeada/"><img src="https://img.shields.io/badge/Ver_Material-5f5f5f" alt="Ver_Material"></a> |
+| 9 | Lista Encadeada Circular | <a href="./[  9 ] Lista Encadeada Circular/"><img src="https://img.shields.io/badge/Ver_Material-215a36" alt="Ver_Material"></a> |
+| 10 | Lista Duplamente Encadeada | <a href="./[ 10 ] Lista Duplamente Encadeada/"><img src="https://img.shields.io/badge/Ver_Material-5f5f5f" alt="Ver_Material"></a> |
+| 11 | Lista Genérica | <a href="./[ 11 ] Lista Genérica/"><img src="https://img.shields.io/badge/Ver_Material-215a36" alt="Ver_Material"></a> |
+| 12 | Matrizes Esparsas | <a href="./[ 12 ] Matrizes Esparsas/"><img src="https://img.shields.io/badge/Ver_Material-5f5f5f" alt="Ver_Material"></a> |
+| 13 | Introdução a Grafos | <a href="./[ 13 ] Introdução a Grafos/"><img src="https://img.shields.io/badge/Ver_Material-215a36" alt="Ver_Material"></a> |
+| 14 | Introdução a Árvores | <a href="./[ 14 ] Introdução a Árvores Binárias/"><img src="https://img.shields.io/badge/Ver_Material-5f5f5f" alt="Ver_Material"></a> |
+| 15 | Árvores Genéricas | <a href="./[ 15 ] Árvores Genéricas/"><img src="https://img.shields.io/badge/Ver_Material-215a36" alt="Ver_Material"></a> |
+| 16 | Árvores de Expressão | <a href="./[ 16 ] Árvores de Expressão/"><img src="https://img.shields.io/badge/Ver_Material-5f5f5f" alt="Ver_Material"></a> |
+| 17 | Árvores Binárias de Busca | <a href="./[ 17 ] Árvores Binárias de Busca/"><img src="https://img.shields.io/badge/Ver_Material-215a36" alt="Ver_Material"></a> |
+
+
+
+
 📁 [Definições Iniciais](./[%20%201%20]%20Definições%20Iniciais/)
 <br> 📁 [Struct e Ponteiro](./[%20%202%20]%20Struct%20e%20Ponteiro/)
 <br> 📁 [Alocação Dinâmica](./[%20%203%20]%20Alocação%20Dinâmica/)
